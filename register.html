@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up to TickTockTasks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="Assests/CSS/tgc.css">
+
     <!-- <style>
         *{
             padding: 0;
@@ -20,75 +22,46 @@
 
         div#Content{
             /* Structure */
-            width: 500px;
-            height: 700px;
+            width: 50%;
             background-color: #fff;
             border-radius: 15px;
-
-            /* Position */
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -250px;
-            margin-top: -350px;
         }
 
         div#Content h2{
             /* text */
             font-family: 'Poppins';
             text-align: center;
-            font-size: 32px;
+            font-size: 4vw;
+            line-height: 4vw;
 
             /* Position */
-            margin: 10px auto;
+            padding-top: 20px;
         }
 
-        div#Content h2.Password{
-            /* Position */
-            margin-left: 20px;
-
+        div#Content h4.Password{
             /* text */
             font-family: 'Poppins';
             text-align: left;
+            font-size: 3vw;
+            line-height: 3vw;
         }
 
         div#Content input{
-            width: 460px;
-            height: 50px;
             background-color: #F0F0F0;
 
             /* border */
             border: 0px;
             border-radius: 15px;
 
-            /* Position */
-            display: block;
-            margin: 20px auto;
-
             /* text */
             font-family: 'Poppins';
-            text-indent: 15px;
-            line-height: 50px;
-        }
-
-        div#Content div#NamePart{
-            width: 100%;
-            height: 70px;
-
-            margin: 0px;
-        }
-
-        div#Content div#NamePart input{
-            width: 220px;
-            
-            /* Position */
-            display: inline;
-            margin: 20px 0 0 19px;
+            font-weight: bolder;
+            text-indent: 2vw;
+            line-height: 5vw;
+            font-size: 1vw;
         }
 
         div#Content input.btn{
-            width: 150px;
-            height: 50px;
             background-color: #439A97;
 
             /* border */
@@ -97,36 +70,42 @@
 
             /* text */
             font-family: 'Poppins';
+            text-align: center;
+            line-height: 3vw;
             text-indent: 0;
             color: #fff;
-
-            /* Position */
-            margin-top: 30px;
-        }
-
+            font-size: 1vw;
+        } 
     </style> -->
+
 </head>
 <body>
     <div class="logo">
         <img src="" alt="">
     </div>
 
-    <div id="Content">
-        <h2>Personal Information</h2>
-        <div id="NamePart">
-            <input type="text" name="" value="" placeholder="First Name">
-            <input type="text" name="" value="" placeholder="Last Name">
-        </div>
-        <input type="text" name="" value="" placeholder="Email">
-        <input type="text" name="" value="" placeholder="Birthday">
-        <input type="text" name="" value="" placeholder="Region">
-        <input type="text" name="" value="" placeholder="Contact Number">
+    <div id="Content" class="container">
+        <h2 class="h2">Personal Information</h2>
 
-        <h2 class="Password">Password Setup</h2>
-        <input type="password" name="" value="" placeholder="password">
-        <input type="password" name="" value="" placeholder="Confirm Password">
+        <input type="text" name="" value="" placeholder="First Name" class="col-4 offset-1 mt-2">
+        <input type="text" name="" value="" placeholder="Last Name" class="col-4 offset-1 mt-2">
+        <br>
+        <input type="text" name="" value="" placeholder="Email" class="col-10 offset-1 mt-2">
+        <br>
+        <input type="text" name="" value="" placeholder="Birthday" class="col-10 offset-1 mt-2">
+        <br>
+        <input type="text" name="" value="" placeholder="Region" class="col-10 offset-1 mt-2">
+        <br>
+        <input type="text" name="" value="" placeholder="Contact Number" class="col-10 offset-1 mt-2">
+        <br>
 
-        <input type="button" name="" value="Sign up" class="btn">
+        <h4 class="offset-1 Password h4 mt-4">Password Setup</h4>
+        <input type="password" name="" value="" placeholder="password" class="col-10 offset-1">
+        <br>
+        <input type="password" name="" value="" placeholder="Confirm Password" class="col-10 offset-1 mt-2">
+        <br>
+
+        <input type="button" name="" value="Sign up" class="col-4 offset-4 mt-4 mb-2 btn">
     </div>
 
     <!-- JavaScript -->
