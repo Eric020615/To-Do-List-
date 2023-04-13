@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback to TickTockTasks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="Assests/CSS/tgc.css">
+
     <!-- <style>
         *{
             padding: 0;
@@ -20,78 +22,58 @@
 
         div#feedbackcontent{
             /* Structure */
-            width: 600px;
-            height: 900px;
             background-color: #fff;
             border-radius: 15px;
-
-            /* Position */
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -300px;
-            margin-top: -450px;
         }
 
         div#feedbackcontent h2{
-            display: inline-block;
-            width: 600px;
-            height: 100px;
-
             /* text */
-            color: #000;
-            line-height: 100px;
-            font-size: 32px;
             font-family: 'Poppins';
             text-align: center;
-            
+            font-size: 4vw;
+            line-height: 4vw;
+
+            /* Position */
+            padding-top: 20px;
         }
 
         div#feedbackcontent input{
-            width:500px;
-            height: 75px;
             background-color: #F0F0F0;
 
             /* border */
             border: 0px;
             border-radius: 15px;
 
-            /* Position */
-            display: block;
-            margin: 20px auto;
-
             /* text */
             font-family: 'Poppins';
-            font-size: 24px;
             font-weight: bolder;
-            text-indent: 15px;
-            line-height: 75px;
+            text-indent: 2vw;
+            line-height: 5vw;
+            font-size: 1vw;
         }
 
         div#feedbackcontent textarea.feedbackmessage{
-            width:500px;
-            height: 200px;
             background-color: #F0F0F0;
 
             /* border */
             border: 0px;
             border-radius: 15px;
 
-            /* Position */
-            display: block;
-            margin: 20px auto;
-
             /* text */
             font-family: 'Poppins';
-            font-size: 24px;
             font-weight: bolder;
-            text-indent: 15px;
-            line-height: 75px;
+            text-indent: 2vw;
+            line-height: 2vw;
+            font-size: 1vw;
+        }
+
+        textarea::placeholder {
+            position: absolute;
+            top: 2vw;
+            left: 3vw;
         }
 
         div#feedbackcontent input.btn{
-            width: 150px;
-            height: 50px;
             background-color: #439A97;
 
             /* text */
@@ -99,109 +81,82 @@
             text-align: center;
             text-indent: 0;
             color: #fff;
-
-            /* Position */
-            margin: 30px 225px 0;
+            line-height: 3vw;
+            font-size: 2vw;
         }
 
         div#feedbackcontent h4{
-            width: 600px;
-            height: 50px;
-
             /* text */
             color: #000;
-            line-height: 50px;
-            font-size: 32px;
+            line-height: 3vw;
             font-family: 'Poppins';
             text-align: left;
-
-            /* Position */
-            margin: 10px 0 0 50px;
-        }
-
-        div#feedbackcontent input.btn{
-            width: 150px;
-            height: 50px;
-            background-color: #439A97;
-
-            /* text */
-            font-family: 'Poppins';
-            text-align: center;
-            text-indent: 0;
-            line-height: 50px;
-            color: #fff;
-
-            /* Position */
-            margin: 40px 225px 0;
+            font-size: 3vw;
         }
 
         div#feedbackcontent div.file{
-            width:500px;
-            height: 200px;
             background-color: #F0F0F0;
 
             /* border */
             border: 2px dashed #555;
             border-radius: 15px;
-
-            /* Position */
-            display: block;
-            margin: 0px auto;
         }
 
         div#feedbackcontent div.file input{
-            width: 100px;
-            height: 50px;
             background-color: #fff;
-            box-shadow: 0px 5px 5px #555;
+            box-shadow: 0vw 1vw 1vw #555;
 
             /* text */
             font-family: 'Poppins';
             font-weight: border;
             text-align: center;
             text-indent: 0;
-            line-height: 50px;
-            color: #000;
-
-            /* Position */
-            margin-top: 40px;
+            line-height: 4vw;
+            color: #555;
+            font-size: 1vw;
         }
 
         div#feedbackcontent div.file span{
-            width: 500px;
-            height: 50px;
-            display: inline-block;
-
             /* text */
             font-family: 'Poppins';
-            font-size: 24px;
             font-weight: border;
             text-align: center;
             text-indent: 0;
-            line-height: 50px;
+            line-height: 3vw;
             color: #555;
+            font-size: 1vw;
         }
+    </style>  -->
 
-    </style> -->
+
 </head>
 <body>
     <div class="logo">
         <img src="" alt="">
     </div>
 
-    <div id="feedbackcontent">
+    <div id="feedbackcontent" class="container  col-6 offset-3">
         <h2>FeedBack Form</h2>
-        <input type="text" name="" value="" placeholder="Name">
-        <input type="text" name="" value="" placeholder="Email">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Message" class="feedbackmessage"></textarea>
-        
-        <h4>Attachments:</h4>
-        <div class="file">
-            <input type="button" name="" value="Browse">
-            <span>or drop files here</span>
+        <div class="row">
+            <input type="text" name="" value="" placeholder="Name" class="col-8 offset-2">
+            <br>
+            <input type="text" name="" value="" placeholder="Email" class="col-8 mt-2 offset-2">
+            <br>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message" class="feedbackmessage col-8 mt-2 offset-2"></textarea>
+        </div>
+        <br>
+
+        <div class="row">
+            <h4 class="h4 col-2 offset-1">Attachments:</h4>
+            <br>
+            <div class="file row col-8 offset-2">
+                <input type="button" name="" value="Browse" class="col-6 offset-3 mt-4">
+                <br>
+                <span class="h6 text-center col-10 offset-1 mt-1 mb-3">or drop files here</span>
+            </div>
         </div>
 
-        <input type="button" name="" value="Submit" class="btn">
+        <input type="button" name="" value="Submit" class="btn col-4 text-center mt-3 mb-3 offset-4">
     </div>
 </body>
 </html>

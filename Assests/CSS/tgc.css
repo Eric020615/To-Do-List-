@@ -1,3 +1,5 @@
+/* Register */
+
 *{
     padding: 0;
     margin: 0;
@@ -11,75 +13,46 @@ html,body{
 
 div#Content{
     /* Structure */
-    width: 500px;
-    height: 700px;
+    width: 50%;
     background-color: #fff;
     border-radius: 15px;
-
-    /* Position */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -250px;
-    margin-top: -350px;
 }
 
 div#Content h2{
     /* text */
     font-family: 'Poppins';
     text-align: center;
-    font-size: 32px;
+    font-size: 4vw;
+    line-height: 4vw;
 
     /* Position */
-    margin: 10px auto;
+    padding-top: 20px;
 }
 
-div#Content h2.Password{
-    /* Position */
-    margin-left: 20px;
-
+div#Content h4.Password{
     /* text */
     font-family: 'Poppins';
     text-align: left;
+    font-size: 3vw;
+    line-height: 3vw;
 }
 
 div#Content input{
-    width: 460px;
-    height: 50px;
     background-color: #F0F0F0;
 
     /* border */
     border: 0px;
     border-radius: 15px;
 
-    /* Position */
-    display: block;
-    margin: 20px auto;
-
     /* text */
     font-family: 'Poppins';
-    text-indent: 15px;
-    line-height: 50px;
-}
-
-div#Content div#NamePart{
-    width: 100%;
-    height: 70px;
-
-    margin: 0px;
-}
-
-div#Content div#NamePart input{
-    width: 220px;
-    
-    /* Position */
-    display: inline;
-    margin: 20px 0 0 19px;
+    font-weight: bolder;
+    text-indent: 2vw;
+    line-height: 5vw;
+    font-size: 1vw;
 }
 
 div#Content input.btn{
-    width: 150px;
-    height: 50px;
     background-color: #439A97;
 
     /* border */
@@ -88,67 +61,59 @@ div#Content input.btn{
 
     /* text */
     font-family: 'Poppins';
+    text-align: center;
+    line-height: 3vw;
     text-indent: 0;
     color: #fff;
+    font-size: 1vw;
+} 
 
-    /* Position */
-    margin-top: 30px;
+/* ------------------------------------------------------------------------ */
+
+/* Login */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #9FE1E1;
 }
 
 div#content{
     /* Structure */
-    width: 600px;
-    height: 350px;
     background-color: #293241;
     border-radius: 15px;
-
-    /* Position */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -300px;
-    margin-top: -300px;
 }
 
-#content div span{
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-
+#content div span h4{
     /* text */
     color: #fff;
-    line-height: 50px;
+    line-height: 5vw;
     font-family: 'Poppins';
     text-align: center;
-    
+    font-size: 2vw;
 }
 
 #content input{
-    width:400px;
-    height: 50px;
     background-color: #F0F0F0;
 
     /* border */
     border: 0px;
     border-radius: 15px;
 
-    /* Position */
-    
-    margin: 20px 0px;
-
     /* text */
     font-family: 'Poppins';
-    text-indent: 15px;
-    line-height: 50px;
-}
-
-#content div#email{
-    margin-top: 20px;
+    font-weight: bolder;
+    text-indent: 2vw;
+    line-height: 5vw;
+    font-size: 1vw;
 }
 
 #content input.btn{
-    width: 150px;
-    height: 50px;
     background-color: #439A97;
 
     /* text */
@@ -156,46 +121,32 @@ div#content{
     text-align: center;
     text-indent: 0;
     color: #fff;
-
-    /* Position */
-    margin: 30px 225px 0;
+    line-height: 3vw;
+    font-size: 1vw;
 }
 
-#content h4{
+#content p{
     /* text */
     color: #fff;
     font-weight: 100;
-    font-size: 10px;
-    text-decoration: underline;
     font-family: 'Poppins';
-
-    /* Position */
-    margin: 20px 0 0 40px;
+    line-height: 3vw;
+    font-size: 1vw;
 }
 
 div#BottomPart {
     /* Structure */
-    width: 600px;
-    height: 200px;
     border-radius: 15px;
-
-    /* Position */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -300px;
-    margin-top: 150px;
 }
 
 div#BottomPart h2{
     /* text */
-    font-size: 24px;
     font-family: 'Poppins';
+    line-height: 2vw;
+    font-size: 2vw;
 }
 
 div#BottomPart input{
-    width: 150px;
-    height: 50px;
     background-color: #439A97;
 
     /* border */
@@ -206,87 +157,80 @@ div#BottomPart input{
     font-family: 'Poppins';
     text-align: center;
     text-indent: 0;
-    font-size: px;
     color: #fff;
+    line-height: 3vw;
+    font-size: 1vw;
+}
 
-    /* Position */
-    margin: 20px 0;
+/* ------------------------------------------------------------------------ */
+
+/* feedback */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #9FE1E1;
 }
 
 div#feedbackcontent{
     /* Structure */
-    width: 600px;
-    height: 900px;
     background-color: #fff;
     border-radius: 15px;
-
-    /* Position */
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -300px;
-    margin-top: -450px;
 }
 
 div#feedbackcontent h2{
-    display: inline-block;
-    width: 600px;
-    height: 100px;
-
     /* text */
-    color: #000;
-    line-height: 100px;
-    font-size: 32px;
     font-family: 'Poppins';
     text-align: center;
-    
+    font-size: 4vw;
+    line-height: 4vw;
+
+    /* Position */
+    padding-top: 20px;
 }
 
 div#feedbackcontent input{
-    width:500px;
-    height: 75px;
     background-color: #F0F0F0;
 
     /* border */
     border: 0px;
     border-radius: 15px;
 
-    /* Position */
-    display: block;
-    margin: 20px auto;
-
     /* text */
     font-family: 'Poppins';
-    font-size: 24px;
     font-weight: bolder;
-    text-indent: 15px;
-    line-height: 75px;
+    text-indent: 2vw;
+    line-height: 5vw;
+    font-size: 1vw;
 }
 
 div#feedbackcontent textarea.feedbackmessage{
-    width:500px;
-    height: 200px;
     background-color: #F0F0F0;
 
     /* border */
     border: 0px;
     border-radius: 15px;
 
-    /* Position */
-    display: block;
-    margin: 20px auto;
-
     /* text */
     font-family: 'Poppins';
-    font-size: 24px;
     font-weight: bolder;
-    text-indent: 15px;
-    line-height: 75px;
+    text-indent: 2vw;
+    line-height: 2vw;
+    font-size: 1vw;
+}
+
+textarea::placeholder {
+    position: absolute;
+    top: 2vw;
+    left: 3vw;
 }
 
 div#feedbackcontent input.btn{
-    width: 150px;
-    height: 50px;
     background-color: #439A97;
 
     /* text */
@@ -294,85 +238,48 @@ div#feedbackcontent input.btn{
     text-align: center;
     text-indent: 0;
     color: #fff;
-
-    /* Position */
-    margin: 30px 225px 0;
+    line-height: 3vw;
+    font-size: 2vw;
 }
 
 div#feedbackcontent h4{
-    width: 600px;
-    height: 50px;
-
     /* text */
     color: #000;
-    line-height: 50px;
-    font-size: 32px;
+    line-height: 3vw;
     font-family: 'Poppins';
     text-align: left;
-
-    /* Position */
-    margin: 10px 0 0 50px;
-}
-
-div#feedbackcontent input.btn{
-    width: 150px;
-    height: 50px;
-    background-color: #439A97;
-
-    /* text */
-    font-family: 'Poppins';
-    text-align: center;
-    text-indent: 0;
-    line-height: 50px;
-    color: #fff;
-
-    /* Position */
-    margin: 40px 225px 0;
+    font-size: 3vw;
 }
 
 div#feedbackcontent div.file{
-    width:500px;
-    height: 200px;
     background-color: #F0F0F0;
 
     /* border */
     border: 2px dashed #555;
     border-radius: 15px;
-
-    /* Position */
-    display: block;
-    margin: 0px auto;
 }
 
 div#feedbackcontent div.file input{
-    width: 100px;
-    height: 50px;
     background-color: #fff;
-    box-shadow: 0px 5px 5px #555;
+    box-shadow: 0vw 1vw 1vw #555;
 
     /* text */
     font-family: 'Poppins';
     font-weight: border;
     text-align: center;
     text-indent: 0;
-    line-height: 50px;
-    color: #000;
-
-    /* Position */
-    margin-top: 40px;
+    line-height: 4vw;
+    color: #555;
+    font-size: 1vw;
 }
 
 div#feedbackcontent div.file span{
-    width: 500px;
-    height: 50px;
-    display: inline-block;
-
     /* text */
     font-family: 'Poppins';
-    font-size: 24px;
     font-weight: border;
     text-align: center;
     text-indent: 0;
-    line-height: 50px;
+    line-height: 3vw;
     color: #555;
+    font-size: 1vw;
 }
