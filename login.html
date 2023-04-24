@@ -29,7 +29,7 @@
         #content div span h4{
             /* text */
             color: #fff;
-            line-height: 5vw;
+            line-height: 3vw;
             font-family: 'Poppins';
             text-align: center;
             font-size: 2vw;
@@ -46,7 +46,7 @@
             font-family: 'Poppins';
             font-weight: bolder;
             text-indent: 2vw;
-            line-height: 5vw;
+            line-height: 3vw;
             font-size: 1vw;
         }
 
@@ -63,6 +63,15 @@
         }
 
         #content p{
+            /* text */
+            color: #fff;
+            font-weight: 100;
+            font-family: 'Poppins';
+            line-height: 3vw;
+            font-size: 1vw;
+        }
+
+        #content p a{
             /* text */
             color: #fff;
             font-weight: 100;
@@ -117,19 +126,30 @@
                 <span class="col-3 offset-1 mt-3"><h4 class="h4 text-center">Password</h4></span>
                 <input type="password" name="" value="" placeholder="password" class="col-6 mt-3">
                 <br>
-                <input type="button" name="" value="Sign in" class="btn offset-4 col-4 mt-3 text-center">
+                <input type="button" name="" value="Sign in" class="btn offset-5 col-sm-2 col-md-2 col-xl-2 col-2 mt-3 text-center" id="signin_Btn">
             </div>
     
             <div class="row">
-                <p class="p text-decoration-underline col-4 mt-3 offset-2">Forgot password</p>
+                <p class="p text-decoration-underline col-4 mt-3 offset-1" id="forgot_link"><a href="#">Forgot password</a></p>
             </div>
             <br>
         </div>
     
         <div id="BottomPart" class="mt-4">
             <h2 class="h2">Do not have an account? Sign up now.</h2>
-            <input type="button" name="" value="Sign up" class="btn col-4 mb-3 text-center">
+            <input type="button" name="" value="Sign up" class="btn col-sm-2 col-md-2 col-xl-2 col-2 mb-3 text-center" id="signup_Btn">
         </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        signup_Btn.onclick = function(){
+            open("register.html","_self");
+        }
+
+        signin_Btn.onclick = function(){
+            // open("Home.html","_self");
+        }
+    </script>
 </body>
 </html>
