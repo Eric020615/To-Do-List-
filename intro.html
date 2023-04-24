@@ -6,15 +6,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="Assests/CSS/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <title>To-Do-List</title>
 </head>
 <body>
+    <!-- header for website -->
     <header>
-
+        <nav class="navbar navbar-expand-xxl p-0">
+            <div class="container-fluid bg-white fixed-top nav_container">
+                <button
+                    class="btn_nav"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                        <i class="uil uil-bars nav_toggler"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse top_nav" id="collapsibleNavbar">
+                    <ul class="navbar-nav gap-lg-3 p-3">
+                        <li class="nav-item">
+                            <a href="#about_us" class="nav-link">
+                                ABOUT US
+                            </a>
+                        </li>
+                        <li class="nav-item dot">
+                            <img src="Assests/img/dot.svg" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <a href="#features" class="nav-link">
+                                FEATURES
+                            </a>
+                        </li>
+                        <li class="nav-item dot">
+                            <img src="Assests/img/dot.svg" alt="">
+                        </li>
+                        <a href="#" class="navbar-brand">
+                            Tick Tok Tasks
+                        </a>
+                        <li class="nav-item dot">
+                            <img src="Assests/img/dot.svg" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <a href="#team_member" class="nav-link">
+                                TEAM MEMBER                        
+                            </a>
+                        </li>
+                        <li class="nav-item dot">
+                            <img src="Assests/img/dot.svg" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <h1 class="">Hello</h1>
+        <section class="home section" id="#home" style="background-image: url(Assests/img/intro_home_background.svg)">
+            <div class="section_container container-sm">
+                <div class="home title">
+                    <h1>
+                    Organize your life with <span>TickTokTasks</span>
+                    </h1>
+                </div>
+                <div class="home subtitle">
+                    <p>
+                    Start Planning Now!
+                    </p>
+                </div>
+                <div class="button btn-group-sm gap-5">
+                    <button type="button" class="signup btn p-2">Sign Up</button>
+                    <button type="button" class="login btn p-2">Log In</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="about_us section" id="about_us">
+            <div class="section_container container-sm">
+                <div class="title_background">
+                    <h1>ABOUT US</h1>
+                </div>
+                <div class="container content">
+                    <div class="text-content">
+                        <h2>Welcome to <span>TickTokTasks</span></h2>
+                        <p>TickTockTasks is a user-friendly online platform 
+                        that helps individuals and teams stay organized and 
+                        productive by managing their tasks and to-do lists. 
+                        With its simple and intuitive interface, TaskTracker 
+                        allows users to easily create, organize, and prioritize 
+                        tasks in order to streamline their workflow and achieve 
+                        their goals.</p>
+                    </div>
+                    <img src="Assests/img/intro_about_us_background.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="features section" id="features">
+            <div class="section_container container-sm">
+                <div class="features_content">
+                    <div class="card_container">
+                        <div class="feature_card">
+                            <i class="uil uil-edit card_icon"></i>
+                            <div class="feature_card_body">
+                                <h4 class="card_title">Manage your tasks!</h4>
+                                <p class="card_text">Manage tasks to be able to view, add edit and delete tasks</p>
+                                <a href="#" class="btn btn-success">Try it!</a>
+                            </div>
+                        </div>
+                        <div class="feature_card">
+                            <i class="uil uil-books card_icon"></i>
+                            <div class="feature_card_body">
+                                <h4 class="card_title">Categorize your tasks!</h4>
+                                <p class="card_text">Categorize tasks based on priority and deadline</p>
+                                <a href="#" class="btn btn-success">Try it!</a>
+                            </div>
+                        </div>
+                        <div class="feature_card">
+                            <i class="uil uil-bell card_icon"></i>
+                            <div class="feature_card_body">
+                                <h4 class="card_title">Remind your tasks!</h4>
+                                <p class="card_text">Set reminder to remind users on the tasks, due date and priority</p>
+                                <a href="#" class="btn btn-success">Try it!</a>
+                            </div>
+                        </div>
+                        <div class="feature_card">
+                            <i class="uil uil-chart card_icon"></i>
+                            <div class="feature_card_body">
+                                <h4 class="card_title">Visualize your tasks!</h4>
+                                <p class="card_text">Using graphs/charts based on priority and deadline</p>
+                                <a href="#" class="btn btn-success">Try it!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features title">
+                        <h1><span>OUR</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FEATURES</h1>
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+
+        <section class="container-fluid team_member_section" id="team_member">
+            <div class="member_title_background">
+                <h1>MEET OUR MEMBER</h1>
+            </div>
+            <div class="team_member section d-flex justify-content-center">
+                <div class="circular-slider flex-center">
+                    <h1 class="member-name active">ENG JUN CHENG</h1>
+                    <ul class="wrapper flex-center">
+                        <li class="slides" style="--img-no:1;">
+                            <img src="Assests/img/temp.jpg" alt="">
+                        </li>
+                        <li class="slides" style="--img-no:2;">
+                            <img class="active" src="Assests/img/ENGJUNCHENG.jpg">
+                        </li>
+                        <li class="slides" style="--img-no:3;">
+                            <img src="Assests/img/temp.jpg" alt="">
+                        </li>
+                        <li class="slides" style="--img-no:4;">
+                            <img src="Assests/img/temp.jpg" alt="">
+                        </li>
+                        <li class="slides" style="--img-no:5;">
+                            <img src="Assests/img/temp.jpg" alt="">
+                        </li>
+                    </ul>
+                    <div class="descriptions">
+                        <div class="descriptions_item">
+                            <h1>HO KAI CHONG</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae vitae asperiores voluptatibus perspiciatis aliquam ea libero fuga ut! Consequatur inventore id ullam vel. Reiciendis earum nulla autem suscipit tenetur est.</p>
+                            <button type="button">View More</button>
+                        </div>
+                        <div class="descriptions_item active">
+                            <h1>ENG JUN CHENG</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae vitae asperiores voluptatibus perspiciatis aliquam ea libero fuga ut! Consequatur inventore id ullam vel. Reiciendis earum nulla autem suscipit tenetur est.</p>
+                            <button type="button">View More</button>
+                        </div>
+                        <div class="descriptions_item">
+                            <h1>TAN GENG CHENG</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae vitae asperiores voluptatibus perspiciatis aliquam ea libero fuga ut! Consequatur inventore id ullam vel. Reiciendis earum nulla autem suscipit tenetur est.</p>
+                            <button type="button">View More</button>
+                        </div>
+                        <div class="descriptions_item">
+                            <h1>CHEW KAH CHUN</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae vitae asperiores voluptatibus perspiciatis aliquam ea libero fuga ut! Consequatur inventore id ullam vel. Reiciendis earum nulla autem suscipit tenetur est.</p>
+                            <button type="button">View More</button>
+                        </div>
+                        <div class="descriptions_item">
+                            <h1>PANG JING SHAN</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae vitae asperiores voluptatibus perspiciatis aliquam ea libero fuga ut! Consequatur inventore id ullam vel. Reiciendis earum nulla autem suscipit tenetur est.</p>
+                            <button type="button">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
     </main>
 
     <footer>
@@ -23,5 +215,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="Assests/JS/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 </body>
 </html>
