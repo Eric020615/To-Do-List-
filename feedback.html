@@ -30,8 +30,8 @@
             /* text */
             font-family: 'Poppins';
             text-align: center;
-            font-size: 4vw;
-            line-height: 4vw;
+            font-size: 3vw;
+            line-height: 3vw;
 
             /* Position */
             padding-top: 20px;
@@ -81,8 +81,8 @@
             text-align: center;
             text-indent: 0;
             color: #fff;
-            line-height: 3vw;
-            font-size: 2vw;
+            line-height: 2vw;
+            font-size: 1vw;
         }
 
         div#feedbackcontent h4{
@@ -91,7 +91,8 @@
             line-height: 3vw;
             font-family: 'Poppins';
             text-align: left;
-            font-size: 3vw;
+            font-size: 2vw;
+            text-indent: 3vw;
         }
 
         div#feedbackcontent div.file{
@@ -111,7 +112,7 @@
             font-weight: border;
             text-align: center;
             text-indent: 0;
-            line-height: 4vw;
+            line-height: 3vw;
             color: #555;
             font-size: 1vw;
         }
@@ -150,13 +151,20 @@
             <h4 class="h4 col-2 offset-1">Attachments:</h4>
             <br>
             <div class="file row col-8 offset-2">
-                <input type="button" name="" value="Browse" class="col-6 offset-3 mt-4">
+                <input type="button" name="" value="Browse" class="col-4 offset-4 mt-4">
                 <br>
                 <span class="h6 text-center col-10 offset-1 mt-1 mb-3">or drop files here</span>
             </div>
         </div>
 
-        <input type="button" name="" value="Submit" class="btn col-4 text-center mt-3 mb-3 offset-4">
+        <input type="button" name="" value="Submit" class="btn col-sm-2 col-md-2 col-xl-2 col-2 text-center mt-3 mb-3 offset-5" id="submit_Btn">
+
+        <!-- JavaScript -->
+        <script>
+            submit_Btn.onclick = function(){
+                // open("home.html","_self");
+            }
+        </script>
     </div>
 </body>
 </html>
