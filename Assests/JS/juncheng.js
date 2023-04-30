@@ -1,10 +1,14 @@
+// select the element with class wrapper and it return a node (div)
 const circular_slider = document.querySelector('.wrapper'),
+    // select the element with class name slides and it return a nodelist
     slides = document.querySelectorAll('.slides'),
     member_name = document.querySelector('.member-name'),
     descriptions_item = document.querySelectorAll('.descriptions_item'),
     images = document.querySelectorAll('.slides img');
 
+// loopping the nodelist
 slides.forEach((slide,i)=>{
+    
     slide.onclick = ()=>{
         circular_slider.style.transform= `rotateZ(-${360 / 5 * (i + 4)}deg)`;
         member_name.classList.remove('active');
