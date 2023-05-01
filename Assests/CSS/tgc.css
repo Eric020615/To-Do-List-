@@ -22,8 +22,8 @@ div#Content h2{
     /* text */
     font-family: 'Poppins';
     text-align: center;
-    font-size: 4vw;
-    line-height: 4vw;
+    font-size: 3vw;
+    line-height: 3vw;
 
     /* Position */
     padding-top: 20px;
@@ -33,8 +33,9 @@ div#Content h4.Password{
     /* text */
     font-family: 'Poppins';
     text-align: left;
-    font-size: 3vw;
-    line-height: 3vw;
+    font-size: 2vw;
+    line-height: 2vw;
+    text-indent: 1vw;
 }
 
 div#Content input{
@@ -92,7 +93,7 @@ div#content{
 #content div span h4{
     /* text */
     color: #fff;
-    line-height: 5vw;
+    line-height: 3vw;
     font-family: 'Poppins';
     text-align: center;
     font-size: 2vw;
@@ -109,7 +110,7 @@ div#content{
     font-family: 'Poppins';
     font-weight: bolder;
     text-indent: 2vw;
-    line-height: 5vw;
+    line-height: 3vw;
     font-size: 1vw;
 }
 
@@ -126,6 +127,15 @@ div#content{
 }
 
 #content p{
+    /* text */
+    color: #fff;
+    font-weight: 100;
+    font-family: 'Poppins';
+    line-height: 3vw;
+    font-size: 1vw;
+}
+
+#content p a{
     /* text */
     color: #fff;
     font-weight: 100;
@@ -187,8 +197,8 @@ div#feedbackcontent h2{
     /* text */
     font-family: 'Poppins';
     text-align: center;
-    font-size: 4vw;
-    line-height: 4vw;
+    font-size: 3vw;
+    line-height: 3vw;
 
     /* Position */
     padding-top: 20px;
@@ -226,8 +236,12 @@ div#feedbackcontent textarea.feedbackmessage{
 
 textarea::placeholder {
     position: absolute;
-    top: 2vw;
-    left: 3vw;
+    top: 1vw;
+    left: 1vw;
+}
+
+textarea {
+    padding: 1vw;
 }
 
 div#feedbackcontent input.btn{
@@ -238,8 +252,8 @@ div#feedbackcontent input.btn{
     text-align: center;
     text-indent: 0;
     color: #fff;
-    line-height: 3vw;
-    font-size: 2vw;
+    line-height: 2vw;
+    font-size: 1vw;
 }
 
 div#feedbackcontent h4{
@@ -248,7 +262,8 @@ div#feedbackcontent h4{
     line-height: 3vw;
     font-family: 'Poppins';
     text-align: left;
-    font-size: 3vw;
+    font-size: 2vw;
+    text-indent: 3vw;
 }
 
 div#feedbackcontent div.file{
@@ -268,7 +283,7 @@ div#feedbackcontent div.file input{
     font-weight: border;
     text-align: center;
     text-indent: 0;
-    line-height: 4vw;
+    line-height: 3vw;
     color: #555;
     font-size: 1vw;
 }
