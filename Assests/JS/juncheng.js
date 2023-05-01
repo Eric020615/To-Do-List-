@@ -49,4 +49,12 @@ let swiper_testimonial = new Swiper('.testimonial_container',{
     //  }
 });
 
+function login(){
+    open("login.html","_self");
+}
+
+function register(){
+    open("register.html","_self");
+}
+
 

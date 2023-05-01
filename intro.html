@@ -69,7 +69,7 @@
     <main>
         <!-- home section -->
         <section class="home section" id="#home">
-            <div class="home-content container-sm">
+            <div class="home-content container-lg">
                 <div class="section_container">
                     <div class="home title">
                         <h1>
@@ -82,13 +82,14 @@
                         </p>
                     </div>
                     <div class="button btn-group-sm gap-5">
-                        <button type="button" class="signup btn p-2">Sign Up</button>
-                        <button type="button" class="login btn p-2">Log In</button>
+                        <button type="button" class="signup btn p-2" onclick="register()">Sign Up</button>
+                        <button type="button" class="login btn p-2" onclick="login()">Log In</button>
                     </div>
                 </div>
-                <div class="home-background-lottie" style="background-image: url(Assests/img/home.svg);">
-                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_OMkcKPBoxI.json" mode="bounce" background="transparent"  speed="1"  style="width: 500px; height: 500px;" hover loop  autoplay></lottie-player>  
+                <div class="home-background-lottie" style="background: url(Assests/img/home.svg) no-repeat;">
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_OMkcKPBoxI.json" mode="bounce" background="transparent"  speed="1"loop autoplay></lottie-player>  
                 </div>
+            </div>
         </section>
 
         <!-- about us section -->
@@ -413,8 +414,8 @@
                 </div>
                 <form action="">
                     <label for="email" class="mb-2">Sign up for more details</label>
-                    <input type="email" name="email" id="email" class="mb-2">
-                    <input type="submit" value="Submit" id="form-button" class="btn-form">
+                    <input type="email" name="email" id="email" class="mb-2" placeholder="abc@gmail.com">
+                    <input type="submit" value="Submit" id="form-button" class="btn-form" onclick="register()">
                 </form>
             </div>
             <hr>
