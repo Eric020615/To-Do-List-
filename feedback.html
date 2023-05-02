@@ -28,13 +28,18 @@
 
         div#feedbackcontent h2{
             /* text */
-            font-family: 'Poppins';
             text-align: center;
-            font-size: 3vw;
-            line-height: 3vw;
+            font-family: 'Poppins';
+            font-size: 5vw;
+            line-height: 5vw;
+        }
 
-            /* Position */
-            padding-top: 20px;
+        div#feedbackcontent h6{
+            /* text */
+            font-family: 'Poppins';
+            font-weight: bolder;
+            line-height: 2vw;
+            font-size: 2vw;
         }
 
         div#feedbackcontent input{
@@ -48,8 +53,8 @@
             font-family: 'Poppins';
             font-weight: bolder;
             text-indent: 2vw;
-            line-height: 5vw;
-            font-size: 1vw;
+            line-height: 3vw;
+            font-size: 2vw;
         }
 
         div#feedbackcontent textarea.feedbackmessage{
@@ -62,31 +67,13 @@
             /* text */
             font-family: 'Poppins';
             font-weight: bolder;
-            text-indent: 2vw;
-            line-height: 2vw;
-            font-size: 1vw;
-        }
-
-        textarea::placeholder {
-            position: absolute;
-            top: 1vw;
-            left: 1vw;
+            text-indent: 1vw;
+            line-height: 3vw;
+            font-size: 2vw;
         }
 
         textarea {
             padding: 1vw;
-        }
-
-        div#feedbackcontent input.btn{
-            background-color: #439A97;
-
-            /* text */
-            font-family: 'Poppins';
-            text-align: center;
-            text-indent: 0;
-            color: #fff;
-            line-height: 2vw;
-            font-size: 1vw;
         }
 
         div#feedbackcontent h4{
@@ -95,8 +82,7 @@
             line-height: 3vw;
             font-family: 'Poppins';
             text-align: left;
-            font-size: 2vw;
-            text-indent: 3vw;
+            font-size: 3vw;
         }
 
         div#feedbackcontent div.file{
@@ -116,12 +102,12 @@
             font-weight: border;
             text-align: center;
             text-indent: 0;
-            line-height: 3vw;
+            line-height: 4vw;
             color: #555;
-            font-size: 1vw;
+            font-size: 2vw;
         }
 
-        div#feedbackcontent div.file span{
+        div#feedbackcontent div.file h6{
             /* text */
             font-family: 'Poppins';
             font-weight: border;
@@ -130,6 +116,18 @@
             line-height: 3vw;
             color: #555;
             font-size: 1vw;
+        }
+
+        div#feedbackcontent input.btn{
+            background-color: #439A97;
+
+            /* text */
+            font-family: 'Poppins';
+            text-align: center;
+            text-indent: 0;
+            color: #fff;
+            line-height: 3vw;
+            font-size: 2vw;
         }
     </style>  -->
 
@@ -140,29 +138,34 @@
         <img src="" alt="">
     </div>
 
-    <div id="feedbackcontent" class="container  col-6 offset-3">
-        <h2>FeedBack Form</h2>
-        <div class="row">
-            <input type="text" name="" value="" placeholder="Name" class="col-8 offset-2">
-            <br>
-            <input type="text" name="" value="" placeholder="Email" class="col-8 mt-2 offset-2">
-            <br>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Message" class="feedbackmessage col-8 mt-2 offset-2"></textarea>
+    <div id="feedbackcontent" class="container">
+        <h2 class="h2 p-2 pt-4">FeedBack Form</h2>
+        <div class="offset-2 col-8 mt-3">
+            <h6 class="h6 m-1 mb-0 mt-0">Name:</h6>
+            <input type="text" name="" value="" placeholder="Please Enter Your Name" class="col-12 mt-1">
         </div>
-        <br>
 
-        <div class="row">
-            <h4 class="h4 col-2 offset-1">Attachments:</h4>
-            <br>
-            <div class="file row col-8 offset-2">
+        <div class="offset-2 col-8 mt-3">
+            <h6 class="h6 m-1 mb-0 mt-0">Email:</h6>
+            <input type="text" name="" value="" placeholder="Please Enter Your Email" class="col-12 mt-1">
+        </div>
+
+        <div class="offset-2 col-8 mt-3">
+            <h6 class="h6 m-1 mb-0 mt-0">Comments:</h6>
+            <textarea name="" id="" cols="30" rows="5" placeholder="Click To Type" class="feedbackmessage col-12 mt-1"></textarea>
+        </div>
+
+        <div class="offset-2 mt-4 col-8">
+            <h4 class="h4 m-0 p-0">Attachments:</h4>
+            <div class="file col-12 mt-1 pb-3">
                 <input type="button" name="" value="Browse" class="col-4 offset-4 mt-4">
-                <br>
-                <span class="h6 text-center col-10 offset-1 mt-1 mb-3">or drop files here</span>
+                <h6 class="h6 col-10 offset-1 mt-1 mb-3">or drop files here</h6>
             </div>
         </div>
 
-        <input type="button" name="" value="Submit" class="btn col-sm-2 col-md-2 col-xl-2 col-2 text-center mt-3 mb-3 offset-5" id="submit_Btn">
-
+        <div class="offset-5 col-2 pt-4 pb-3 button">
+            <input type="button" name="" value="Submit" class="col-12 btn" id="submit_Btn">
+        </div>
         <!-- JavaScript -->
         <script>
             submit_Btn.onclick = function(){
