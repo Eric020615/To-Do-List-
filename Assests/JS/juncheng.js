@@ -24,29 +24,6 @@ slides.forEach((slide,i)=>{
         descriptions_item[i].classList.add('active');
         slide.querySelector('img').classList.add('active');
     }
-})
-
-let swiper_testimonial = new Swiper('.testimonial_container',{
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-     },
- 
-     pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-     },
-
-    //  breakpoints:{
-    //     568:{
-    //         slidesPerView: 2,
-    //     }
-    //  }
 });
 
 function login(){
@@ -57,4 +34,4 @@ function register(){
     open("register.html","_self");
 }
 
-
+console.log("jaskl")
