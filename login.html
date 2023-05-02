@@ -20,19 +20,27 @@
             background-color: #9FE1E1;
         }
 
+        div.container h2{
+            /* text */
+            font-family: 'Poppins';
+            text-align: left;
+            font-size: 5vw;
+            line-height: 5vw;
+        }
+
         div#content{
             /* Structure */
             background-color: #293241;
             border-radius: 15px;
         }
 
-        #content div span h4{
+        #content div h6 {
             /* text */
             color: #fff;
             line-height: 3vw;
             font-family: 'Poppins';
             text-align: center;
-            font-size: 2vw;
+            font-size: 3vw;
         }
 
         #content input{
@@ -46,8 +54,8 @@
             font-family: 'Poppins';
             font-weight: bolder;
             text-indent: 2vw;
-            line-height: 3vw;
-            font-size: 1vw;
+            line-height: 2vw;
+            font-size: 2vw;
         }
 
         #content input.btn{
@@ -56,19 +64,15 @@
             /* text */
             font-family: 'Poppins';
             text-align: center;
-            text-indent: 0;
             color: #fff;
+            text-indent: 0;
             line-height: 3vw;
-            font-size: 1vw;
+            font-size: 2vw;
         }
 
         #content p{
             /* text */
-            color: #fff;
-            font-weight: 100;
-            font-family: 'Poppins';
-            line-height: 3vw;
-            font-size: 1vw;
+            font-size: 2vw;
         }
 
         #content p a{
@@ -76,13 +80,8 @@
             color: #fff;
             font-weight: 100;
             font-family: 'Poppins';
-            line-height: 3vw;
-            font-size: 1vw;
-        }
-
-        div#BottomPart {
-            /* Structure */
-            border-radius: 15px;
+            line-height: 2vw;
+            font-size: 2vw;
         }
 
         div#BottomPart h2{
@@ -105,7 +104,7 @@
             text-indent: 0;
             color: #fff;
             line-height: 3vw;
-            font-size: 1vw;
+            font-size: 2vw;
         }
     </style> -->
     
@@ -115,41 +114,35 @@
         <img src="" alt="">
     </div>
 
-    <div class="container  col-8 offset-2">
+    <div class="container">
+        <h2 class="h2 mb-0 p-3">Welcome to TickTockTasks!</h2>
         <div id="content" class="row">
-            <div class="row">
-                <span class="col-3 offset-1 mt-4"><h4 class="h4 text-center">Email</h4></span>
-                <input type="text" name="" value="" placeholder="Email" class="col-6 mt-4">
+            <div class="row mt-4">
+                <h6 class="col-4 m-0">Email:</h6>
+                <input type="text" name="" value="" placeholder="Please Enter Your Email" class="col-6">
             </div>
-            <br>
-            <div class="row">
-                <span class="col-3 offset-1 mt-3"><h4 class="h4 text-center">Password</h4></span>
-                <input type="password" name="" value="" placeholder="password" class="col-6 mt-3">
-                <br>
-                <input type="button" name="" value="Sign in" class="btn offset-5 col-sm-2 col-md-2 col-xl-2 col-2 mt-3 text-center" id="signin_Btn">
+
+            <div class="row mt-2">
+                <h6 class="col-4 m-0">Password:</h6>
+                <input type="password" name="" value="" placeholder="Please Enter Your Password" class="col-6">
+            </div>
+            
+            <div class="row mt-3">
+                <input type="button" name="" value="Sign in" class="btn offset-5 col-2 mt-2" onclick="SignInSuccess()">
             </div>
     
-            <div class="row">
-                <p class="p text-decoration-underline col-4 mt-3 offset-1" id="forgot_link"><a href="#">Forgot password</a></p>
+            <div class="row mt-3">
+                <p class="p text-decoration-underline col-4 offset-1" id="forgot_link"><a href="#">Forgot password</a></p>
             </div>
-            <br>
         </div>
     
-        <div id="BottomPart" class="mt-4">
+        <div id="BottomPart" class="row mt-3">
             <h2 class="h2">Do not have an account? Sign up now.</h2>
-            <input type="button" name="" value="Sign up" class="btn col-sm-2 col-md-2 col-xl-2 col-2 mb-3 text-center" id="signup_Btn">
+            <input type="button" name="" value="Sign up" class="btn col-2 mb-3 text-center" onclick="gotoSignUp()">
         </div>
     </div>
 
     <!-- JavaScript -->
-    <script>
-        signup_Btn.onclick = function(){
-            open("register.html","_self");
-        }
-
-        signin_Btn.onclick = function(){
-            // open("Home.html","_self");
-        }
-    </script>
+    <script src="Assests/JS/tgc.js"></script>
 </body>
 </html>

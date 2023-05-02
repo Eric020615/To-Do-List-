@@ -22,7 +22,6 @@
 
         div#Content{
             /* Structure */
-            width: 50%;
             background-color: #fff;
             border-radius: 15px;
         }
@@ -33,19 +32,24 @@
             text-align: center;
             font-size: 3vw;
             line-height: 3vw;
-
-            /* Position */
-            padding-top: 20px;
         }
 
-        div#Content h4.Password{
+        div#Content h6{
             /* text */
             font-family: 'Poppins';
-            text-align: left;
-            font-size: 2vw;
+            font-weight: bolder;
             line-height: 2vw;
-            text-indent: 1vw;
+            font-size: 2vw;
         }
+
+        div#Content .twoRow h6{
+            /* text */
+            font-family: 'Poppins';
+            font-weight: bolder;
+            line-height: 2vw;
+            font-size: 2vw;
+        }
+
 
         div#Content input{
             background-color: #F0F0F0;
@@ -57,10 +61,20 @@
             /* text */
             font-family: 'Poppins';
             font-weight: bolder;
-            text-indent: 2vw;
-            line-height: 5vw;
-            font-size: 1vw;
+            text-indent: 1vw;
+            line-height: 3vw;
+            font-size: 2vw;
         }
+
+        div#Content h4.Password{
+            /* text */
+            font-family: 'Poppins';
+            text-align: left;
+            font-size: 3vw;
+            line-height: 3vw;
+            text-indent: 1vw;
+        }
+
 
         div#Content input.btn{
             background-color: #439A97;
@@ -75,7 +89,7 @@
             line-height: 3vw;
             text-indent: 0;
             color: #fff;
-            font-size: 1vw;
+            font-size: 2vw;
         } 
     </style> -->
 
@@ -86,35 +100,62 @@
     </div>
 
     <div id="Content" class="container">
-        <h2 class="h2">Personal Information</h2>
+        <h2 class="h2 mb-0 p-3">Personal Information</h2>
 
-        <input type="text" name="" value="" placeholder="First Name" class="col-4 offset-1 mt-2">
-        <input type="text" name="" value="" placeholder="Last Name" class="col-4 offset-1 mt-2">
-        <br>
-        <input type="text" name="" value="" placeholder="Email" class="col-10 offset-1 mt-2">
-        <br>
-        <input type="text" name="" value="" placeholder="Birthday" class="col-10 offset-1 mt-2">
-        <br>
-        <input type="text" name="" value="" placeholder="Region" class="col-10 offset-1 mt-2">
-        <br>
-        <input type="text" name="" value="" placeholder="Contact Number" class="col-10 offset-1 mt-2">
-        <br>
+        <div class="row twoRow">
+            <div class="col-5 offset-1">
+                <h6 class="h6 m-1 mb-0 mt-0">FirstName:</h6>
+                <input type="text" name="" value="" placeholder="Enter First Name" class="col-10 mt-1">
+            </div>
+            <div class="col-5">
+                <h6 class="h6 m-1 mb-0 mt-0">LastName:</h6>
+                <input type="text" name="" value="" placeholder="Enter Last Name" class="col-10 mt-1">
+            </div>
+        </div>
 
-        <h4 class="offset-1 Password h4 mt-4">Password Setup</h4>
-        <input type="password" name="" value="" placeholder="password" class="col-10 offset-1">
-        <br>
-        <input type="password" name="" value="" placeholder="Confirm Password" class="col-10 offset-1 mt-2">
-        <br>
+        <div class="offset-1 col-10 mt-3">
+            <h6 class="h6 m-1 mb-0 mt-0">Email:</h6>
+            <input type="text" name="" value="" placeholder="Please Enter Email" class="col-12 mt-1">
+        </div>
 
-        <input type="button" name="" value="Sign up" class="col-4 offset-4 mt-4 mb-2 btn">
-    </div>
+        <div class="row twoRow mt-2">
+            <div class="col-3 offset-1">
+                <h6 class="h6 m-1 mb-0 mt-0">Birthday:</h6>
+                <input type="date" name="" value="" placeholder="Please Enter Birthday" class="col-12 mt-1">
+            </div>
+            <div class="offset-2 col-5 mt-1">
+                <h6 class="h6 m-1 mb-0 mt-0">Contact Number:</h6>
+                <input type="text" name="" value="" placeholder="Please Enter Contact Number" class="col-12 mt-1">
+            </div>  
+        </div>
+
+        <div class="row twoRow mt-2">
+            <div class="col-4 offset-1">
+                <h6 class="h6 m-1 mb-0 mt-0">Region:</h6>
+                <input type="text" name="" value="" placeholder="Please Enter Region" class="col-12 mt-1">
+            </div>
+            <div class="offset-1 col-5 mt-1">
+                <h6 class="h6 m-1 mb-0 mt-0">City:</h6>
+                <input type="text" name="" value="" placeholder="Please Enter Contact Number" class="col-12 mt-1">
+            </div>  
+        </div>
+
+        <h4 class="h4 Password mb-0 mt-3 p-0 offset-1">Password Setup</h4>
+        <div class="offset-1 col-10">
+            <input type="password" name="" value="" placeholder="Please Enter Password" class="col-12 mt-1">
+        </div> 
+        <div class="offset-1 mt-1 col-10">
+            <input type="password" name="" value="" placeholder="Confirm Password" class="col-12">
+        </div> 
+
+        <div class="row offset-4 pt-2 pb-2 button">
+            <div class="col-1"></div>
+            <input type="button" name="" value="Sign up" class="col-4 btn" onclick="SignUpSuccess()">
+        </div>
+    </div> 
+    
 
     <!-- JavaScript -->
-    <script>
-        var btn = document.body.getElementsByClassName('btn');
-        btn[0].onclick = function(){
-            open("intro.html","_self");
-        }
-    </script>
+    <script src="Assests/JS/tgc.js"></script>
 </body>
 </html>

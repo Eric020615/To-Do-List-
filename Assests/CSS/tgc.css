@@ -1,5 +1,4 @@
 /* Register */
-
 *{
     padding: 0;
     margin: 0;
@@ -13,7 +12,6 @@ html,body{
 
 div#Content{
     /* Structure */
-    width: 50%;
     background-color: #fff;
     border-radius: 15px;
 }
@@ -24,19 +22,24 @@ div#Content h2{
     text-align: center;
     font-size: 3vw;
     line-height: 3vw;
-
-    /* Position */
-    padding-top: 20px;
 }
 
-div#Content h4.Password{
+div#Content h6{
     /* text */
     font-family: 'Poppins';
-    text-align: left;
-    font-size: 2vw;
+    font-weight: bolder;
     line-height: 2vw;
-    text-indent: 1vw;
+    font-size: 2vw;
 }
+
+div#Content .twoRow h6{
+    /* text */
+    font-family: 'Poppins';
+    font-weight: bolder;
+    line-height: 2vw;
+    font-size: 2vw;
+}
+
 
 div#Content input{
     background-color: #F0F0F0;
@@ -48,10 +51,20 @@ div#Content input{
     /* text */
     font-family: 'Poppins';
     font-weight: bolder;
-    text-indent: 2vw;
-    line-height: 5vw;
-    font-size: 1vw;
+    text-indent: 1vw;
+    line-height: 3vw;
+    font-size: 2vw;
 }
+
+div#Content h4.Password{
+    /* text */
+    font-family: 'Poppins';
+    text-align: left;
+    font-size: 3vw;
+    line-height: 3vw;
+    text-indent: 1vw;
+}
+
 
 div#Content input.btn{
     background-color: #439A97;
@@ -66,13 +79,12 @@ div#Content input.btn{
     line-height: 3vw;
     text-indent: 0;
     color: #fff;
-    font-size: 1vw;
+    font-size: 2vw;
 } 
 
 /* ------------------------------------------------------------------------ */
 
 /* Login */
-
 *{
     padding: 0;
     margin: 0;
@@ -84,19 +96,27 @@ html,body{
     background-color: #9FE1E1;
 }
 
+div.container h2{
+    /* text */
+    font-family: 'Poppins';
+    text-align: left;
+    font-size: 5vw;
+    line-height: 5vw;
+}
+
 div#content{
     /* Structure */
     background-color: #293241;
     border-radius: 15px;
 }
 
-#content div span h4{
+#content div h6 {
     /* text */
     color: #fff;
     line-height: 3vw;
     font-family: 'Poppins';
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 #content input{
@@ -110,8 +130,8 @@ div#content{
     font-family: 'Poppins';
     font-weight: bolder;
     text-indent: 2vw;
-    line-height: 3vw;
-    font-size: 1vw;
+    line-height: 2vw;
+    font-size: 2vw;
 }
 
 #content input.btn{
@@ -120,19 +140,15 @@ div#content{
     /* text */
     font-family: 'Poppins';
     text-align: center;
-    text-indent: 0;
     color: #fff;
+    text-indent: 0;
     line-height: 3vw;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 #content p{
     /* text */
-    color: #fff;
-    font-weight: 100;
-    font-family: 'Poppins';
-    line-height: 3vw;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 #content p a{
@@ -140,13 +156,8 @@ div#content{
     color: #fff;
     font-weight: 100;
     font-family: 'Poppins';
-    line-height: 3vw;
-    font-size: 1vw;
-}
-
-div#BottomPart {
-    /* Structure */
-    border-radius: 15px;
+    line-height: 2vw;
+    font-size: 2vw;
 }
 
 div#BottomPart h2{
@@ -169,13 +180,12 @@ div#BottomPart input{
     text-indent: 0;
     color: #fff;
     line-height: 3vw;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 /* ------------------------------------------------------------------------ */
 
 /* feedback */
-
 *{
     padding: 0;
     margin: 0;
@@ -195,13 +205,18 @@ div#feedbackcontent{
 
 div#feedbackcontent h2{
     /* text */
-    font-family: 'Poppins';
     text-align: center;
-    font-size: 3vw;
-    line-height: 3vw;
+    font-family: 'Poppins';
+    font-size: 5vw;
+    line-height: 5vw;
+}
 
-    /* Position */
-    padding-top: 20px;
+div#feedbackcontent h6{
+    /* text */
+    font-family: 'Poppins';
+    font-weight: bolder;
+    line-height: 2vw;
+    font-size: 2vw;
 }
 
 div#feedbackcontent input{
@@ -215,8 +230,8 @@ div#feedbackcontent input{
     font-family: 'Poppins';
     font-weight: bolder;
     text-indent: 2vw;
-    line-height: 5vw;
-    font-size: 1vw;
+    line-height: 3vw;
+    font-size: 2vw;
 }
 
 div#feedbackcontent textarea.feedbackmessage{
@@ -229,31 +244,13 @@ div#feedbackcontent textarea.feedbackmessage{
     /* text */
     font-family: 'Poppins';
     font-weight: bolder;
-    text-indent: 2vw;
-    line-height: 2vw;
-    font-size: 1vw;
-}
-
-textarea::placeholder {
-    position: absolute;
-    top: 1vw;
-    left: 1vw;
+    text-indent: 1vw;
+    line-height: 3vw;
+    font-size: 2vw;
 }
 
 textarea {
     padding: 1vw;
-}
-
-div#feedbackcontent input.btn{
-    background-color: #439A97;
-
-    /* text */
-    font-family: 'Poppins';
-    text-align: center;
-    text-indent: 0;
-    color: #fff;
-    line-height: 2vw;
-    font-size: 1vw;
 }
 
 div#feedbackcontent h4{
@@ -262,8 +259,7 @@ div#feedbackcontent h4{
     line-height: 3vw;
     font-family: 'Poppins';
     text-align: left;
-    font-size: 2vw;
-    text-indent: 3vw;
+    font-size: 3vw;
 }
 
 div#feedbackcontent div.file{
@@ -283,12 +279,12 @@ div#feedbackcontent div.file input{
     font-weight: border;
     text-align: center;
     text-indent: 0;
-    line-height: 3vw;
+    line-height: 4vw;
     color: #555;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
-div#feedbackcontent div.file span{
+div#feedbackcontent div.file h6{
     /* text */
     font-family: 'Poppins';
     font-weight: border;
@@ -297,4 +293,16 @@ div#feedbackcontent div.file span{
     line-height: 3vw;
     color: #555;
     font-size: 1vw;
+}
+
+div#feedbackcontent input.btn{
+    background-color: #439A97;
+
+    /* text */
+    font-family: 'Poppins';
+    text-align: center;
+    text-indent: 0;
+    color: #fff;
+    line-height: 3vw;
+    font-size: 2vw;
 }
