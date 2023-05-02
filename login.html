@@ -128,7 +128,7 @@
             </div>
             
             <div class="row mt-3">
-                <input type="button" name="" value="Sign in" class="btn offset-5 col-2 mt-2" id="signin_Btn">
+                <input type="button" name="" value="Sign in" class="btn offset-5 col-2 mt-2" onclick="SignInSuccess()">
             </div>
     
             <div class="row mt-3">
@@ -138,19 +138,11 @@
     
         <div id="BottomPart" class="row mt-3">
             <h2 class="h2">Do not have an account? Sign up now.</h2>
-            <input type="button" name="" value="Sign up" class="btn col-2 mb-3 text-center" id="signup_Btn">
+            <input type="button" name="" value="Sign up" class="btn col-2 mb-3 text-center" onclick="gotoSignUp()">
         </div>
     </div>
 
     <!-- JavaScript -->
-    <script>
-        signup_Btn.onclick = function(){
-            open("register.html","_self");
-        }
-
-        signin_Btn.onclick = function(){
-            // open("Home.html","_self");
-        }
-    </script>
+    <script src="Assests/JS/tgc.js"></script>
 </body>
 </html>
