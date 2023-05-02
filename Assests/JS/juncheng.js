@@ -33,5 +33,3 @@ function login(){
 function register(){
     open("register.html","_self");
 }
-
-console.log("jaskl")

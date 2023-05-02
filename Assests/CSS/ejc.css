@@ -36,7 +36,7 @@ section{
 
 /* navigation bar */
 .nav_container{
-    opacity: 70%;
+    opacity: 100%;
     animation: nav_shadow 3s infinite;
 }
 
@@ -76,6 +76,7 @@ section{
 }
 
 /* home section */
+
 .home-content{
     display: flex;
     justify-content: center;
