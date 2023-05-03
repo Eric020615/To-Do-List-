@@ -82,12 +82,10 @@
   
   /* Main ================================================*/
   .main {
-    height: 1400px;
     /* background-color: pink; */
     margin-left: 202px;
-    padding: 0 10px;
   }
-  
+
   /* Head =======================================*/
   .head {
     position: relative;
