@@ -307,12 +307,17 @@ div#feedbackcontent input.btn{
     font-size: 2vw;
 }
 
+/* ------------------------------------------------------------------------ */
 /* About us */
 *{
     margin: 0;
     padding: 0;
     list-style-type: none;
     text-decoration: none;
+}
+
+#aboutus{
+    background-color: #fff;
 }
 
 /* hkc.css */
@@ -410,6 +415,10 @@ div#feedbackcontent input.btn{
     margin-top: 10px;
     margin-bottom: 5px;
     border-bottom: 2px solid #d8d6d6;
+}
+
+.top a{
+    text-decoration: none;
 }
 
 .toggle-nav-btn {

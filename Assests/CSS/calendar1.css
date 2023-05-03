@@ -4,7 +4,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -12,6 +11,10 @@ body {
 	height: 100vh;
 	box-sizing: border-box;
 	background-color: rgb(98, 182, 183,0.90);
+}
+
+.main{
+	font-family: 'Poppins', sans-serif;
 }
 
 .cal__main {
