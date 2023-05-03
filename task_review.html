@@ -12,6 +12,7 @@
 </head>
 <body >
     <div class="row">
+        
     <!-- SideNavBar -->
         <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
             <a href="home.html" class="logo">
@@ -56,10 +57,25 @@
                 </li>
             </ul>
         </section>
+        <div class="bg-semidark d-md-none"></div>
     <!-- SideNavBar -->
-        <section class="main container-sm col px-5 py-3">
+
+
+        <section class="main container-sm col">
+            <!-- Top -->
+                <div class="top d-md-none ">
+                    <a href="#" > 
+                        <div class="toggle-nav-btn ">
+                            <i class="fa-solid fa-bars fa-xl"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <h4 class="logo-top">TiktokTask</h4>
+                    </a>
+                </div>
+            <!-- Top -->
+          
             <!-- Head -->
-            <div class="p-3">
                 <div class="head">
                 <h1>Task Review</h1>
                 <div class="search">
@@ -97,7 +113,7 @@
                 </div>
             </nav>
             <!-- NavBar -->
-            </div>
+            
             
 
             <section class="body-content">
@@ -249,7 +265,7 @@
                         <input class="from-date" type="date">
                         To
                         <input class="end-date" type="date">
-                        <button class="analysis">Analysis</button>
+                        <button class="analysis ">Analysis</button>
                     </div>
                  </div>
                 <div class="prio-chart row mt-4 mb-5">
@@ -285,7 +301,38 @@
 </div>
 
 
+    
 
+  
+    <script>
+
+        //collapse-side-nav-btn
+        var toggle_side_btn = document.querySelector('.toggle-nav-btn');
+        var sidebar = document.querySelector('.sidebar');
+        var bg_semidark = document.querySelector('.bg-semidark');
+ 
+        toggle_side_btn.onclick = function(){
+            sidebar.className = "sidebar d-block min-vh-100 col-auto position-fixed sidebar-show";
+            bg_semidark.style.display = 'block'
+            bg_semidark.onclick = function(){
+                this.style.display = "none";
+                sidebar.className = "sidebar d-none d-md-block min-vh-100 col-auto position-fixed";
+            }
+
+            const auto_close_sideNav = window.matchMedia('(min-width: 767px)');
+            function close(e){
+                if(e.matches){
+                     sidebar.className = "sidebar d-none d-md-block min-vh-100 col-auto position-fixed";
+                     bg_semidark.style.display = 'none';
+                }
+            }
+            auto_close_sideNav.addListener(close);
+            close(auto_close_sideNav);
+        }
+
+         //collapse-side-nav-btn
+
+    </script>
 
     
 </body>
