@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +16,10 @@ a {
 
 body {
   overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
 }
+
 
 .search {
   max-width: 180px;
@@ -43,7 +48,32 @@ body {
   height: 100%;
   padding: 0;
   background-color: #439a97;
+  z-index: 1000;
 }
+
+.sidebar-show {
+  animation-name: side-show;
+  animation-duration: 0.5s;
+}
+
+@keyframes side-show {
+   0% {
+      transform: translateX(-200px);
+   }
+}
+
+.bg-semidark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  display: none;
+}
+
 
 .sidebar .logo {
   display: block;
@@ -67,6 +97,7 @@ body {
   line-height: 48px;
   padding: 0 35px;
   color: white;
+  font-family: 'Bitter', serif;
 }
 
 .sidebar .sidemenu li a:hover {
@@ -82,16 +113,53 @@ body {
 
 /* Main ================================================*/
 .main {
-  height: 1400px;
   /* background-color: pink; */
   margin-left: 202px;
   padding: 0 10px;
+}
+
+/* Top =======================================*/
+.top {
+  height: 50px;
+  padding-left: 10px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #d8d6d6;
+}
+
+.toggle-nav-btn {
+  float: left;
+  margin-right: 20px;
+  border: 1px solid #dddbdb;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  text-align: center;
+  padding: 5px;
+}
+
+.toggle-nav-btn:hover{
+  background-color: #f6f8f8;
+}
+
+.toggle-nav-btn i {
+  color: #439a97;
+}
+
+.logo-top {
+  height: 40px;
+  line-height: 40px;
+   color: #439a97;
 }
 
 /* Head =======================================*/
 .head {
   position: relative;
   height: 90px;
+  padding-top: 15px; 
+  /* ===================================================change */
 }
 .head h1 {
   float: left;
@@ -127,7 +195,7 @@ body {
 .head span {
   position: absolute;
   left: 13px;
-  top: 60px;
+  top: 70px;
   font-weight: 700;
 }
 
@@ -138,6 +206,7 @@ body {
 .nav-item a {
   color: black;
   margin-right: 20px;
+  font-family: 'Bitter', serif;
 }
 
 .nav-item a:hover {
@@ -206,7 +275,6 @@ body {
 }
 
 .num-piece {
-  /* background-color: #439A97; */
   height: 100%;
   border: 3px solid #439a97;
   border-radius: 30px;
@@ -263,12 +331,19 @@ body {
 }
 
 .completed-rate .row input {
-  max-width: 140px;
+  max-width: 155px;
   border: 1px solid #439a97;
   border-radius: 10px;
   margin: 0 20px;
 }
+.completed-rate .row button {
+  max-width: 120px;
+  background-color: #62B6B7;
+}
 
+.completed-rate .row button:hover {
+    background-color: #439a97;
+}
 .completed-rate {
   border-top: 1px solid #ccc;
   padding-left: 12px;
@@ -353,6 +428,7 @@ body {
   background-color: white;
   border-radius: 50%;
 }
+
 @media screen and (max-width: 767px) {
   .main {
     margin-left: 0;
