@@ -43,3 +43,8 @@ function SignInSuccess(){
 function FeedBackSuccess(){
     close("_self");
 }
+
+// About us
+function gotoFeedBack(){
+    open("feedback.html","_blank");
+}
