@@ -540,6 +540,34 @@ margin-bottom: 15px;
     color: black;
 }
 
+/* home.html css */
+.home-view-task {
+   
+}
+.home-view-task li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    border-bottom: 1px solid #d2d0d0;
+}
+
+.home-view-task li:first-child {
+    padding-top: 0;
+}
+.home-view-task li div {
+    align-items: center;
+    padding-left: 3px;
+}
+.home-view-task li button {
+    max-width: 120px;
+    padding: 10px;
+    text-align: center;
+}
+
+.add-new-task {
+    width: 40%;
+}
+
 @media screen and (max-width: 767px) {
   .main {
     margin-left: 0;
