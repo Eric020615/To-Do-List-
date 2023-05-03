@@ -306,3 +306,280 @@ div#feedbackcontent input.btn{
     line-height: 3vw;
     font-size: 2vw;
 }
+
+/* About us */
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+/* hkc.css */
+.sidebar {
+    display: flex;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    padding: 0;
+    background-color: #439a97;
+    z-index: 1000;
+}
+
+.sidebar-show {
+    animation-name: side-show;
+    animation-duration: 0.5s;
+}
+
+@keyframes side-show {
+0%  {
+    transform: translateX(-200px);
+    }
+}
+
+.bg-semidark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    display: none;
+}
+
+
+.sidebar .logo {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    padding-left: -20px;
+    /* background-color: aliceblue; */
+    text-decoration: none;
+}
+
+.sidebar .sidemenu {
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.sidebar .sidemenu li a {
+    display: block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 35px;
+    color: white;
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+}
+
+.sidebar .sidemenu li a:hover {
+    background-color: #6ac2bf;
+    color: black;
+    transition: all 0.3s;
+}
+
+.sidebar .sidemenu li i {
+    padding-right: 10px;
+}
+
+/* Content */
+.main {
+    /* width: 100%; */
+    /* background-color: pink; */
+    margin-left: 202px;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 767px) {
+.main {
+    margin-left: 0;
+}
+}
+
+.top {
+    height: 50px;
+    padding-left: 10px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #d8d6d6;
+}
+
+.toggle-nav-btn {
+    float: left;
+    margin-right: 20px;
+    border: 1px solid #dddbdb;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.toggle-nav-btn:hover{
+    background-color: #f6f8f8;
+}
+
+.toggle-nav-btn i {
+    color: #439a97;
+}
+
+.logo-top {
+    height: 40px;
+    line-height: 40px;
+    color: #439a97;
+}
+
+.main h1{
+    font-size: 4vw;
+    line-height: 4vw;
+    border-top: 1px solid #ccc;
+    padding-top: 2vw;
+}
+
+.main h1#first{
+    font-size: 5vw;
+    line-height: 5vw;
+    font-weight: 700;
+    border-top: 0px;
+}
+
+.main h3{
+    font-size: 2vw;
+    line-height: 2.5vw;
+    font-weight: normal;
+}
+
+.main p{
+    font-size: 1vw;
+    line-height: 1.5vw;
+}
+
+/* Online Source for members intro */
+.ourworks-box{
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+}
+
+.introduce{
+    height: 25vw;
+    margin: 0 15px;
+    background-color:white;
+    box-shadow: 0 3px 10px #5969f642;
+    border-bottom: 4px solid #5969f6;
+    color: black;
+}
+
+.introduce:hover{
+    box-shadow: 0 3px 15px #5969f666;
+    border-bottom: 4px solid #B122e5;
+    color: black;
+    text-decoration: none;
+}
+
+.flex-column-1{
+    height: 40%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.flex-column-1 p{
+    font-size: 1.20vw;
+}
+
+.flex-column-2{
+    height: 60%;
+    width: 90%;
+    margin-left: 5%;
+    align-items:center;
+}
+
+.information p{
+    font-size: 1.25vw;
+    font-weight: bold;
+    line-height: 2vw;
+}
+
+.text-gray{
+    color: gray;
+}
+
+.pic{
+    height: 50%;
+    margin-right: 20px;
+    border-radius: 25%;
+    transition: all .2s ease-in-out;
+}
+
+.introduce:hover .pic{
+    transform: scale(1.1);
+}
+
+.carousel-indicators .active{
+    background-color: #46eeaa;
+}
+
+.carousel-indicators li{
+    background-color: #c8e5ff;
+}
+
+.carousel-indicators{
+    bottom: -50px;
+}
+
+.p1{
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p2{
+    background-image: url(Assests/img/ENGJUNCHENG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.p3{
+    background-image: url(Assests/img/TANGENGCHENG.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p4{
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.p5{
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+div.aboutus input.btn{
+    background-color: #439A97;
+
+    /* text */
+    font-family: 'Poppins';
+    text-align: center;
+    text-indent: 0;
+    color: #fff;
+    line-height: 3vw;
+    font-size: 2vw;
+}

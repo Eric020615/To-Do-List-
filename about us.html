@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="Assests/CSS/tgc.css"> -->
-    <style>
+    <link rel="stylesheet" href="Assests/CSS/tgc.css">
+    <!-- <style>
         *{
             margin: 0;
             padding: 0;
@@ -18,14 +18,39 @@
         /* hkc.css */
         .sidebar {
             display: flex;
-            position: fixed;
+            /* position: fixed; */
             top: 0;
             left: 0;
             width: 200px;
             height: 100%;
             padding: 0;
             background-color: #439a97;
+            z-index: 1000;
         }
+
+        .sidebar-show {
+            animation-name: side-show;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes side-show {
+        0%  {
+            transform: translateX(-200px);
+            }
+        }
+
+        .bg-semidark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+            display: none;
+        }
+
 
         .sidebar .logo {
             display: block;
@@ -50,7 +75,7 @@
             line-height: 48px;
             padding: 0 35px;
             color: white;
-
+            font-family: 'Bitter', serif;
             text-decoration: none;
         }
 
@@ -64,14 +89,53 @@
             padding-right: 10px;
         }
 
-
         /* Content */
         .main {
-            height: 140vw;
-            width: 100%;
+            /* width: 100%; */
             /* background-color: pink; */
-            /* margin-left: 200px; */
-            /* padding-left: 200px; */
+            margin-left: 202px;
+            padding: 0 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+        .main {
+            margin-left: 0;
+        }
+        }
+
+        .top {
+            height: 50px;
+            padding-left: 10px;
+            line-height: 40px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #d8d6d6;
+        }
+
+        .toggle-nav-btn {
+            float: left;
+            margin-right: 20px;
+            border: 1px solid #dddbdb;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            line-height: 30px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .toggle-nav-btn:hover{
+            background-color: #f6f8f8;
+        }
+
+        .toggle-nav-btn i {
+            color: #439a97;
+        }
+
+        .logo-top {
+            height: 40px;
+            line-height: 40px;
+            color: #439a97;
         }
 
         .main h1{
@@ -219,15 +283,14 @@
             line-height: 3vw;
             font-size: 2vw;
         }
-        
-    </style>
+    </style> -->
 </head>
 <body>
-    <div class="aboutus">
+    <div class="row">
         <!-- SideNavBar -->
-        <div class="sidebar d-none d-md-block min-vh-100 position-fixed col-auto">
+        <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
             <a href="home.html" class="logo">
-                <h4>TickTockTasks</h4>
+                <h4>TiktokTask</h4>
             </a>
             <ul class="sidemenu">
                 <li>
@@ -267,11 +330,25 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </section>
+        <div class="bg-semidark d-md-none"></div>
 
-        <!-- Content -->
-        <div class="main">
-            <div class="p-2">
+        <section class = "main container-sm col">
+            <main>
+                <!-- Top -->
+                <div class="top d-md-none ">
+                    <a href="#" > 
+                        <div class="toggle-nav-btn ">
+                            <i class="fa-solid fa-bars fa-xl"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <h4 class="logo-top">TiktokTask</h4>
+                    </a>
+                </div>
+
+            <!-- Content -->
+            <div class="container">
                 <h1 class="h1 text-center" id="first">
                     About Us
                 </h1>
@@ -379,11 +456,12 @@
                 <h2 class="h2 text-center mt-2">Please leave a comment to make us become more better!!! Thanks!!!</h2>
                 <input type="button" name="" value="FeedBack" class="btn col-2 mt-5 mx-auto" onclick="gotoFeedBack()">
             </div>
-        </div>
     </div>
+    </main>
+    </section>
 
     <!-- JavaScript -->
-    <script>
+    <!-- <script>
         var sidebar = document.getElementsByClassName('sidebar');
         var main_content = document.getElementsByClassName('main');
 
@@ -395,7 +473,7 @@
             main_content[0].style.paddingLeft = '200px';
             sidebar[0].style.display == 'display';
         }
-    </script>
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
     <script src="Assests/JS/tgc.js"></script>
