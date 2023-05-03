@@ -12,7 +12,13 @@ function SignUpSuccess(){
         alert('Please make sure you have filled all the blanks.');
     }
     else{
-        open("intro.html","_self");
+        if(pwd1.value == pwd2.value){
+            open("intro.html","_self");
+        }
+        
+        else{
+            alert("Please make sure you type the same password for the both password spaces.");
+        }
     }
 }
 
