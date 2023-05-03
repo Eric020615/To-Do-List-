@@ -11,39 +11,33 @@
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
 </head>
 <body >
-
-        
-
     <div class="row">
-
-   
     <!-- SideNavBar -->
         <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
-
-            <a href="#" class="logo">
+            <a href="home.html" class="logo">
                 <h4>TiktokTask</h4>
             </a>
             <ul class="sidemenu">
                 <li>
-                    <a href="#">
+                    <a href="home.html">
                         <i class="fa-solid fa-house"></i>
                         <span class="text">Home</span>
                     </a>
                 </li>
                   <li>
-                    <a href="#">
+                    <a href="task to do.html">
                         <i class="fa-solid fa-list"></i>
                         <span class="text">Task</span>
                     </a>
                 </li>
                   <li>
-                    <a href="#">
+                    <a href="calendar.html">
                         <i class="fa-solid fa-calendar-days"></i>
                         <span class="text">Calendar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="profile.html">
                         <i class="fa-solid fa-user"></i>
                         <span class="text">Profile</span>
                     </a>
@@ -80,9 +74,10 @@
             <!-- Top -->
           
             <!-- Head -->
-            <div class="head">
-               <h1>Task Review</h1>
-               <div class="search">
+            <div class="p-3">
+                <div class="head">
+                <h1>Task Review</h1>
+                <div class="search">
                 <input type="text" placeholder="search" class=""> 
                 <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
@@ -93,43 +88,43 @@
             <!-- NavBar -->
             <nav class="navbar navbar-expand-sm ">
                 <div class="container-fluid">
-                <ul class="navbar-nav bottom-line">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">To-Do</a>
-                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">In-progress</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Completed</a>
-                 </li>
-                  <li class="nav-item"">
-                    <a class="nav-link" href="#" active="active" >All Task</a>
-                 </li>
-
-                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Filter</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Priority</a></li>
-                    <li><a class="dropdown-item" href="#">Deadline</a></li>
-                </ul>
-        </li>
-            </ul>
-        </div>
+                    <ul class="navbar-nav bottom-line">
+                        <li class="nav-item ">
+                    <a class="nav-link" href="task to do.html">To-Do</a>
+                        </li>
+                        <li class="nav-item">
+                    <a class="nav-link" href="task in progress.html">In-progress</a>
+                        </li>
+                        <li class="nav-item">
+                    <a class="nav-link" href="task to complete.html">Completed</a>
+                        </li>
+                        <li class="nav-item"">
+                    <a class="nav-link" href="task_review.html" active="active" >All Task</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Filter</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Priority</a></li>
+                        <li><a class="dropdown-item" href="#">Deadline</a></li>
+                    </ul>
+                        </li>
+                        </ul>
+                </div>
             </nav>
             <!-- NavBar -->
-
+            </div>
+            
 
             <section class="body-content">
             <!-- All-Task-->
-            <div class="all-task p-1">
-                <p class="all-task-num fw-bold ">Total Task: 15</p>
+            <div class="all-task">
+                <p class="all-task-num fw-bold px-3">Total Task: 15</p>
                 <div class="task row ">
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-red m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
-                                <li><span class="badge bg-danger"">To-Do</span> </li>
+                                <li><span class="badge bg-danger">To-Do</span> </li>
                                 <li>Priority:3/3</li>
                                 <li>Deadline:14/4/2023</li>
                             </ul>
@@ -139,7 +134,7 @@
                         <div class="piece d-flex flex-nowrap b-blue m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
-                                <li><span class="badge bg-primary"">In-progress</span> </li>
+                                <li><span class="badge bg-primary">In-progress</span> </li>
                                 <li>Priority:2/3</li>
                                 <li>Deadline:10/4/2023</li>
                             </ul>
@@ -149,17 +144,17 @@
                         <div class="piece d-flex flex-nowrap b-green m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
-                                <li><span class="badge bg-success"">Completed</span> </li>
+                                <li><span class="badge bg-success">Completed</span> </li>
                                 <li>Priority:1/3</li>
                                 <li>Deadline:6/4/2023</li>
                             </ul>
                         </div>
                     </div>
-                 <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-red m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
-                                <li><span class="badge bg-danger"">To-Do</span> </li>
+                                <li><span class="badge bg-danger">To-Do</span> </li>
                                 <li>Priority:3/3</li>
                                 <li>Deadline:14/4/2023</li>
                             </ul>
@@ -169,7 +164,7 @@
                         <div class="piece d-flex flex-nowrap b-blue m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
-                                <li><span class="badge bg-primary"">In-progress</span> </li>
+                                <li><span class="badge bg-primary">In-progress</span> </li>
                                 <li>Priority:2/3</li>
                                 <li>Deadline:10/4/2023</li>
                             </ul>
@@ -179,7 +174,7 @@
                         <div class="piece d-flex flex-nowrap b-green m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
-                                <li><span class="badge bg-success"">Completed</span> </li>
+                                <li><span class="badge bg-success">Completed</span> </li>
                                 <li>Priority:1/3</li>
                                 <li>Deadline:6/4/2023</li>
                             </ul>
@@ -189,7 +184,7 @@
                         <div class="piece d-flex flex-nowrap b-red m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
-                                <li><span class="badge bg-danger"">To-Do</span> </li>
+                                <li><span class="badge bg-danger">To-Do</span> </li>
                                 <li>Priority:3/3</li>
                                 <li>Deadline:14/4/2023</li>
                             </ul>
@@ -199,13 +194,12 @@
                         <div class="piece d-flex flex-nowrap b-blue  m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
-                                <li><span class="badge bg-primary"">In-progress</span> </li>
+                                <li><span class="badge bg-primary">In-progress</span> </li>
                                 <li>Priority:2/3</li>
                                 <li>Deadline:10/4/2023</li>
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <!-- All-Task-->
@@ -244,7 +238,6 @@
                         </div>
                     </div>
                     <div class="pie-chart col-xl-6 ">
-                        
                         <div class="pie-col d-flex flex-column justify-content-around">
                             <div class="chart">
 
@@ -302,12 +295,7 @@
              </section>
 
         </section>
-
-
     </div>
-
-    
-
  </div>
 </div>
 
