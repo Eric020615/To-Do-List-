@@ -37,7 +37,7 @@
 //collapse-side-nav-btn
 
 //Delete-acc button function
-const openModalBtn = document.getElementById('delete-btn');
+const openModalBtn = document.getElementById('delete_btn');
 const closeModalBtn = document.getElementById('cancel-btn');
 const modalOverlay = document.getElementById('modal-overlay');
 
