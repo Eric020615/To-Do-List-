@@ -8,17 +8,16 @@
 function hideForm(event) {
     event.preventDefault(); // Prevent form submission
     var overlay = document.querySelector('.overlay');
-    var formContainer = document.querySelector('.form-container');
 
-    overlay.style.display = 'none';
-    formContainer.style.display = 'none';
+    overlay.className = "overlay d-none";
+    addtaskBtn.style.display = 'block';
 }
 
 function showForm(event) {
     event.preventDefault(); // Prevent form submission
     var overlay = document.querySelector('.overlay');
-    var formContainer = document.querySelector('.form-container');
+    var addtaskBtn = document.querySelector('#addtaskBtn');
 
-    overlay.style.display = 'block';
-    formContainer.style.display = 'block';
+    overlay.className = "overlay";
+    addtaskBtn.style.display = 'none';
 }
