@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* SideNavBar ========================================================= */
+.sidebar {
+  display: flex;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding: 0;
+  background-color: #439a97;
+  z-index: 1000;
+}
+
+.sidebar-show {
+  animation-name: side-show;
+  animation-duration: 0.5s;
+}
+
+@keyframes side-show {
+   0% {
+      transform: translateX(-200px);
+   }
+}
+
+.bg-semidark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 500;
+  display: none;
+}
+
+
+.sidebar .logo {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  padding-left: -20px;
+  text-decoration: none;
+  /* background-color: aliceblue; */
+}
+
+.sidebar .sidemenu {
+  width: 100%;
+  margin-top: 30px;
+  padding-left: 0;
+}
+
+.sidebar .sidemenu li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 35px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .sidemenu li a:hover {
+  background-color: #6ac2bf;
+  color: black;
+  transition: all 0.3s;
+}
+
+.sidebar .sidemenu li i {
+  padding-right: 10px;
+}
+
+/* SideNavBar ==========================================================*/
+
+/* Main================= */
+main {
+  /* background-color: pink; */
+  margin-left: 202px;
+  padding: 0 10px;
+}
+/* Main================= */
+
+/* Top =======================================*/
+.top {
+  height: 50px;
+  padding-left: 10px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #d8d6d6;
+}
+
+.toggle-nav-btn {
+  float: left;
+  margin-right: 20px;
+  border: 1px solid #dddbdb;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  text-align: center;
+  padding: 5px;
+}
+
+.toggle-nav-btn:hover{
+  background-color: #f6f8f8;
+}
+
+.toggle-nav-btn i {
+  color: #439a97;
+}
+
+.logo-top {
+  height: 40px;
+  line-height: 40px;
+  color: #439a97;
+  text-decoration: none;
+}
+
+.top a{
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 767px){
+  main{
+    margin-left: 0px;
+  }
+  .logo-top {
+    height: 40px;
+    line-height: 40px;
+    color: #439a97;
+  }
+  
+}
+
+/* horizontal nav bar */
+.navbar{
+  position: relative;
+  right: 1vh;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+.navbar a{
+  color: black;
+}
+
+.navbar a:hover{
+  background-color: #439a97;
+  color: white;
+}
+
+/* .title{
+  margin-top: 3vh;
+  margin-left: 3vh;
+} */
+
+.top-title{
+  margin-top: 3vh;
+  margin-left: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.top-title button{
+  margin-left: auto;
+  margin-right: 30px;
+  background-color: #439a97;
+  color: white;
+  padding: 0.5rem 2.0rem;
+
+}
+
+.top-title button:hover{
+  background-color: #6ac2bf;
+  color: black;
+}
+
+/* content */
+main{
+  max-width: 100%;
+}
+
+.settings-content select{
+  width: 30%;
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+.settings-content label{
+  margin-top: 10px;
+}
+
+/* settings for advanced */
+#advanced-settings label{
+  margin-top: 10px;
+}
+
+#advanced-settings input{
+  width: 30%;
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+#advanced-settings form{
+  display: grid;
+}
+
+form p{
+  display: block;
+}
+
+form p.show{
+  display: none;
+}
+
+form .part-show{
+  display: none;
+}
+
+form .part-show.show{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form .part-show.show input{
+  border: 1px solid black;
+}
+
+form .part-show.show button{
+  width: 3.5rem;
+  background-color: #ccc;
+}
+
+.part-show button{
+  border-radius: 10px;
+  padding: 0.2rem;
+}

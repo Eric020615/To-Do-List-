@@ -33,3 +33,15 @@ function login(){
 function register(){
     open("register.html","_self");
 }
+
+const text_show = document.querySelectorAll(".text-show");
+const part_show = document.querySelectorAll(".part-show");
+for(let x in text_show){
+    text_show[x].style.color = "red";
+    text_show[x].addEventListener('click', () => {
+        text_show[x].classList.add("show");
+        part_show[x].classList.add("show");
+    });
+}
+
+
