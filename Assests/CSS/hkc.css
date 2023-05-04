@@ -57,9 +57,9 @@ body {
 }
 
 @keyframes side-show {
-   0% {
+  0% {
       transform: translateX(-200px);
-   }
+  }
 }
 
 .bg-semidark {
