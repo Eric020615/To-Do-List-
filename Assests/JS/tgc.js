@@ -41,7 +41,7 @@ function SignInSuccess(){
         alert('Please make sure you have filled all the blanks.');
     }
     else{
-        open("task_review.html","_self");
+        open("home.html","_self");
     }
 }
 
