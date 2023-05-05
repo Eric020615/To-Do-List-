@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +73,7 @@ a {
   line-height: 48px;
   padding: 0 35px;
   color: white;
-  font-family: 'Bitter', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sidebar .sidemenu li a:hover {
@@ -84,15 +86,30 @@ a {
   padding-right: 10px;
 }
 
+.sidebar-active {
+  background-color: #6ac2bf;
+  color: black !important;
+}
+
 /* SideNavBar ==========================================================*/
 
 /* Main================= */
 .main {
   /* background-color: pink; */
-  margin-left: 202px;
-  padding: 0 10px;
+   margin-left: 232px;
+
 }
 /* Main================= */
+
+/* Head =======================================*/
+.head {
+  position: relative;
+  height: 90px;
+  padding-top: 20px; 
+  padding-left: 10px;
+  margin-top: 10px;
+  /* ===================================================change */
+}
 
 /* Top =======================================*/
 .top {
@@ -138,7 +155,7 @@ html, body{
     width: 100%;
     height: 100%;
     background-color: white;
-    font-family: 'Poppins', sans-serif;
+
 }
 
 .col-md-3{
@@ -154,7 +171,7 @@ nav{
 }
 
 .nav-brand{
-    font-family: 'Bitter';
+    /* font-family: 'Bitter'; */
     font-size: 30px;
     font-weight: bold;
     color: white;
@@ -178,7 +195,7 @@ nav ul li:first-child{
 }
 
 .nav-item a{
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
     font-size: 18px;
     color: white;
     margin: 0;
@@ -216,7 +233,7 @@ nav ul li:first-child{
 }  
 
 main ol{
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
     font-size: 20px;
     margin-top: 20px;
 }
@@ -225,10 +242,12 @@ main {
     margin-bottom: 40px;
 }
 
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
 h2{
     font-family: 'Poppins';
     font-weight: bold;
-    margin-top: 20px;
     margin-left: 10px;
 }
 
@@ -246,7 +265,6 @@ h5{
 }
 
 #date{
-    font-family: 'Bitter';
     font-size: 20px;;
     font-weight: bolder;
     color: #439A97;

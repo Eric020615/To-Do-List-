@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    <div class="row taskinprogress">
+    <div class="row ">
         <!-- SideNavBar -->
         <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
             <a href="home.html" class="logo">
-                <h4>TiktokTask</h4>
+                <h4>TicktokTask</h4>
             </a>
             <ul class="sidemenu">
                 <li>
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="task to do.html">
+                    <a href="task to do.html" class="sidebar-active">
                         <i class="fa-solid fa-list"></i>
                         <span class="text">Task</span>
                     </a>
@@ -64,7 +64,7 @@
         <!-- dark background after open nav -->
         <div class="bg-semidark d-md-none"></div>
 
-        <section class = "main container-sm col">
+        <section class = "main container-fluid col">
             <main>
                 <!-- Top -->
                 <div class="top d-md-none ">
@@ -78,10 +78,7 @@
                     </a>
                 </div>
             </main>
-        </section>
 
-        <div class="row">
-            <section class="main container-fluid col px-5 py-3">
                 <!-- Head -->
                 <div class="head">
                     <h1>Task Review</h1>
@@ -101,7 +98,7 @@
                                 <a class="nav-link" href="task to do.html">To-Do</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="task in progress.html">In-progress</a>
+                                <a class="nav-link active" href="task in progress.html">In-progress</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="task to complete.html">Completed</a>
@@ -221,9 +218,10 @@
                             </div>
                         </div>
                     </div>
+                    </section>
                 </section>
-            </section>
-        </div>
+           
+        
     </div>
 
     <!-- JavaScript -->
