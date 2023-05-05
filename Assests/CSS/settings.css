@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +14,9 @@ a {
   text-decoration: none;
 }
 
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
 
 /* SideNavBar ========================================================= */
 .sidebar {
@@ -75,6 +80,7 @@ a {
   padding: 0 35px;
   color: white;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .sidebar .sidemenu li a:hover {
@@ -85,6 +91,11 @@ a {
 
 .sidebar .sidemenu li i {
   padding-right: 10px;
+}
+
+.sidebar-active {
+  background-color: #6ac2bf;
+  color: black !important;
 }
 
 /* SideNavBar ==========================================================*/

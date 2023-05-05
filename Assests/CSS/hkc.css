@@ -105,6 +105,11 @@ body {
   transition: all 0.3s;
 }
 
+.sidebar-active {
+  background-color: #6ac2bf;
+  color: black !important;
+}
+
 .sidebar .sidemenu li i {
   padding-right: 10px;
 }
@@ -113,8 +118,9 @@ body {
 /* Main ================================================*/
 .main {
   /* background-color: pink; */
-  margin-left: 202px;
-  padding: 0 10px;
+   margin-left: 232px;
+   /* margin-top: 10px; */
+
 }
 
 /* Top =======================================*/
@@ -158,6 +164,7 @@ body {
   position: relative;
   height: 90px;
   padding-top: 15px; 
+    margin-top: 10px;
   /* ===================================================change */
 }
 .head h1 {
@@ -218,6 +225,11 @@ body {
 
 .nav-item a:active {
   color: #6ac2bf;
+  border-bottom: 2px solid #6ac2bf;
+}
+
+.active {
+  color: #6ac2bf !important;
   border-bottom: 2px solid #6ac2bf;
 }
 

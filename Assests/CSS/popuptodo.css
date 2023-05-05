@@ -1,0 +1,186 @@
+form {
+  
+    width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    /* border: 1px solid #007bff; */
+    border-radius: 15px;
+    padding: 20px;
+    position:fixed;
+  }
+  
+  .title {
+    font-size: large;
+    font-weight: 700;
+    display: inline;
+    margin-right: 5px;
+  }
+  
+  .overlay {
+    /* for form */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity as needed */
+    z-index: 9999; /* Set a high z-index value to ensure it appears in front of other elements */
+  }
+  
+  
+  .form-container {
+    /* for form */
+    display: none;
+    position: fixed;
+    top: 15%;
+    left: 40%;
+    transform: translate(-0%, -0%);
+    z-index: 10000; /* Set a higher z-index value to ensure it appears in front of other elements */
+    background-color: white; /* Adjust background color as needed */
+    border-radius: 15px;
+    /* border: 3px solid #CBEDD5; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow for a visual effect */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .form-container{
+      top: 20%;
+      left: 5%;
+      width: 10px;
+    
+    }
+  
+    
+  
+    /* .title {
+      font-size: large;
+      font-weight: 700;
+      display: inline;
+      margin-right: 5px;
+    } */
+  
+   
+    
+  
+  
+  
+  }
+  
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  input[type="text"],
+  select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  #progress-dropdown {
+    /* margin-left: 10px; */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .close-btn {
+    position: relative;
+    left: 50%;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .close-btn:hover {
+    color: #ff0000;
+  }
+  
+  /* Bootstrap classes */
+  
+  form label,
+  form input[type="text"],
+  form textarea,
+  form input[type="date"],
+  form select {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  form input[type="text"],
+  form textarea,
+  form input[type="date"],
+  form select {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+  
+  form input[type="text"]:focus,
+  form textarea:focus,
+  form input[type="date"]:focus,
+  form select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  }
+  
+  form input[type="submit"] {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"]:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  form input[type="submit"]:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  }
+  
+  
+  

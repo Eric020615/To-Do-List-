@@ -5,7 +5,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+h1 {
+	    font-family: 'Poppins', sans-serif;
+}
 body {
 	width: 100vw;
 	height: 100vh;
@@ -15,6 +17,11 @@ body {
 
 .main{
 	font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-active {
+  background-color: #6ac2bf;
+  color: black !important;
 }
 
 .cal__main {
