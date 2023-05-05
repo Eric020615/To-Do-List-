@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+    /* font-family */
+    --body-text-family: 'Poppins', sans-serif;
+    /* color palette */
+    --dark-green: #439A97;
+    --medium-green: #62B6B7;
+    --light-green: #97DECE;
+    --light-secondary-green: #CBEDD5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+.sign-up{
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-up-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px gray;
+    border-radius: 1.5rem;
+}
+
+.content label{
+    margin-top: 25px;
+}
+
+.sign-up input{
+    border-radius: 15px;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.sign-up-button{
+    border: 1px;
+    border-radius: 1.5rem;
+    margin-top: 1.5rem;
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--dark-green);
+    color: white;
+    transition: all 0.5s;
+}
+
+.sign-up-button:hover{
+    background-color: var(--light-green);
+    color: black;
+    width: 100%;
+}
+
+@media(max-width: 500px){
+    .content{
+        padding: 1.5rem;
+    }
+}
+
+.lottie{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+hr{
+    color: black;
+}
+
+/* sign in page */
+.sign-in{
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-up-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#signin{
+    margin-top: 25px;
+    background-color: #439A97;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+#signin:hover{
+    background-color: var(--light-secondary-green);
+    color: black;
+    width: 150px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px gray;
+    border-radius: 1.5rem;
+}
+
+.content label{
+    margin-top: 25px;
+}
+
+.sign-in input{
+    border-radius: 15px;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+#forgot-password{
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.8rem;
+}
+
+#forgot-password:hover{
+    color: black;
+}
+
+#signup{
+    margin-top: 25px;
+    color: white;
+    background-color: #439A97;
+    transition: all 1.0s ease;
+}
+
+#signup:hover{
+    width: 150px;
+}
+
+.sign-up-button{
+    border: 1px;
+    border-radius: 1.5rem;
+    margin-top: 1.5rem;
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--dark-green);
+    color: white;
+    transition: all 0.5s;
+}
+
+.sign-up-button:hover{
+    background-color: var(--light-green);
+    color: black;
+    width: 100%;
+}
+
+@media(max-width: 500px){
+    .content{
+        padding: 1.5rem;
+    }
+}
+
+.lottie{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.small-text a{
+    color: var(--dark-green);
+}
+
+.small-text a:hover{
+    color: black;
+}
+
+

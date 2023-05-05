@@ -1,4 +1,6 @@
 // register
+
+
 function SignUpSuccess(){
     var allInput = document.getElementsByTagName('input');
     var detect = false;

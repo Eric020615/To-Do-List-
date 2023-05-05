@@ -31,8 +31,18 @@ function login(){
 }
 
 function register(){
-    open("register.html","_self");
+    open("signup.html","_self");
 }
+
+const signin = document.querySelector("#signin");
+signin.addEventListener("click", ()=>{
+    open("home.html","_self");
+})
+
+const signup = document.querySelector("#signup");
+signup.addEventListener("click", ()=>{
+    open("login.html","_self");
+})
 
 const text_show = document.querySelectorAll(".text-show");
 const part_show = document.querySelectorAll(".part-show");
