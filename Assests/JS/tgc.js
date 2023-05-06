@@ -1,27 +1,28 @@
 // register
-
-
-function SignUpSuccess(){
-    var allInput = document.getElementsByTagName('input');
-    var detect = false;
-    for(var i = 0; i < allInput.length ;i++){
-        if(allInput[i].value == ''){
-            detect = true;
-            break;
-        }
-    }
-    if(detect){
-        alert('Please make sure you have filled all the blanks.');
-    }
-    else{
-        if(pwd1.value == pwd2.value){
-            open("intro.html","_self");
-        }
+// function SignUpSuccess(){
+//     var allInput = document.getElementsByTagName('input');
+//     var detect = false;
+//     for(var i = 0; i < allInput.length ;i++){
+//         if(allInput[i].value == ''){
+//             detect = true;
+//             break;
+//         }
+//     }
+//     if(detect){
+//         alert('Please make sure you have filled all the blanks.');
+//     }
+//     else{
+//         if(pwd1.value == pwd2.value){
+//             open(".html","_self");
+//         }
         
-        else{
-            alert("Please make sure you type the same password for the both password spaces.");
-        }
-    }
+//         else{
+//             alert("Please make sure you type the same password for the both password spaces.");
+//         }
+//     }
+// }
+function SignUpSuccess(){
+    open("login.html","_self");
 }
 
 // login

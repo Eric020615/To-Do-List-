@@ -34,20 +34,10 @@ function register(){
     open("signup.html","_self");
 }
 
-const signin = document.querySelector("#signin");
-signin.addEventListener("click", ()=>{
-    open("home.html","_self");
-})
-
-const signup = document.querySelector("#signup");
-signup.addEventListener("click", ()=>{
-    open("login.html","_self");
-})
-
 const text_show = document.querySelectorAll(".text-show");
 const part_show = document.querySelectorAll(".part-show");
 for(let x in text_show){
-    text_show[x].style.color = "red";
+    text_show[x].style.color = "#ff0000";
     text_show[x].addEventListener('click', () => {
         text_show[x].classList.add("show");
         part_show[x].classList.add("show");
