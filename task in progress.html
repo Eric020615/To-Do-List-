@@ -9,12 +9,60 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="Assests/CSS/taskinprogress.css">
+        <link rel="stylesheet" href="Assests/CSS/popupinprogress.css">
     <script src="Assests/JS/popup1.js"></script>
 
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+   
+
+    <div class="overlay">
+        <div class="form-container">
+            <!-- Your form HTML goes here -->
+            <form>
+                <div class="form-heading">
+                    <div class="heading-content">
+                        <span class="title">Edit task</span>
+                        <button class="close-btn" onclick="hideForm(event)">&times;</button>
+                    </div>
+                </div>
+
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title"><br>
+
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description"></textarea><br>
+
+                <label for="date">Date:</label><br>
+                <input type="date" id="date" name="date"><br>
+
+                <label for="progress">Progress:</label><br>
+                <div class="progress-container">
+
+                    <select name="progress-dropdown" id="progress-dropdown">
+                        <option value="0">0%</option>
+                        <option value="10">10%</option>
+                        <option value="20">20%</option>
+                        <option value="30">30%</option>
+                        <option value="40">40%</option>
+                        <option value="50" selected>50%</option>
+                        <option value="60">60%</option>
+                        <option value="70">70%</option>
+                        <option value="80">80%</option>
+                        <option value="90">90%</option>
+                      </select>
+                </div>
+
+                <div class="form-buttons">
+                <input type="submit" class="markasdone" value="Mark as Done">
+                <input type="submit" class="delete-btn" value="Delete">
+            </div>
+            </form>
+        </div>
+    </div>
+
     <div class="row ">
         <!-- SideNavBar -->
         <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
@@ -64,6 +112,7 @@
         <!-- dark background after open nav -->
         <div class="bg-semidark d-md-none"></div>
 
+        
         <section class = "main container-fluid col">
             <main>
                 <!-- Top -->
@@ -137,7 +186,7 @@
                     <!-- All-Task-->
                     <div class="all-task p-1">
                         <div class="task row ">
-                            <div class="col-xl-4 col-lg-4 col-md-6"  >
+                            <div class="col-xl-4 col-lg-4 col-md-6"  onclick="showForm(event)">
                                 <div class="piece d-flex flex-nowrap m-auto ">
                                     <ul class="d-flex flex-column justify-content-around ">
                                         <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
@@ -150,7 +199,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="col-xl-4 col-lg-4 col-md-6" onclick="showForm(event)">
                                 <div class="piece d-flex flex-nowrap  m-auto  ">
                     
                                     <ul class="d-flex flex-column justify-content-around ">
@@ -165,7 +214,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="col-xl-4 col-lg-4 col-md-6" onclick="showForm(event)">
                                 <div class="piece d-flex flex-nowrap  m-auto">
                                     <ul class="d-flex flex-column justify-content-around ">
                                         <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
@@ -178,7 +227,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-4 col-lg-4 col-md-6"  >
+                            <div class="col-xl-4 col-lg-4 col-md-6" onclick="showForm(event)" >
                                 <div class="piece d-flex flex-nowrap m-auto ">
                                     <ul class="d-flex flex-column justify-content-around ">
                                         <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
@@ -191,7 +240,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="col-xl-4 col-lg-4 col-md-6" onclick="showForm(event)">
                                 <div class="piece d-flex flex-nowrap  m-auto  ">
                                     <ul class="d-flex flex-column justify-content-around ">
                                         <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
@@ -204,7 +253,7 @@
                                 </div>
                             </div>
                         
-                            <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="col-xl-4 col-lg-4 col-md-6" onclick="showForm(event)">
                                 <div class="piece d-flex flex-nowrap  m-auto">
                                     <ul class="d-flex flex-column justify-content-around ">
                                         <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
@@ -226,6 +275,7 @@
 
     <!-- JavaScript -->
     <script src="Assests/JS/ckc.js"></script>
+    <script src="Assests/JS/task.js"></script>
 </body>
 
 </html>
