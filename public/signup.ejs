@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TickTockTasks</title>
-    <link rel="stylesheet" href="Assests/CSS/login.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/login.css">
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -14,27 +14,28 @@
   />
 </head>
 <body>
-    <div class="sign-in">
+    <div class="sign-up">
         <div class="content">
             <h1 class="title">TickTockTasks</h1>
-            <p>Hey, Welcome Back<br>TickTokTasks</p>
+            <p>Create an account with<br>TickTokTasks</p>
             <form action="" id="sign-up-form">
                 <input type="email" class="user-input" placeholder="Email Address">
+                <input type="text" class="user-input" name="phone" id="phone" placeholder="Phone Number">
                 <input type="password" class="user-input" name="password" id="password" placeholder="Password">
-                <a href="#" id="forgot-password">Having trouble in sign in?</a>
-                <input type="button" id="signin" class="btn" onclick=" SignInSuccess()" value="Sign In"></input>
+                <input type="button" id="signup" class="btn" value="Sign Up" onclick="SignUpSuccess()"></input>
             </form>
             <hr>
-            <p class="small-text">Don't have an account? <a href="signup.html">Request Now</a></p>
+            <p class="small-text">Already have an account? <a href="/login">Sign in</a></p>
         </div>
     </div>
 
     <div class="footer">
-        Copyright @ToDoList 2022 | Privacy Policy
+        Copyright @ToDoList 2023 | Privacy Policy
     </div>
     <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_x4nau02e.json" class="lottie" background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop  autoplay></lottie-player>
+    <script src="Assests/JS/tgc.js"></script>
      <!-- JavaScript -->
-     <script src="Assests/JS/tgc.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </body>
 </html>

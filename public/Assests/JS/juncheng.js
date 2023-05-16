@@ -8,7 +8,6 @@ const circular_slider = document.querySelector('.wrapper'),
 
 // loopping the nodelist
 slides.forEach((slide,i)=>{
-    
     slide.onclick = ()=>{
         circular_slider.style.transform= `rotateZ(-${360 / 5 * (i + 4)}deg)`;
         member_name.classList.remove('active');
@@ -25,14 +24,6 @@ slides.forEach((slide,i)=>{
         slide.querySelector('img').classList.add('active');
     }
 });
-
-function login(){
-    open("login.html","_self");
-}
-
-function register(){
-    open("signup.html","_self");
-}
 
 const text_show = document.querySelectorAll(".text-show");
 const part_show = document.querySelectorAll(".part-show");
