@@ -21,15 +21,6 @@
 //         }
 //     }
 // }
-function SignUpSuccess(){
-    open("login.html","_self");
-}
-
-// login
-
-function gotoSignUp(){
-    open("register.html","_self");
-}
 
 function SignInSuccess(){
     var allInput = document.getElementsByTagName('input');
