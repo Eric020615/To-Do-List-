@@ -76,6 +76,22 @@ section{
 }
 
 /* home section */
+.home .bg-lottie{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    height: 50%;
+    width: 100%;
+}
+
+.bg-cycle-lottie{
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    z-index: -1;
+}
+
+
 .home-content{
     display: flex;
     justify-content: center;
@@ -182,6 +198,11 @@ section{
     }
 
     .home-content .home-background-lottie{
+        width: 300px;
+        height: 300px;
+    }
+
+    .bg-cycle-lottie{
         width: 300px;
         height: 300px;
     }

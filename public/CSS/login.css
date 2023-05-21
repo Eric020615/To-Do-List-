@@ -20,6 +20,13 @@ body{
     text-align: center;
 }
 
+.lottie-background{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
 .sign-up{
     min-height: 650px;
     display: flex;
@@ -205,5 +212,3 @@ hr{
     flex-direction: column;
     align-items: center;
 }
-
-
