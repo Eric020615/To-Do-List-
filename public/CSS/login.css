@@ -108,22 +108,17 @@ hr{
     margin-top: 25px;
 }
 
-.sign-in .user-input{
-    border-radius: 15px;
-    border: 1px solid gray;
-    padding: 0.5rem;
-    margin-top: 1.5rem;
+/* sign in sign up */
+.email-error{
+    color: red;
 }
 
-
-#forgot-password{
-    text-decoration: none;
-    color: var(--dark-green);
-    font-size: 0.8rem;
+.phone-num-error{
+    color: red;
 }
 
-#forgot-password:hover{
-    color: black;
+.password-error{
+    color: red;
 }
 
 /* sign up */
@@ -207,8 +202,46 @@ hr{
     color: black;
 }
 
+/* sign-in */
+
 #sign-in-form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.sign-in-button{
+    border: 1px;
+    border-radius: 1.5rem;
+    margin-top: 1.5rem;
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--dark-green);
+    color: white;
+    transition: all 0.5s;
+}
+
+.sign-in-button:hover{
+    background-color: var(--light-green);
+    color: black;
+    width: 100%;
+}
+
+
+.sign-in .user-input{
+    border-radius: 15px;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+#forgot-password{
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.8rem;
+}
+
+#forgot-password:hover{
+    color: black;
 }

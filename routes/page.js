@@ -1,61 +1,67 @@
 const express = require('express')
 const app = express();
 const router = express.Router();
+const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 
-router.get('/',(req,res)=>{
-    res.render("intro")
+// apply checkUser middleware into every single route
+router.get('*', checkUser);
+
+router.get('/', (req,res)=>{
+    res.render("intro");
 });
 
-router.get('/signup',(req,res)=>{
+router.get('/signup', (req,res)=>{
     res.render("signup");
 });
 
-router.get('/login',(req,res)=>{
+// when user click this route, show login.ejs page to user
+router.get('/login', (req,res)=>{
     res.render("login");
 });
 
-router.get('/home',(req,res)=>{
+router.get('/home', requireAuth , (req,res)=>{
     res.render("home");
 })
 
-router.get('/task',(req,res)=>{
+router.get('/task', requireAuth , (req,res)=>{
     res.render("task to do");
 })
 
-router.get('/task-in-progress',(req,res)=>{
+router.get('/task-in-progress', requireAuth , (req,res)=>{
     res.render('task in progress');
 })
 
-router.get('/task-review',(req,res)=>{
+router.get('/task-review', requireAuth , (req,res)=>{
     res.render('task_review');
 })
 
-router.get('/task-to-complete',(req,res)=>{
+router.get('/task-to-complete', requireAuth , (req,res)=>{
     res.render('task to complete');
 })
 
-router.get('/calendar',(req,res)=>{
+router.get('/calendar', requireAuth , (req,res)=>{
     res.render("calendar");
 })
 
-router.get('/profile',(req,res)=>{
+router.get('/profile', requireAuth , (req,res)=>{
     res.render("profile");
 })
 
-router.get('/settings-advanced',(req,res)=>{
+router.get('/settings-advanced', requireAuth , (req,res)=>{
     res.render('settings-advanced');
 })
 
-router.get('/settings-general',(req,res)=>{
+router.get('/settings-general', requireAuth , (req,res)=>{
     res.render('settings-general');
 })
 
-router.get('/about-us',(req,res)=>{
+router.get('/about-us', requireAuth , (req,res)=>{
     res.render('about us');
 })
 
-router.get('/feedback',(req,res)=>{
+router.get('/feedback', requireAuth , (req,res)=>{
     res.render('feedback');
 })
 
+// export router objects
 module.exports = router;
