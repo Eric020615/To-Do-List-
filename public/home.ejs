@@ -99,6 +99,12 @@
                         <span class="text">About Us</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa-solid fa-sign-out"></i> 
+                        <span class="text">Log Out</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <div class="bg-semidark d-md-none"></div>
@@ -118,10 +124,8 @@
                     </a>
                 </div>
                 <!-- Top -->
-                <!-- <h2> Welcome, User </h2>
-                <h6 id = "text"> You have 4 tasks today. </h6> -->
                 <div class="head">
-                    <h1>Welcome, User</h1>
+                    <h1>Welcome, <%= user.email %></h1>
                     <span class="text-danger">You have 4 tasks today.</span>
                 </div>
         
@@ -256,6 +260,9 @@
     </script>
 
     <script src = "Assests/JS/ckc.js"> </script>
+    <script>
+
+    </script>
 </body>
 
 </html>

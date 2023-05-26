@@ -21,11 +21,14 @@
         <div class="content">
             <h1 class="title">TickTockTasks</h1>
             <p>Create an account with<br>TickTokTasks</p>
-            <form action="" id="sign-up-form">
-                <input type="email" class="user-input" placeholder="Email Address">
-                <input type="text" class="user-input" name="phone" id="phone" placeholder="Phone Number">
-                <input type="password" class="user-input" name="password" id="password" placeholder="Password">
-                <input type="button" id="signup" class="btn" value="Sign Up" onclick="SignUpSuccess()"></input>
+            <form id="sign-up-form">
+                <input type="text" class="user-input" placeholder="Email Address" name="email" required>
+                <div class="email-error"></div>
+                <input type="text" class="user-input" name="phone_num" id="phone_num" placeholder="Phone Number" required>
+                <div class="phone-num-error"></div>
+                <input type="password" class="user-input" name="password" id="password" placeholder="Password" required>
+                <div class="password-error"></div>
+                <button class="sign-up-button" type="submit">Sign Up</button>
             </form>
             <hr>
             <p class="small-text">Already have an account? <a href="/login">Sign in</a></p>
