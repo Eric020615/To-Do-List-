@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../services/mongodb');
 // destructure and we get the method from the validator
 const {isEmail} = require('validator');
 const bcrypt = require('bcrypt');

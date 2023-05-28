@@ -85,43 +85,10 @@
         </main>
     </section>
 
-    <!-- <div class="overlay d-none">
-        <div class="form-container">
-            <form>
-                <div class="form-heading">
-                    <div class="heading-content">
-                        <span class="title">Create new task</span>
-                        <button class="close-btn" onclick="hideForm(event)">&times;</button>
-                    </div>
-                </div>
-
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title"><br>
-
-                <label for="description">Description:</label><br>
-                <textarea id="description" name="description"></textarea><br>
-
-                <label for="date">Date:</label><br>
-                <input type="date" id="date" name="date"><br>
-
-                <label for="progress">Priority:</label><br>
-                <div class="progress-container">
-                    <select name="progress-dropdown" id="progress-dropdown">
-                        <option value="10" selected>1</option>
-                        <option value="20">2</option>
-                        <option value="30">3</option>
-                    </select>
-                </div>
-
-                <input type="submit" value="Create">
-            </form>
-        </div> 
-    </div>-->
-
     <div class="overlay">
         <div class="form-container">
             <!-- Your form HTML goes here -->
-            <form>
+            <form id="task-to-do-form" action="">
                 <div class="form-heading">
                     <div class="heading-content">
                         <span class="title">Create new task</span>
@@ -136,17 +103,14 @@
                 <textarea id="description" name="description"></textarea><br>
 
                 <label for="date">Date:</label><br>
-                <input type="date" id="date" name="date"><br>
+                <input type="datetime-local" id="date" name="date"><br>
 
                 <label for="progress">Priority:</label><br>
                 <div class="progress-container">
-
-                    <select name="progress-dropdown" id="progress-dropdown">
-
+                    <select name="progress-dropdown" id="progress-dropdown" name="priority" onchange="selectPriority()">
                         <option value="10" selected>1</option>
                         <option value="20">2</option>
                         <option value="30">3</option>
-
                     </select>
                 </div>
 
@@ -164,7 +128,7 @@
                     <input type="text" placeholder="search" class=""> 
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <span class="text-muted">Today, 8 April 2023</span>
+                <span class="text-muted"><%= date %></span>
             </div>
             <!-- Head -->
 
@@ -198,46 +162,48 @@
             </nav>
             <!-- NavBar -->
 
-            <p class="all-task-num fw-bold">Total Task: 15</p>
+            <p class="all-task-num fw-bold">Total Task: <%= tasks.length %></p>
             <button id="addtaskBtn" class="btn btn-primary custom-button" onclick="showForm(event)">Add task</button>
 
-            <div class="overlay d-none">
-                <div class="form-container">
-                    <form>
-                        <div class="form-heading">
-                            <div class="heading-content">
-                                <span class="title">Create new task</span>
-                                <button class="close-btn" onclick="hideForm(event)">&times;</button>
+            <section class="body-content">
+
+                <% if(tasks.length) {%>
+                    <% for(let task of tasks) {%>
+                        <div class="task-1">
+                            <div class="box-a1">
+                                <!-- <div class="title-a1"> below code is title,numbers words allow allowed only -->
+                                <div class="content-a">
+                                    <%= task.title %>
+                                </div>
+                                <div class="images-container">
+                                    <img src="Assests/img/redflag.png" alt="Red Flag">
+                                    <div class="date-a">
+                                        <%= task.date %>
+                                    </div>
+                                </div>
+        
+                                <!-- </div> -->
+                                <div class="content-b">
+                                    <%= task.description %>
+                                </div>
+                                <div class="show-more">
+                                    <p id="show-more-text">Show More</p>
+                                    <!-- <div id="form-container" class="hidden"> -->
+                                        <!-- Html form -->
+                                        <!-- <form> -->
+                                            <!-- Form fields and elements -->
+                                        <!-- </form> -->
+                                    <!-- </div> -->
+                                </div>
                             </div>
                         </div>
-        
-                        <label for="title">Title:</label><br>
-                        <input type="text" id="title" name="title"><br>
-        
-                        <label for="description">Description:</label><br>
-                        <textarea id="description" name="description"></textarea><br>
-        
-                        <label for="date">Date:</label><br>
-                        <input type="date" id="date" name="date"><br>
-        
-                        <label for="progress">Priority:</label><br>
-                        <div class="progress-container">
-                            <select name="progress-dropdown" id="progress-dropdown">
-                                <option value="10" selected>1</option>
-                                <option value="20">2</option>
-                                <option value="30">3</option>
-                            </select>
-                        </div>
-        
-                        <input type="submit" value="Create">
-                    </form>
-                </div>
-            </div>
+                    <% } %>
+                <% }else{ %>
+                        <div>No tasks available</div>
+                <% } %>
 
-            <section class="body-content">
-                <div class="task-1">
+                <!-- <div class="task-1">
                     <div class="box-a1">
-                        <!-- <div class="title-a1"> below code is title,numbers words allow allowed only -->
                         <div class="content-a">
                             Title 1
                         </div>
@@ -248,7 +214,6 @@
                             </div>
                         </div>
 
-                        <!-- </div> -->
                         <div class="content-b">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                             Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque …
@@ -260,19 +225,12 @@
                         </div>
                         <div class="show-more">
                             <p id="show-more-text">Show More</p>
-                            <!-- <div id="form-container" class="hidden"> -->
-                                <!-- Html form -->
-                                <!-- <form> -->
-                                    <!-- Form fields and elements -->
-                                <!-- </form> -->
-                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="task-1">
                     <div class="box-a1">
-                        <!-- <div class="title-a1"> below code is title -->
                         <div class="content-a">
                             Title 2
 
@@ -284,7 +242,6 @@
                             </div>
 
                         </div>
-                        <!-- </div> -->
                         <div class="content-b">
 
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -298,15 +255,9 @@
 
                         <div class="show-more">
                             <p id="show-more-text">Show More</p>
-                            <!-- <div id="form-container" class="hidden"> -->
-                                <!-- Html form -->
-                                <!-- <form> -->
-                                    <!-- Form fields and elements -->
-                                <!-- </form> -->
-                            <!-- </div> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
             </section>
         </section>
         </div>
@@ -316,6 +267,5 @@
 
 
     <script src="Assests/JS/task.js"></script>
-    <script src="Assests/JS/ckc.js"></script>
 
 </html>
