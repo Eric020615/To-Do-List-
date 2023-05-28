@@ -14,7 +14,6 @@ const requireAuth = (req, res, next) =>{
                 res.redirect('/login');
             }
             else{
-                console.log(decodedToken);
                 next();
             }
         });
@@ -44,7 +43,6 @@ const checkUser = (req, res, next) => {
                 let user = await User.findById(decodedToken.id);
                 // assign user document to local user
                 res.locals.user = user;
-                console.log(user);
                 next();
             }
         });

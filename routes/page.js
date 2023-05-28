@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 const router = express.Router();
 const {requireAuth, checkUser} = require('../middleware/authMiddleware');
+const task_controller = require("../controllers/taskController")
 
 // apply checkUser middleware into every single route
 router.get('*', checkUser);
@@ -23,7 +24,7 @@ router.get('/home', requireAuth , (req,res)=>{
     res.render("home");
 })
 
-router.get('/task', requireAuth , (req,res)=>{
+router.get('/task', requireAuth, task_controller.task_to_do_get, (req,res)=>{
     res.render("task to do");
 })
 

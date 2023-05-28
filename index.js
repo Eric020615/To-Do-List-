@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require('./services/mongodb')
 const page_route = require('./routes/page');
 const auth_route = require('./routes/authRoutes');
+const task_route = require('./routes/taskRoutes');
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -23,6 +23,7 @@ app.use(cookieParser());
 // route
 app.use(page_route);
 app.use(auth_route);
+app.use(task_route);
 
 app.listen(3000, ()=>{
     console.log("Port Connected")
