@@ -1,6 +1,24 @@
 // import Task model
 const Task = require('../models/Task');
 
+const handleErrors = (err) =>{
+    let errors = {
+        title: '',
+        description: '',
+        date: '',
+        priority_level: '',
+        progress_level: '',
+    }
+
+    if(err.message.includes('task validation failed')){
+        Object.values(err.errors).forEach(({properties})=>{
+            errors[properties.path] = properties.message;
+        })
+    }
+
+    return errors;
+}
+
 module.exports.task_to_do_get = async (req,res,next) =>{
     const user = res.locals.user;
     let currentDate = new Date();
@@ -26,6 +44,8 @@ module.exports.task_to_do_post = async (req,res) =>{
         res.status(201).json({task});
     }
     catch(err){
-        res.status(400).json({err});
+        const errors = handleErrors(err);
+        console.log(errors);
+        res.status(400).json({errors});
     }
 }

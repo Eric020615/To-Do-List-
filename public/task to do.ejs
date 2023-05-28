@@ -98,12 +98,15 @@
 
                 <label for="title">Title:</label><br>
                 <input type="text" id="title" name="title"><br>
+                <div id="title_error" class="text-bg-danger"></div>
 
                 <label for="description">Description:</label><br>
                 <textarea id="description" name="description"></textarea><br>
+                <div id="description_error" class="text-bg-danger"></div>
 
                 <label for="date">Date:</label><br>
                 <input type="datetime-local" id="date" name="date"><br>
+                <div id="date_error" class="text-bg-danger"></div>
 
                 <label for="progress">Priority:</label><br>
                 <div class="progress-container">
@@ -113,6 +116,7 @@
                         <option value="30">3</option>
                     </select>
                 </div>
+                <div id="priority_error" class="text-bg-danger"></div>
 
                 <input type="submit" value="Create">
             </form>
@@ -128,7 +132,7 @@
                     <input type="text" placeholder="search" class=""> 
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <span class="text-muted"><%= date %></span>
+                <span class="text-muted" id="current_date"><%= date %></span>
             </div>
             <!-- Head -->
 

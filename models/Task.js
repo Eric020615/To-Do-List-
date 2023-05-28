@@ -11,7 +11,7 @@ const taskSchema = new mongoose.Schema({
     },
     description:{
         type: String,
-        maxlength: [150, 'Please enter maximum 150 characters']
+        maxlength: [500, 'Please enter maximum 500 characters']
     },
     date:{
         type: String,
