@@ -132,7 +132,12 @@
 
     <script src = "Assests/JS/ckc.js"> </script>
     <script>
-
+        const timer = document.querySelector('#date');
+        timer.innerHTML = new Date();
+        setInterval(()=>{
+            let date = new Date();
+            timer.innerHTML = date;
+        },1000);
     </script>
 </body>
 

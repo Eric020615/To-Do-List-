@@ -27,13 +27,12 @@ form {
     background-color: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity as needed */
     z-index: 9999; /* Set a high z-index value to ensure it appears in front of other elements */
   }
-  
-  
+
   .form-container {
     /* for form */
     display: none;
     position: fixed;
-    top: 15%;
+    top: 10%;
     left: 40%;
     transform: translate(-0%, -0%);
     z-index: 10000; /* Set a higher z-index value to ensure it appears in front of other elements */
@@ -76,7 +75,7 @@ form {
     height: 100px;
   }
   
-  input[type="date"] {
+  input[type="datetime-local"] {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;

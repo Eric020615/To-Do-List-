@@ -21,9 +21,15 @@
 //     overlay.className = "overlay";
 //     addtaskBtn.style.display = 'none';
 // }
+var timer = document.querySelector('#current_date');
 var toggle_side_btn = document.querySelector('.toggle-nav-btn');
 var sidebar = document.querySelector('.sidebar');
 var bg_semidark = document.querySelector('.bg-semidark');
+
+setInterval(()=>{
+  let date = new Date();
+  timer.innerHTML = date;
+},1000);
 
 toggle_side_btn.onclick = function(){
     sidebar.className = "sidebar d-block min-vh-100 col-auto position-fixed sidebar-show";
@@ -50,13 +56,22 @@ function selectPriority(){
 }
 
 const task_to_do_form = document.querySelector('#task-to-do-form');
+const title_error = document.querySelector('#title_error');
+const description_error = document.querySelector('#description_error');
+const date_error = document.querySelector('#date_error');
+const priority_error = document.querySelector('#priority_error');
 task_to_do_form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
   // check json web token exists and verified
   let user_id = "";
   const title = task_to_do_form.title.value;
   const description = task_to_do_form.description.value;
   const date = task_to_do_form.date.value;
   const progress_level = 0;
+  title_error.textContent = '';
+  description_error.textContent = '';
+  date_error.textContent = '';
+  priority_error.textContent = '';
 
   try{
     const resolve = await fetch('/task-to-do',{
@@ -66,7 +81,10 @@ task_to_do_form.addEventListener('submit', async (e)=>{
     });
     const data = await resolve.json();
     if(data.errors){
-      console.log(data.errors);
+      title_error.textContent = data.errors.title;
+      description_error.textContent = data.errors.description;
+      date_error.textContent = data.errors.date;
+      priority_error.textContent = data.errors.priority_level;
     }
     if(data.task){
       var overlay = document.querySelector(".overlay");
