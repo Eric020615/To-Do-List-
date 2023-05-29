@@ -98,19 +98,37 @@ task_to_do_form.addEventListener('submit', async (e)=>{
   }
 });
 
-function hideForm(event) {
+function hideAddForm(event) {
   event.preventDefault(); // Prevent form submission
-  var overlay = document.querySelector(".overlay");
-  var formContainer = document.querySelector(".form-container");
+  var overlay = document.querySelector(".Add-overlay");
+  var formContainer = document.querySelector(".Add-form-container");
 
   overlay.style.display = "none";
   formContainer.style.display = "none";
 }
 
-function showForm(event) {
+function showAddForm(event) {
   event.preventDefault(); // Prevent form submission
-  var overlay = document.querySelector(".overlay");
-  var formContainer = document.querySelector(".form-container");
+  var overlay = document.querySelector(".Add-overlay");
+  var formContainer = document.querySelector(".Add-form-container");
+
+  overlay.style.display = "block";
+  formContainer.style.display = "block";
+}
+
+function hideEditForm(event) {
+  event.preventDefault(); // Prevent form submission
+  var overlay = document.querySelector(".Edit-overlay");
+  var formContainer = document.querySelector(".Edit-form-container");
+
+  overlay.style.display = "none";
+  formContainer.style.display = "none";
+}
+
+function showEditForm(event) {
+  event.preventDefault(); // Prevent form submission
+  var overlay = document.querySelector(".Edit-overlay");
+  var formContainer = document.querySelector(".Edit-form-container");
 
   overlay.style.display = "block";
   formContainer.style.display = "block";
