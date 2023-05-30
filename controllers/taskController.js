@@ -65,7 +65,6 @@ module.exports.task_edit = async (req,res) =>{
     try{
         const task_edited = await Task.findOneAndUpdate({_id:task_id},{title:title,description:description,date:date,progress_level:progress_level})
         res.status(201).json({task_edited});
-        console.log({task_edited});
     }
     catch(err){
         const errors = handleErrors(err);
