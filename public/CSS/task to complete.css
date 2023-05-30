@@ -296,7 +296,7 @@ body {
   border-radius: 0.5rem;
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.150000006);
   box-sizing: border-box;
-  height: 12.8rem;
+  height: 10rem;
   padding: 1.2rem ;
   width: 100%;
   margin-bottom: 3%;
@@ -330,12 +330,10 @@ body {
 .images-container {
   position: absolute;
   top: 0; /* position to top */
-  margin-left: 2%;
   right: 1%; /* position to right */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 6rem;
 }
 
 .images-container img {
@@ -374,28 +372,20 @@ body {
   border-color: #459798;
 }
 
-
-.show-more {
-  position: relative;
-}
-  
-#show-more-text {
-  color: blue;
+#edit-task-text {
+  color: #459798;
   cursor: pointer;
   text-decoration: underline;
 }
   
-#show-more-text:hover {
-  color: darkblue;
+#edit-task-text:hover {
+  color: #62B6B7;
 }
-
   
 section.body-content {
   background-color: #E6ECF0;
   padding: 20px;
   margin: 20px;
-  /* min-height: 0px;
-  control the #E6ECF0 part */ 
 }
 
 .editrow {
@@ -405,7 +395,6 @@ section.body-content {
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
-    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
 }
 
 .editrow>* {
@@ -416,147 +405,7 @@ section.body-content {
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-top: var(--bs-gutter-y);
 }
-  
-
-/* .nav-link {
-  padding: 0px 120px;
-} */
 
 .card {
   margin: 2em;
 }
-
-  /* .hidden {
-    display: none;
-  } */
-  
-  
-
-   /* pass */
-  /* .tasktop-iiJ {
-    background-color: #FFFF00;
-    box-sizing: border-box;
-    height: 14rem;
-    left: 1.2rem;
-    padding-bottom: 3.85rem;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  } */
-  
-  /* .title-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.25rem;
-    width: 100%;
-  } */
-  
-  
-  /* .title-a1 img {
-    margin-right: 0.5rem;
-  } */
-
-  /* .title-a1 {
-    color: #1d2d35;
-    font-family: Roboto, 'Source Sans Pro';
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.1725;
-    white-space: nowrap;
-  } */
-
-  
-  
-/* .title-a1 > span {
-    display: flex;
-    align-items: center;
-  }
-  
-  .title-a1 img {
-    margin-right: 0.5rem;
-    height: 1.5rem;
-  } */
-  
-    /* .taskdivider-66a {
-        background-color: #e6ecf0;
-        height: 0.1rem;
-        left: 0;
-        position: absolute;
-        top: 11.4rem;
-        width: 28.7rem;
-      } */
-   
-
-  /*
-  @media (max-width: 768px) {
-    .nav-item {
-      margin-left: 3em;
-    }
-  }
-  @media (max-width: 576px) {
-    .nav-item {
-      margin-left: 2em;
-    }
-  } */
-
-  
-/* 
-  .task-myx {
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.150000006);
-    box-sizing: border-box;
-    height: 24rem;
-    padding: 1.2rem 0;
-    width: 100%;
-    }
-    
-    .auto-group-bapn-nPG {
-    height: 14rem;
-    position: relative;
-    width: 28.7rem;
-    }
-    
-    .tasktop-VHg {
-    box-sizing: border-box;
-    height: 14rem;
-    left: 1.2rem;
-    padding-bottom: 3.85rem;
-    position: absolute;
-    top: 0;
-    width: 24.2rem;
-    }
-    
-    .user-research-aK8 {
-    align-items: center;
-    color: #1d2d35;
-    display: flex;
-    font-family: Roboto, 'Source Sans Pro';
-    font-size: 1.5rem;
-    font-weight: 500;
-    justify-content: center;
-    line-height: 1.1725;
-    margin-bottom: 1.25rem;
-    white-space: nowrap;
-    width: 100%;
-    }
-    
-    .lorem-ipsum-dolor-sit-amet-consectetuer-adipiscing-elit-aenean-commodo-ligula-eget-dolor-aenean-massa-cum-sociis-natoque--Q3G {
-    color: #1d2d35;
-    display: flex;
-    font-family: Roboto, 'Source Sans Pro';
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.1725;
-    max-width: 24.2rem;
-    }
-    
-    .taskdivider-SEr {
-    background-color: #e6ecf0;
-    height: 0.1rem;
-    left: 0;
-    position: absolute;
-    top: 11.4rem;
-    width: 28.7rem;
-    } */
