@@ -21,6 +21,7 @@
 //         }
 //     }
 // }
+
 const sign_up_form = document.querySelector('#sign-up-form');
 const email_error = document.querySelector('.email-error');
 const phone_num_error = document.querySelector('.phone-num-error');
@@ -59,6 +60,7 @@ sign_up_form.addEventListener('submit', async (e)=>{
         console.log(err);
     }
 });
+
 
 
 // function SignInSuccess(){

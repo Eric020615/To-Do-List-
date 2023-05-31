@@ -197,13 +197,13 @@ html#feedback,body{
     background-color: #9FE1E1;
 }
 
-div#feedbackcontent{
+#feedbackcontent{
     /* Structure */
     background-color: #fff;
     border-radius: 15px;
 }
 
-div#feedbackcontent h2{
+#feedbackcontent h2{
     /* text */
     text-align: center;
     font-family: 'Poppins';
@@ -211,7 +211,7 @@ div#feedbackcontent h2{
     line-height: 5vw;
 }
 
-div#feedbackcontent h6{
+#feedbackcontent h6{
     /* text */
     font-family: 'Poppins';
     font-weight: bolder;
@@ -219,7 +219,7 @@ div#feedbackcontent h6{
     font-size: 2vw;
 }
 
-div#feedbackcontent input{
+#feedbackcontent input{
     background-color: #F0F0F0;
 
     /* border */
@@ -234,7 +234,7 @@ div#feedbackcontent input{
     font-size: 2vw;
 }
 
-div#feedbackcontent textarea.feedbackmessage{
+#feedbackcontent textarea.feedbackmessage{
     background-color: #F0F0F0;
 
     /* border */
@@ -253,7 +253,7 @@ textarea {
     padding: 1vw;
 }
 
-div#feedbackcontent h4{
+#feedbackcontent h4{
     /* text */
     color: #000;
     line-height: 3vw;
@@ -262,7 +262,7 @@ div#feedbackcontent h4{
     font-size: 3vw;
 }
 
-div#feedbackcontent div.file{
+#feedbackcontent div.file{
     background-color: #F0F0F0;
 
     /* border */
@@ -270,7 +270,7 @@ div#feedbackcontent div.file{
     border-radius: 15px;
 }
 
-div#feedbackcontent div.file input{
+#feedbackcontent div.file input{
     background-color: #fff;
     box-shadow: 0vw 1vw 1vw #555;
 
@@ -284,7 +284,7 @@ div#feedbackcontent div.file input{
     font-size: 2vw;
 }
 
-div#feedbackcontent div.file h6{
+#feedbackcontent div.file h6{
     /* text */
     font-family: 'Poppins';
     font-weight: border;
@@ -295,7 +295,7 @@ div#feedbackcontent div.file h6{
     font-size: 1vw;
 }
 
-div#feedbackcontent input.btn{
+#feedbackcontent input.btn{
     background-color: #439A97;
 
     /* text */
