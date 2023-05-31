@@ -16,7 +16,7 @@ form {
     margin-right: 5px;
   }
   
-  .overlay {
+  .Add-overlay {
     /* for form */
     display: none;
     position: fixed;
@@ -28,7 +28,7 @@ form {
     z-index: 9999; /* Set a high z-index value to ensure it appears in front of other elements */
   }
 
-  .form-container {
+  .Add-form-container {
     /* for form */
     display: none;
     position: fixed;
@@ -47,23 +47,7 @@ form {
       top: 20%;
       left: 5%;
       width: 10px;
-    
     }
-  
-    
-  
-    /* .title {
-      font-size: large;
-      font-weight: 700;
-      display: inline;
-      margin-right: 5px;
-    } */
-  
-   
-    
-  
-  
-  
   }
   
   label {
@@ -101,7 +85,7 @@ form {
     margin-bottom: 10px;
   }
   
-  .close-btn {
+  .Add-form-container .form-heading .close-btn {
     position: relative;
     left: 50%;
     background: transparent;

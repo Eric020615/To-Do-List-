@@ -7,7 +7,7 @@ form {
   padding: 20px;
 }
 
-.overlay {
+.Edit-overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -18,11 +18,11 @@ form {
   z-index: 9999; /* Set a high z-index value to ensure it appears in front of other elements */
 }
 
-.form-container {
+.Edit-form-container {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 10%;
+  left: 40%;
   transform: translate(-50%, -50%);
   z-index: 10000; /* Set a higher z-index value to ensure it appears in front of other elements */
   background-color: white; /* Adjust background color as needed */
@@ -34,15 +34,14 @@ form {
 
 
 @media only screen and (max-width: 768px) {
-
 }
 
-  .title {
-    font-size: large;
-    font-weight: 700;
-    display: inline;
-    margin-right: 5px;
-  }
+.title {
+  font-size: large;
+  font-weight: 700;
+  display: inline;
+  margin-right: 5px;
+}
 
 
 label {
@@ -79,8 +78,6 @@ select {
   padding: 8px;
   margin-bottom: 10px;
 }
-
-
 
 .close-btn {
   position: relative;
@@ -130,12 +127,12 @@ form select:focus {
   box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
 
-.markasdone {
+.form-buttons .markasdone {
   color: #fff;
   background-color: #00C271;
   border-color: #00C271;
   display: block;
-  width: 50%;
+  width: 30%;
   max-width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -151,23 +148,23 @@ form select:focus {
   margin-top: 10px;
 }
 
-.markasdone:hover {
+.form-buttons .markasdone :hover {
   color: #fff;
   background-color: darkgreen;
   border-color: darkgreen;
 }
 
-.markasdone:focus {
+.form-buttons .markasdone :focus {
   outline: 0;
   box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
 
-.delete-btn {
-  background-color: #dc3545;
-  border-color: #dc3545;
+.form-buttons .edit-btn {
   color: #fff;
+  background-color: #009bde;
+  border-color: #009bde;
   display: block;
-  width: 48%;
+  width: 30%;
   max-width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -183,18 +180,48 @@ form select:focus {
   margin-top: 10px;
 }
 
-.delete-btn:hover {
+.form-buttons .edit-btn :hover {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+}
+
+.form-buttons .edit-btn :focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+.form-buttons .delete-btn {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+  display: block;
+  width: 30%;
+  max-width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+  margin-top: 10px;
+}
+
+.form-buttons .delete-btn:hover {
   color: #fff;
   background-color: #8B0000; /* Darker red color */
   border-color: #8B0000; /* Darker red color */
 }
 
-.delete-btn:focus {
+.form-buttons .delete-btn:focus {
   outline: 0;
   box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
-
-
 
 .form-buttons {
   display: flex;
@@ -202,11 +229,8 @@ form select:focus {
 }
 
 .form-buttons input[type="submit"] {
-  width: 48%;
+  width: 30%;
 }
-
-
-
 
 .form-buttons {
   display: flex;

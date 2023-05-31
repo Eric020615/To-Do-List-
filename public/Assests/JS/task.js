@@ -1,26 +1,3 @@
-// function hideForm() {
-//     var overlay = document.querySelector('.overlay');
-//     var formContainer = document.querySelector('.form-container');
-//     overlay.style.display = 'none';
-//     formContainer.style.display = 'none';
-//   }
-
-// function hideForm(event) {
-//     event.preventDefault(); // Prevent form submission
-//     var overlay = document.querySelector('.overlay');
-
-//     overlay.className = "overlay d-none";
-//     addtaskBtn.style.display = 'block';
-// }
-
-// function showForm(event) {
-//     event.preventDefault(); // Prevent form submission
-//     var overlay = document.querySelector('.overlay');
-//     var addtaskBtn = document.querySelector('#addtaskBtn');
-
-//     overlay.className = "overlay";
-//     addtaskBtn.style.display = 'none';
-// }
 var timer = document.querySelector('#current_date');
 var toggle_side_btn = document.querySelector('.toggle-nav-btn');
 var sidebar = document.querySelector('.sidebar');
@@ -52,10 +29,10 @@ toggle_side_btn.onclick = function(){
 
 let priority_level;
 function selectPriority(){
-  priority_level = document.querySelector("#progress-dropdown").value;
+  priority_level = document.querySelector("#progress-dropdown.priority").value;
 }
-
 const task_to_do_form = document.querySelector('#task-to-do-form');
+const task_to_do_form_container = document.querySelector('.Add-form-container');
 const title_error = document.querySelector('#title_error');
 const description_error = document.querySelector('#description_error');
 const date_error = document.querySelector('#date_error');
@@ -85,10 +62,11 @@ task_to_do_form.addEventListener('submit', async (e)=>{
       description_error.textContent = data.errors.description;
       date_error.textContent = data.errors.date;
       priority_error.textContent = data.errors.priority_level;
+      task_to_do_form_container.style.top = "5%";
     }
     if(data.task){
-      var overlay = document.querySelector(".overlay");
-      var formContainer = document.querySelector(".form-container");
+      var overlay = document.querySelector(".Add-overlay");
+      var formContainer = document.querySelector(".Add-form-container");
       overlay.style.display = "none";
       formContainer.style.display = "none";
     }
@@ -98,21 +76,157 @@ task_to_do_form.addEventListener('submit', async (e)=>{
   }
 });
 
-function hideForm(event) {
+function hideAddForm(event) {
   event.preventDefault(); // Prevent form submission
-  var overlay = document.querySelector(".overlay");
-  var formContainer = document.querySelector(".form-container");
-
+  var overlay = document.querySelector(".Add-overlay");
+  var formContainer = document.querySelector(".Add-form-container");
   overlay.style.display = "none";
   formContainer.style.display = "none";
 }
 
-function showForm(event) {
+function showAddForm(event) {
   event.preventDefault(); // Prevent form submission
-  var overlay = document.querySelector(".overlay");
-  var formContainer = document.querySelector(".form-container");
-
+  var overlay = document.querySelector(".Add-overlay");
+  var formContainer = document.querySelector(".Add-form-container");
   overlay.style.display = "block";
   formContainer.style.display = "block";
 }
 
+function hideEditForm(event) {
+  event.preventDefault(); // Prevent form submission
+  var overlay = document.querySelector(".Edit-overlay");
+  var formContainer = document.querySelector(".Edit-form-container");
+  overlay.style.display = "none";
+  formContainer.style.display = "none";
+}
+
+let task_id,progress_level;
+function selectProgress(){
+  progress_level = document.querySelector(".progress-level").value;
+}
+function showEditForm(event,id,title,description,date) {
+  event.preventDefault(); // Prevent form submission
+  var overlay = document.querySelector(".Edit-overlay");
+  var formContainer = document.querySelector(".Edit-form-container");
+  var edit_form = document.querySelector("#Edit-form");
+  edit_form.title.value = title;
+  edit_form.description.value = description;
+  edit_form.date.value = date;
+  task_id = id;
+  overlay.style.display = "block";
+  formContainer.style.display = "block";
+}
+
+const edit_form = document.querySelector("#Edit-form");
+const edit_btn = document.querySelector('#edit-btn');
+const edit_form_container = document.querySelector('.Edit-form-container');
+edit_btn.addEventListener('click', async (event)=>{
+  event.preventDefault();
+  document.querySelector(".progress-level").value = 50;
+  let title = edit_form.title.value;
+  let description = edit_form.description.value;
+  let date = edit_form.date.value;
+  const title_error = document.querySelector('.Edit-form .title_error');
+  const description_error = document.querySelector('.Edit-form .description_error');
+  const date_error = document.querySelector('.Edit-form .date_error');
+  const progress_error = document.querySelector('.Edit-form .progress_error');
+  title_error.textContent = '';
+  description_error.textContent = '';
+  date_error.textContent = '';
+  progress_error.textContent = '';
+  if(edit_form.title.value&&edit_form.description.value&&edit_form.description.value.length<500&&edit_form.date.value&&progress_level){
+    try{
+      const resolve = await fetch("/edit-task",{
+        method: 'POST',
+        body: JSON.stringify({task_id,title,description,date,progress_level}),
+        headers: {'Content-Type':'application/json'}
+      })
+      const data = await resolve.json();
+      if(data.task_edited){
+        var overlay = document.querySelector(".Edit-overlay");
+        var formContainer = document.querySelector(".Edit-form-container");
+        overlay.style.display = "none";
+        formContainer.style.display = "none";
+      }
+      if(data.errors){
+        description_error.textContent = data.errors.description;
+      }
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+  else{
+    if(!title){
+      title_error.textContent = "Please do not leave title empty."
+    }
+    if(!description){
+      description_error.textContent = "Please do not leave description empty."
+    }
+    if(description.length>500){
+      description_error.textContent = "Please type 500 maximum characters"
+    }
+    if(!date){
+      date_error.textContent = "Please do not leave date empty."
+    }
+    if(!progress_level){
+      progress_error.textContent = "Please do not leave progress level empty."
+    }
+    edit_form_container.style.top = "5%";
+  }
+ 
+})
+
+document.querySelector("#delete-btn").addEventListener('click', async ()=>{
+  try{
+    // create delete request (await)
+    const resolve = await fetch("/delete-task",{
+      method: 'DELETE',
+      body: JSON.stringify({task_id}),
+      headers: {'Content-Type':'application/json'},
+    })
+    const data = await resolve.json();
+    if(data.task){
+      var overlay = document.querySelector(".delete-success-overlay");
+      var formContainer = document.querySelector(".delete-success-container");
+      var edit_overlay = document.querySelector(".Edit-overlay");
+      var edit_formContainer = document.querySelector(".Edit-form-container");
+      overlay.style.display = "block";
+      formContainer.style.display = "block";
+      edit_formContainer.style.display = "none";
+      edit_overlay.style.display = "none";
+    }
+    if(data.errors){
+      var overlay = document.querySelector(".Edit-overlay");
+      var formContainer = document.querySelector(".Edit-form-container");
+      overlay.style.display = "none";
+      formContainer.style.display = "none";
+    }
+  }
+  catch(err){
+    console.log(err);
+  }
+});
+
+function hideDeleteSuccess(event){
+  event.preventDefault();
+  var overlay = document.querySelector(".delete-success-overlay");
+  var formContainer = document.querySelector(".delete-success-container");
+  overlay.style.display = "none";
+  formContainer.style.display = "none";
+}
+
+// document.querySelector('.markasdone').addEventListener('click', async (event)=>{
+//   event.preventDefault();
+//   let done = 100;
+//   try{
+//     const resolve = await fetch("/done",{
+//       method: 'POST',
+//       body: JSON.stringify({done}),
+//       headers: {'Content-Type':'application/json'}
+//     })
+//   }
+//   catch(err){
+//     console.log(err)
+//   }
+// })
