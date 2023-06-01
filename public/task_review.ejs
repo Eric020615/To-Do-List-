@@ -8,12 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="CSS/hkc.css">
+   
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+   
     <div class="row">
-        
+    
     <!-- SideNavBar -->
     <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
         <a href="/home" class="logo">
@@ -111,9 +115,10 @@
                         </li>
                         <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Filter</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Priority</a></li>
-                        <li><a class="dropdown-item" href="#">Deadline</a></li>
+                    <ul class="dropdown-menu filter">
+                        <li class="sort-default"><a class="dropdown-item" href="#">Default</a></li>
+                        <li class="sort-priority"><a class="dropdown-item" href="#">Priority</a></li>
+                        <li class="sort-deadline"><a class="dropdown-item" href="#">Deadline</a></li>
                     </ul>
                         </li>
                         </ul>
@@ -126,39 +131,207 @@
             <section class="body-content">
             <!-- All-Task-->
             <div class="all-task">
-                <p class="all-task-num fw-bold px-2">Total Task: 15</p>
-                <div class="task row ">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="piece d-flex flex-nowrap b-red m-auto">
-                            <ul class="d-flex flex-column justify-content-around ">
-                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
+                <p class="all-task-num fw-bold px-2">Total Task: 0</p>
+                <!-- "task row" for normal , "task task-row row" for expand -->
+                <div class="sorting-option m-0">
+                        <!-- <span class="fw-bolder">Priority : &nbsp &nbsp</span>
+                        <button class="prio-sort-asc btn btn-light btn-sm">Ascending</but>
+                        <button class="prio-sort-des btn btn-sorting-selected btn-sm">Descending</button> -->
+                </div>
+                <div class="task row">
+                    <!-- <div class="sorting-option m-0">
+                        <span class="fw-bolder">Priority : &nbsp &nbsp</span>
+                        <button class="prio-sort-asc btn btn-light btn-sm">Ascending</but>
+                        <button class="prio-sort-des btn btn-sorting-selected btn-sm">Descending</button>
+                    </div> -->
+                    <!-- <div class="task-row-form row p-3 d-none d-lg-flex">
+                        <div class="col-xl-6 col-md-3 col-sm-12 col-12 p-0">
+                            <li class="m-0 d-flex align-items-center fw-bolder"><span>No.</span>&nbsp &nbsp &nbsp Title</>
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="fw-bolder">Due Date</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="fw-bolder">Due Time</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                        <li><span class="fw-bolder">Status</span> </li>
+                        </div>
+                        <div class="col-xl-1 col-md-1 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="fw-bolder">Priority</span> </li>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-12 col-12 p-0 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="fw-bolder">Progress</span> </li>
+                        </div>
+
+                    
+                    </div> -->
+
+                    <!-- col-xl-3 col-lg-4 col-md-6 -->
+                    <!-- <div class="task-row-form row p-3 b-task shadow-sm">
+                        <i class="p-0 bg-primary"></i>
+                        <div class="col-xl-6 col-md-3 col-sm-12 col-12 p-0">
+                            <h5 class="m-0 d-flex align-items-center"><span class="badge bg-danger no">1</span>Web Design</h5>
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">14/4/2023</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">12:59 pm</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                        <li><span class="badge bg-primary">In-Progress</span> </li>
+                        </div>
+                        <div class="col-xl-1 col-md-1 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="badge bg-warning ">Middle</span> </li>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-12 col-12 p-0 d-flex align-items-center p-0">
+                            <div class="progress w-100 p-0 m-0">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success m-0" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+
+                        
+                 </div>
+                 <div class="task-description m-0 b-task">
+                        des
+                 </div> -->
+
+
+
+                     <!-- <div class="task-row-form row p-3 b-task shadow-sm d-flex">
+                        <div class="d-flex ">
+
+
+                            <i class="p-0 bg-danger"></i>
+                        <div class="col-xl-6 col-md-3 col-sm-12 col-12 p-0">
+                            <h5 class="m-0 d-flex align-items-center"><span class="badge bg-warning no">2</span>Web Design</h5>
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">14/4/2023</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">12:59 pm</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                        <li><span class="badge bg-danger">To-Do</span> </li>
+                        </div>
+                        <div class="col-xl-1 col-md-1 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="badge bg-danger">High</span> </li>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-12 col-12 p-0 d-flex align-items-center p-0">
+                            <div class="progress w-100 p-0">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success m-0" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        
+                 </div>
+                   <div class="task-description m-0 b-task">
+                        des
+                 </div> -->
+
+                 <!-- <div class="task-row-form row p-3 b-task shadow-sm">
+                        <i class="p-0 bg-success"></i>
+                        <div class="col-xl-6 col-md-3 col-sm-12 col-12 p-0">
+                            <h5 class="m-0 d-flex align-items-center"><span class="badge bg-primary no">3</span>Web Design</h5>
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">14/4/2023</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">12:59 pm</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                        <li><span class="badge bg-success">Completed</span> </li>
+                        </div>
+                        <div class="col-xl-1 col-md-1 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="badge bg-primary">Low</span> </li>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-12 col-12 p-0 d-flex align-items-center p-0">
+                            <div class="progress w-100 p-0">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success m-0" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                 </div> -->
+
+                 <!-- <div class="task-row-form row p-3 b-task shadow-sm">
+                        <i class="p-0 bg-primary"></i>
+                        <div class="col-xl-6 col-md-3 col-sm-12 col-12 p-0">
+                            <h5 class="m-0 d-flex align-items-center"><span class="badge bg-secondary no">4</span>Web Design</h5>
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">14/4/2023</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0">
+                            <li><span class="badge bg-secondary">12:59 pm</span> </li>
+        
+                        </div>
+                        <div class="col-xl-1 col-md-2 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                        <li><span class="badge bg-success">Completed</span> </li>
+                        </div>
+                        <div class="col-xl-1 col-md-1 col-sm-3 col-3 d-flex align-items-center p-0 justify-content-center">
+                            <li><span class="badge bg-primary">Low</span> </li>
+                        </div>
+                        <div class="col-xl-2 col-md-2 col-sm-12 col-12 p-0 d-flex align-items-center p-0">
+                            <div class="progress w-100 p-0">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success m-0" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                 </div> -->
+
+
+                    
+
+
+
+                    <!-- <div class="task-row-form col-12">
+                        <div class="row-details d-flex flex-grow-0 flex-wrap m-auto justify-content-between">
+                            <h5 class="d-flex flex-grow-0 align-items-center pb-2">1.  Web Design</h5>
+                            <ul class="d-flex flex-grow-0 align-items-center">
+                                <li>&nbsp 14/4/2023 </li>
+                                <li>&nbsp 12:59 pm</li>
                                 <li><span class="badge bg-danger">To-Do</span> </li>
-                                <li>Priority:3/3</li>
-                                <li>Deadline:14/4/2023</li>
+                                <li><span class="badge bg-danger">High</span> </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    </div> -->
+
+              
+
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-blue m-auto">
-                            <ul class="d-flex flex-column justify-content-around ">
-                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
+                            <ul class="piece d-flex flex-column flex-wrap justify-content-around ">
+                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototypeiiiiiiiiiiiiiiiiiiiiiii</h4></li>
                                 <li><span class="badge bg-primary">In-progress</span> </li>
                                 <li>Priority:2/3</li>
                                 <li>Deadline:10/4/2023</li>
                             </ul>
+                            
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-green m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
-                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
+                                <li class="text-hidden pt-2 text-truncate"><h4 class="p-1 fw-bold">Lab Viva Lab Viva Lab Viva Lab Viva</h4></li>
                                 <li><span class="badge bg-success">Completed</span> </li>
                                 <li>Priority:1/3</li>
                                 <li>Deadline:6/4/2023</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-red m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
@@ -167,28 +340,16 @@
                                 <li>Deadline:14/4/2023</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="piece d-flex flex-nowrap b-blue m-auto">
+                    </div> -->
+              
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="piece d-flex flex-nowrap m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
-                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
-                                <li><span class="badge bg-primary">In-progress</span> </li>
-                                <li>Priority:2/3</li>
-                                <li>Deadline:10/4/2023</li>
+                                <h4 class="pt-3 text-secondary">Show More >></h4>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="piece d-flex flex-nowrap b-green m-auto">
-                            <ul class="d-flex flex-column justify-content-around ">
-                                <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Lab Viva</h4></li>
-                                <li><span class="badge bg-success">Completed</span> </li>
-                                <li>Priority:1/3</li>
-                                <li>Deadline:6/4/2023</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-red m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Web Design</h4></li>
@@ -197,8 +358,8 @@
                                 <li>Deadline:14/4/2023</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!-- <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="piece d-flex flex-nowrap b-blue  m-auto">
                             <ul class="d-flex flex-column justify-content-around ">
                                 <li class="pt-2"><h4 class="text-truncate p-1 fw-bold">Prototype</h4></li>
@@ -207,7 +368,7 @@
                                 <li>Deadline:10/4/2023</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- All-Task-->
@@ -220,26 +381,26 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="all-num num-piece d-flex flex-column justify-content-around text-center pt-3">
-                                        <h3 class="fs-1 fw-bold">8</h3>
+                                        <h3 class="fs-1 fw-bold all">0</h3>
                                         <p class="fw-bold">All Task</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="all-num num-piece d-flex flex-column justify-content-around text-center pt-3">
-                                        <h3 class="fs-1 fw-bold text-danger">3</h3>
+                                        <h3 class="fs-1 fw-bold text-danger to-do">0</h3>
                                         <p class="fw-bold text-danger">To-Do</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="all-num num-piece d-flex flex-column justify-content-around text-center pt-3">
-                                        <h3 class="fs-1 fw-bold text-primary">3</h3>
+                                        <h3 class="fs-1 fw-bold text-primary in-pro">0</h3>
                                         <p class="fw-bold text-primary">In-Progress</p>
                                 </div>
                             </div>
 
                             <div class="col-6">
                                 <div class="all-num num-piece d-flex flex-column justify-content-around text-center pt-3">
-                                        <h3 class="fs-1 fw-bold text-success">2</h3>
+                                        <h3 class="fs-1 fw-bold text-success comp">0</h3>
                                         <p class="fw-bold text-success">Completed</p>
                                 </div>
                             </div>
@@ -272,77 +433,81 @@
                         <input class="from-date" type="date">
                         To
                         <input class="end-date" type="date">
-                        <button class="analysis ">Analysis</button>
+                        <button class="analysis">Analysis</button>
                     </div>
                 </div>
-                <div class="prio-chart row mt-4 mb-5">
+                <div class="prio-chart row mt-4 mb-5 bg-light">
+
                     <div class="col d-flex flex-column justify-content-around p-1 text-center">
                         <div class="prio-high w">
+                            <div class="prio-high-completed-level"></div>
                             <h1 class="percentage">15%</h1>
                         </div>
                         <span class="badge bg-danger">High-Priority</span>
+
+                        <div class="analysis-tasks-information d-flex justify-content-around">
+                                <span class="badge bg-light text-primary">Total 0</span>
+                                <span class="badge bg-light text-success">Completed 0</span>
+                                <span class="badge bg-light text-danger">Incompleted 0</span>
+                        </div>
                     </div>
+                    
+                    
                     <div class="col d-flex flex-column justify-content-around p-1 text-center">
                         <div class="prio-middle w">
                             <h1 class="percentage">50%</h1>
                         </div>
                         <span class="badge bg-warning">Middle-Priority</span>
+                        <div class="d-flex justify-content-around">
+                                <span class="badge bg-light text-primary">Total 0</span>
+                                <span class="badge bg-light text-success">Completed 0</span>
+                                <span class="badge bg-light text-danger">Incompleted 0</span>
+                        </div>
                     </div>
                     <div class="col d-flex flex-column justify-content-around p-1 text-center">
                         <div class="prio-low w">
                             <h1 class="percentage">87%</h1>
                         </div>
-                        <span class="badge bg-success">Low-Priority</span>
+                        <span class="badge bg-primary">Low-Priority</span>
+                          <div class="d-flex justify-content-around">
+                                <span class="badge bg-light text-primary">Total 0</span>
+                                <span class="badge bg-light text-success">Completed 0</span>
+                                <span class="badge bg-light text-danger">Incompleted 0</span>
+                        </div>
                     </div>
                 </div>
                 
             </div>
             <!-- completion-rate -->
 
-
+            
             </section>
 
         </section>
     </div>
  </div>
 </div>
-
-
-    
-
-  
-    <script>
-
-        //collapse-side-nav-btn
-        var toggle_side_btn = document.querySelector('.toggle-nav-btn');
-        var sidebar = document.querySelector('.sidebar');
-        var bg_semidark = document.querySelector('.bg-semidark');
+    <p class="d-none data"><%= JSON.stringify(tasks) %></p>
+    <!-- <script>
+        var tasksDataElement = document.querySelector('.data').innerHTML;
+        var tasks = JSON.parse(tasksDataElement);
+        var tasksLength = tasks ? tasks.length : 0;
+        console.log("kkkk" + tasksLength);
+        console.log(tasks);
  
-        toggle_side_btn.onclick = function(){
-            sidebar.className = "sidebar d-block min-vh-100 col-auto position-fixed sidebar-show";
-            bg_semidark.style.display = 'block'
-            bg_semidark.onclick = function(){
-                this.style.display = "none";
-                sidebar.className = "sidebar d-none d-md-block min-vh-100 col-auto position-fixed";
-            }
+    </script> -->
 
-            const auto_close_sideNav = window.matchMedia('(min-width: 767px)');
-            function close(e){
-                if(e.matches){
-                     sidebar.className = "sidebar d-none d-md-block min-vh-100 col-auto position-fixed";
-                     bg_semidark.style.display = 'none';
-                }
-            }
-            auto_close_sideNav.addListener(close);
-            close(auto_close_sideNav);
-        }
-
-         //collapse-side-nav-btn
-
-  
-
-    </script>
+    <script src="./Assests/JS/all_task.js"></script>
 
     
 </body>
 </html>
+
+ <!-- <div class="d-flex justify-content-around text-center flex-wrap pt-3 pb-2">
+                            <span class="badge bg-light text-black m-0">Total</span>
+                            <span class="badge bg-primary">10</span>
+                             <span class="badge bg-light text-black m-0">Completed</span>
+                            <span class="badge bg-success">10</span>
+                             <span class="badge bg-light text-black m-0">Uncompleted</span>
+                            <span class="badge bg-danger">10</span>
+                        </div> -->
