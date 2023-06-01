@@ -18,6 +18,28 @@ const handleErrors = (err) =>{
     return errors;
 }
 
+module.exports.home_get = async (req,res,next) =>{
+    const user_id = res.locals.user._id;
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = currentDate.getMonth();
+    let day = currentDate.getDate();
+    var datestring = year + "-" + ("0"+(month+1)).slice(-2) + "-" + ("0" + day).slice(-2);
+    try{
+        let today_list = await Task.find({
+            user_id: user_id,
+            date : {
+                $regex: '.*' + datestring + '.*', //or you can use `.*${name}.*`
+            }
+        })
+        res.locals.today_list = today_list;
+        next();
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
 module.exports.task_to_do_get = async (req,res,next) =>{
     const user = res.locals.user;
     let currentDate = new Date();
@@ -37,11 +59,19 @@ module.exports.task_to_do_get = async (req,res,next) =>{
 }
 
 module.exports.task_to_do_post = async (req,res) =>{
-    let {user_id,title,description,date,priority_level,progress_level} = req.body;
-    const user = res.locals.user;
-    user_id = user._id;
+    let {_id,email} = res.locals.user;
+    user_id = _id;
     try{
-        const task = await Task.create({user_id,title,description,date,priority_level,progress_level});
+        const task = new Task({
+            email: email,
+            user_id: _id,
+            title: req.body.title,
+            description: req.body.description,
+            date: req.body.date,
+            priority_level: req.body.priority_level,
+            progress_level: req.body.progress_level,
+        })
+        await task.save();
         res.status(201).json({task});
     }
     catch(err){
@@ -83,5 +113,33 @@ module.exports.task_done = async (req,res) =>{
     catch(err){
         const errors = handleErrors(err);
         res.status(400).json({errors});
+    }
+}
+
+module.exports.task_complete_get = async (req,res,next) =>{
+    const {_id} = res.locals.user;
+    try{
+        const done_task = await Task.find({
+            user_id:_id,
+            progress_level:100
+        })
+        res.locals.tasks = done_task;
+        next();
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+module.exports.task_complete_delete = async (req,res,next) =>{
+    const {_id} = res.locals.user; 
+    try{
+        const delete_task = await Task.deleteMany({user_id:_id,progress_level:100});
+        res.sendStatus(200);
+        next();
+    }
+    catch(err){
+        res.status(401);
+        console.log(err);
     }
 }

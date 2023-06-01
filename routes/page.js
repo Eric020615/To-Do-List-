@@ -20,7 +20,7 @@ router.get('/login', (req,res)=>{
     res.render("login");
 });
 
-router.get('/home', requireAuth , (req,res)=>{
+router.get('/home', requireAuth, checkUser, task_controller.home_get, (req,res)=>{
     res.render("home");
 })
 
@@ -36,7 +36,7 @@ router.get('/task-review', requireAuth , (req,res)=>{
     res.render('task_review');
 })
 
-router.get('/task-to-complete', requireAuth , (req,res)=>{
+router.get('/task-to-complete', requireAuth, checkUser, task_controller.task_complete_get, (req,res)=>{
     res.render('task to complete');
 })
 

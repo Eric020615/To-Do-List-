@@ -65,7 +65,7 @@ task_to_do_form.addEventListener('submit', async (e)=>{
       task_to_do_form_container.style.top = "5%";
     }
     if(data.task){
-      this.hideAddForm(e);
+      location.assign('/task');
     }
   }
   catch(err){
@@ -144,6 +144,7 @@ edit_btn.addEventListener('click', async (event)=>{
       const data = await resolve.json();
       if(data.task_edited){
         this.hideEditForm(event);
+        location.assign('/task');
       }
       if(data.errors){
         description_error.textContent = data.errors.description;
@@ -176,7 +177,7 @@ edit_btn.addEventListener('click', async (event)=>{
 document.querySelector("#delete-btn").addEventListener('click', async (event)=>{
   try{
     // create delete request (await)
-    const resolve = await fetch("/delete-task",{
+    const resolve = await fetch("/task-to-do",{
       method: 'DELETE',
       body: JSON.stringify({task_id}),
       headers: {'Content-Type':'application/json'},
@@ -204,6 +205,7 @@ function hideDeleteSuccess(event){
   var formContainer = document.querySelector(".delete-success-container");
   overlay.style.display = "none";
   formContainer.style.display = "none";
+  location.assign('/task');
 }
 
 document.querySelector('.markasdone').addEventListener('click', async (event)=>{
@@ -218,6 +220,7 @@ document.querySelector('.markasdone').addEventListener('click', async (event)=>{
     const data = await resolve.json();
     if(data.task_done){
       this.hideEditForm(event);
+      location.assign('/task');
     }
   }
   catch(err){

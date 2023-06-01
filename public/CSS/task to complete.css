@@ -274,8 +274,6 @@ body {
   }
 }
 
-
-
 /* starting from here*/
 body {
   font-family: 'Poppins', sans-serif;
@@ -283,7 +281,6 @@ body {
 
 .overlay{
   border: 1px dashed black;
-    /* background-color: pink; */
 }
 
 .overlay .form-container{
@@ -297,9 +294,8 @@ body {
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.150000006);
   box-sizing: border-box;
   height: 10rem;
-  padding: 1.2rem ;
+  padding: 1.2rem;
   width: 100%;
-  margin-bottom: 3%;
 }
   
 .box-a1 {
@@ -312,11 +308,9 @@ body {
 
 @media only screen and (max-width: 767px) {
   .task-1 {
-    min-height: 400px; /* Adjust the value according to your desired minimum height */
-    margin-bottom: 10%;
+    min-height: 100px; /* Adjust the value according to your desired minimum height */
   }
 }
-  
 
 .content-a {
   color: #1d2d35;
@@ -340,7 +334,6 @@ body {
   height: 20px; 
   width: 20px;
 }
-  
 
 .all-task-num {
   padding-left: 15px;
@@ -350,7 +343,6 @@ body {
   font-weight: bold;
 }
   
-
 .content-b {
   color: #1d2d35;
   font-family: 'Poppins', sans-serif;
@@ -383,6 +375,9 @@ body {
 }
   
 section.body-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
   background-color: #E6ECF0;
   padding: 20px;
   margin: 20px;
