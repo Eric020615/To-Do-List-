@@ -1,0 +1,39 @@
+.delete-success-overlay{
+    display: none;
+    position: fixed;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+}
+
+.delete-success-container{
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px 30px 30px 30px;
+    border-radius: 30px;
+    background-color: whitesmoke;
+}
+
+.dismiss-container{
+    position: absolute;
+    right: 5%;
+    background-color: transparent;
+}
+
+.dismiss-btn{
+    font-size: 1.5rem;
+    color: #439A97;;
+    background-color: transparent;
+    border: 0;
+}
+
+.success-icon{
+    display: flex;
+    justify-content: center;
+}

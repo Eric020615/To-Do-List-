@@ -1,8 +1,6 @@
 form {
   width: 400px;
-  margin: 0 auto;
   background-color: #ffffff;
-  /* border: 1px solid #007bff; */
   border-radius: 15px;
   padding: 20px;
 }
@@ -15,34 +13,27 @@ form {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Adjust background color and opacity as needed */
-  z-index: 9999; /* Set a high z-index value to ensure it appears in front of other elements */
+  z-index: 100; /* Set a high z-index value to ensure it appears in front of other elements */
 }
 
 .Edit-form-container {
   display: none;
-  position: fixed;
-  top: 10%;
-  left: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10000; /* Set a higher z-index value to ensure it appears in front of other elements */
   background-color: white; /* Adjust background color as needed */
   border-radius: 15px;
-  border: 3px solid #CBEDD5;
-  
+  /* border: 3px solid #CBEDD5; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add box shadow for a visual effect */
 }
 
-
-@media only screen and (max-width: 768px) {
-
+.title {
+  font-size: large;
+  font-weight: 700;
+  display: inline;
+  margin-right: 5px;
 }
-
-  .title {
-    font-size: large;
-    font-weight: 700;
-    display: inline;
-    margin-right: 5px;
-  }
 
 
 label {
@@ -79,8 +70,6 @@ select {
   padding: 8px;
   margin-bottom: 10px;
 }
-
-
 
 .close-btn {
   position: relative;
@@ -135,7 +124,7 @@ form select:focus {
   background-color: #00C271;
   border-color: #00C271;
   display: block;
-  width: 50%;
+  width: 30%;
   max-width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -162,12 +151,44 @@ form select:focus {
   box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
 
+.form-buttons .edit-btn {
+  color: #fff;
+  background-color: #009bde;
+  border-color: #009bde;
+  display: block;
+  width: 30%;
+  max-width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+  margin-top: 10px;
+}
+
+.form-buttons .edit-btn :hover {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+}
+
+.form-buttons .edit-btn :focus {
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
 .form-buttons .delete-btn {
   background-color: #dc3545;
   border-color: #dc3545;
   color: #fff;
   display: block;
-  width: 48%;
+  width: 30%;
   max-width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
@@ -194,19 +215,14 @@ form select:focus {
   box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
 
-
-
 .form-buttons {
   display: flex;
   justify-content: space-between;
 }
 
 .form-buttons input[type="submit"] {
-  width: 48%;
+  width: 30%;
 }
-
-
-
 
 .form-buttons {
   display: flex;

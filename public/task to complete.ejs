@@ -92,11 +92,7 @@
                 <!-- Head -->
                 <div class="head">
                     <h1>Task Review</h1>
-                    <!-- <div class="search">
-                        <input type="text" placeholder="search" class=""> 
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div> -->
-                    <span class="text-muted">Today, 8 April 2023</span>
+                    <span class="text-muted" id="current_date">Today, 8 April 2023</span>
                 </div>
                 <!-- Head -->
 
@@ -121,74 +117,34 @@
                 </nav>
                 <!-- NavBar -->
 
-            <p class="all-task-num fw-bold ">Total Task: 15</p>
-            <button class="btn btn-primary custom-button" onclick="">Clear task</button>
+            <p class="all-task-num fw-bold ">Total Task: <%= tasks.length %></p>
+            <button class="btn btn-primary custom-button" onclick="clear_task()">Clear task</button>
+
             <section class="body-content">
-                <div class="task-1">
-                    <div class="box-a1">
-                        <!-- <div class="title-a1"> below code is title,numbers words allow allowed only -->
-                        <div class="content-a">Title 1</div>
-                        <div class="images-container">
-                            <img src="Assests/img/redflag.png" alt="Red Flag">
-                            <div class="date-a">17Jan2024</div>
-                        </div>
-                        <!-- </div> -->
-                        <div class="content-b">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque …
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque …
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </div>
-
-                        <div class="show-more">
-                            <p id="show-more-text">Show More</p>
-                            <div id="form-container" class="hidden">
-                                <!-- Html form -->
-                                <form>
-                                    <!-- Form fields and elements -->
-                                </form>
+                <% if(tasks.length) {%>
+                    <% for(let task of tasks){%>
+                        <div class="task-1">
+                            <div class="box-a1">
+                                <div class="content-a">
+                                    <%= task.title %>
+                                </div>
+                                <div class="images-container">
+                                    <div class="date-a">
+                                        <%= task.date.slice(0,10)+"\t\t"+task.date.slice(11) %>
+                                    </div>
+                                </div>
+                                <div class="content-b">
+                                    <%= task.description %>
+                                </div>
+                                <div class="edit-task">
+                                    <p id="edit-task-text">Edit Tasks</p>
+                                </div>
                             </div>
                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-                <div class="task-1">
-                    <div class="box-a1">
-                        <!-- <div class="title-a1"> below code is title -->
-                        <div class="content-a">Title 2</div>
-                        <div class="images-container">
-                            <img src="Assests/img/redflag.png" alt="Red Flag">
-                            <div class="date-a">17Jan2024</div>
-                        </div>
-                        <!-- </div> -->
-                        <div class="content-b">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque …
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque …
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </div>
-
-                        <div class="show-more">
-                            <p id="show-more-text">Show More</p>
-                            <div id="form-container" class="hidden">
-                                <!-- Html form -->
-                                <form>
-                                    <!-- Form fields and elements -->
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <% } %>
+                <% }else{ %>
+                    <div>No task available</div>
+                <% } %>
             </section>
         </section>
     </div>
@@ -196,8 +152,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="Assests/JS/ckc.js"></script>
-    <script src="Assests/JS/task.js"></script>
+    <script src="Assests/JS/task-complete.js"></script>
 </body>
 
 
