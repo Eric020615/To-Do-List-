@@ -3,11 +3,12 @@ const app = express();
 const router = express.Router();
 const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 const task_controller = require("../controllers/taskController")
+const feedback_controller = require("../controllers/feedbackController");
 
 // apply checkUser middleware into every single route
 router.get('*', checkUser);
 
-router.get('/', (req,res)=>{
+router.get('/',feedback_controller.feedback_get, (req,res)=>{
     res.render("intro");
 });
 
