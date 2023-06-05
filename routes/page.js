@@ -32,8 +32,9 @@ router.get('/task-in-progress', requireAuth , (req,res)=>{
     res.render('task in progress');
 })
 
-router.get('/task-review', requireAuth , (req,res)=>{
-    res.render('task_review');
+router.get('/task-review', requireAuth , task_controller.all_task_get, (req,res)=>{
+    const tasks = res.locals.tasks;
+    res.render('task_review',{tasks});
 })
 
 router.get('/task-to-complete', requireAuth, checkUser, task_controller.task_complete_get, (req,res)=>{
