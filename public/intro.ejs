@@ -69,7 +69,8 @@
         <!-- home section -->
         <section class="home section hidden" id="#home">
             <div class="bg-lottie">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_Pju3OzDuiU.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop  autoplay></lottie-player>
+                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_Pju3OzDuiU.json"
+                    background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
             <div class="home-content container-lg">
                 <div class="section_container">
@@ -90,9 +91,12 @@
                 </div>
                 <div class="home-background-lottie">
                     <div class="bg-cycle-lottie">
-                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_toomp0zu.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop  autoplay></lottie-player>
+                        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_toomp0zu.json"
+                            background="transparent" speed="1" style="width: 100%; height: 100%;" loop
+                            autoplay></lottie-player>
                     </div>
-                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_OMkcKPBoxI.json" mode="bounce" background="transparent"  speed="1"loop autoplay></lottie-player>  
+                    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_OMkcKPBoxI.json" mode="bounce"
+                        background="transparent" speed="1" loop autoplay></lottie-player>
                 </div>
             </div>
         </section>
@@ -225,7 +229,8 @@
                 <div class="container swiper mySwiper member-swiper">
                     <div class="comet swiper-wrapper member-wrapper mb-5">
                         <div class="card d-flex justify-content-center swiper-slide member" style="width: 60%;">
-                            <img src="Assests/img/profile/HoKaiChong.jpg" class="card-img-top" alt="Ho Kai Chong" style="width: 100%;">
+                            <img src="Assests/img/profile/HoKaiChong.jpg" class="card-img-top" alt="Ho Kai Chong"
+                                style="width: 100%;">
                             <div class="card-body">
                                 <h4 class="card-title">HO KAI CHONG</h4>
                                 <p class="card-text">Multimedia Computing</p>
@@ -233,7 +238,8 @@
                             </div>
                         </div>
                         <div class="card d-flex justify-content-center swiper-slide member" style="width: 60%;">
-                            <img src="Assests/img/profile/ENGJUNCHENG.jpg" class="card-img-top" alt="Eng Jun Cheng" style="width: 100%;">
+                            <img src="Assests/img/profile/ENGJUNCHENG.jpg" class="card-img-top" alt="Eng Jun Cheng"
+                                style="width: 100%;">
                             <div class="card-body">
                                 <h4 class="card-title">ENG JUN CHENG</h4>
                                 <p class="card-text">Software Engineering</p>
@@ -241,7 +247,8 @@
                             </div>
                         </div>
                         <div class="card d-flex justify-content-center swiper-slide member" style="width: 60%;">
-                            <img src="Assests/img/profile/GengCheng.png" class="card-img-top" alt="Tan Geng Cheng" style="width: 100%;">
+                            <img src="Assests/img/profile/GengCheng.png" class="card-img-top" alt="Tan Geng Cheng"
+                                style="width: 100%;">
                             <div class="card-body">
                                 <h4 class="card-title">TAN GENG CHENG</h4>
                                 <p class="card-text">Multimedia Computing</p>
@@ -249,7 +256,8 @@
                             </div>
                         </div>
                         <div class="card d-flex justify-content-center swiper-slide member" style="width: 60%;">
-                            <img src="Assests/img/profile/Chew Kah Chun.jpg" class="card-img-top" alt="Chew Kah Chun" style="width: 100%;">
+                            <img src="Assests/img/profile/Chew Kah Chun.jpg" class="card-img-top" alt="Chew Kah Chun"
+                                style="width: 100%;">
                             <div class="card-body">
                                 <h4 class="card-title">CHEW KAH CHUN</h4>
                                 <p class="card-text">Software Engineering</p>
@@ -257,7 +265,8 @@
                             </div>
                         </div>
                         <div class="card d-flex justify-content-center swiper-slide member" style="width: 60%;">
-                            <img src="Assests/img/profile/PangJingShan.jpeg" class="card-img-top" alt="Pang Jing Shan" style="width: 100%;">
+                            <img src="Assests/img/profile/PangJingShan.jpeg" class="card-img-top" alt="Pang Jing Shan"
+                                style="width: 100%;">
                             <div class="card-body">
                                 <h4 class="card-title">PANG JING SHAN</h4>
                                 <p class="card-text">Software Engineering</p>
@@ -279,123 +288,29 @@
             <div class="container-sm d-flex justify-content-center feedback_content">
                 <div class="swiper mySwiper testimonial">
                     <div class="swiper-wrapper testimonial">
-                        <div class="swiper-slide testimonial content">
-                            <div class="testimonial_data">
-                                <div class="testimonial_header">
-                                    <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
+                        <% if(feedbacks.length) {%>
+                            <% for(let feedback of feedbacks) {%>
+                                <div class="swiper-slide testimonial content">
+                                    <div class="testimonial_data">
+                                        <div class="testimonial_header">
+                                            <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
 
-                                    <div>
-                                        <h3 class="testimonial_name">Sara Smith</h3>
-                                        <span class="testimonial_client">Client</span>
+                                            <div>
+                                                <h3 class="testimonial_name">
+                                                    <%= feedback.username %>
+                                                </h3>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <p class="testimonial_description">
+                                        <%= feedback.comments %>
+                                    </p>
                                 </div>
-
-                                <div>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                </div>
-                            </div>
-
-                            <p class="testimonial_description">I get a good impression, I carry out my project with
-                                effort. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quae et nostrum 
-                                vel sint unde qui ducimus. Illum maxime iusto mollitia architecto, excepturi non sequi 
-                                nostrum provident autem possimus fuga!</p>
-                        </div>
-                        <div class="swiper-slide testimonial content">
-                            <div class="testimonial_data">
-                                <div class="testimonial_header">
-                                    <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
-
-                                    <div>
-                                        <h3 class="testimonial_name">Sara Smith</h3>
-                                        <span class="testimonial_client">Client</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                </div>
-                            </div>
-
-                            <p class="testimonial_description">I get a good impression, I carry out my project with
-                                effort.</p>
-                        </div>
-                        <div class="swiper-slide testimonial content">
-                            <div class="testimonial_data">
-                                <div class="testimonial_header">
-                                    <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
-
-                                    <div>
-                                        <h3 class="testimonial_name">Sara Smith</h3>
-                                        <span class="testimonial_client">Client</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                </div>
-                            </div>
-
-                            <p class="testimonial_description">I get a good impression, I carry out my project with
-                                effort.</p>
-                        </div>
-                        <div class="swiper-slide testimonial content">
-                            <div class="testimonial_data">
-                                <div class="testimonial_header">
-                                    <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
-
-                                    <div>
-                                        <h3 class="testimonial_name">Sara Smith</h3>
-                                        <span class="testimonial_client">Client</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                </div>
-                            </div>
-
-                            <p class="testimonial_description">I get a good impression, I carry out my project with
-                                effort.</p>
-                        </div>
-                        <div class="swiper-slide testimonial content">
-                            <div class="testimonial_data">
-                                <div class="testimonial_header">
-                                    <img src="Assests/img/temp.jpg" alt="" class="testimonial_img">
-
-                                    <div>
-                                        <h3 class="testimonial_name">Sara Smith</h3>
-                                        <span class="testimonial_client">Client</span>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                    <i class="uil uil-star testimonial_icon-star"></i>
-                                </div>
-                            </div>
-
-                            <p class="testimonial_description">I get a good impression, I carry out my project with
-                                effort.</p>
-                        </div>
+                            <% } %>
+                        <% }else{ %>
+                                <div>No feedbacks available</div>
+                        <% } %>
                     </div>
                     <div class="swiper-button-next" style="color: #439A97;"></div>
                     <div class="swiper-button-prev" style="color: #439A97;"></div>
@@ -434,9 +349,10 @@
                 </div>
             </div>
         </div>
-        
+
     </footer>
-    
+
+    <script src="Assests/JS/feedback.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
@@ -469,7 +385,6 @@
             },
         });
     </script>
-
 </body>
 
 </html>

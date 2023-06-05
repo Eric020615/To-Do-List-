@@ -15,7 +15,7 @@ const handleErrors = (err) => {
     }
 
      // incorrect password
-     if (err.message === 'Incorrect Password'){
+    if (err.message === 'Incorrect Password'){
         errors.password = 'That password is incorrect'
     }
 
@@ -60,5 +60,17 @@ module.exports.feedback_post = async (req,res) =>{
         const errors = handleErrors(err);
         console.log(err);
         res.status(400).json({errors});
+    }
+}
+
+module.exports.feedback_get = async (req,res,next) =>{
+    try{
+        let query = await Feedback.find();
+        res.locals.feedbacks = query;
+        console.log(query);
+        next();
+    }
+    catch(err){
+        console.log(err);
     }
 }
