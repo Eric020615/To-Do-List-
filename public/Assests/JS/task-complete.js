@@ -1,8 +1,12 @@
-//collapse-side-nav-btn
-//collapse-side-nav-btn
+var timer = document.querySelector('#current_date');
 var toggle_side_btn = document.querySelector('.toggle-nav-btn');
 var sidebar = document.querySelector('.sidebar');
 var bg_semidark = document.querySelector('.bg-semidark');
+
+setInterval(()=>{
+  let date = new Date();
+  timer.innerHTML = date;
+},1000);
 
 toggle_side_btn.onclick = function(){
     sidebar.className = "sidebar d-block min-vh-100 col-auto position-fixed sidebar-show";
@@ -23,23 +27,19 @@ toggle_side_btn.onclick = function(){
     close(auto_close_sideNav);
 };
 
-//collapse-side-nav-btn
-
-//Delete-acc button function
-const openModalBtn = document.getElementById('delete_btn');
-const closeModalBtn = document.getElementById('cancel-btn');
-const modalOverlay = document.getElementById('modal-overlay');
-
-function openModal() {
-  modalOverlay.style.display = 'block';
-  modal.style.display = 'block';
+async function clear_task(){
+    try{
+        const resolve = await fetch('/task-to-complete',{
+            method: 'DELETE',
+        });
+        if(resolve.status==200){
+            location.assign('/task-to-complete');
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
 }
 
-function closeModal() {
-  modalOverlay.style.display = 'none';
-  modal.style.display = 'none';
-}
 
-openModalBtn.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click', closeModal);
 

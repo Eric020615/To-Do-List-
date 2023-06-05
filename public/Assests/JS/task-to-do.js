@@ -65,10 +65,7 @@ task_to_do_form.addEventListener('submit', async (e)=>{
       task_to_do_form_container.style.top = "5%";
     }
     if(data.task){
-      var overlay = document.querySelector(".Add-overlay");
-      var formContainer = document.querySelector(".Add-form-container");
-      overlay.style.display = "none";
-      formContainer.style.display = "none";
+      location.assign('/task');
     }
   }
   catch(err){
@@ -104,14 +101,17 @@ let task_id,progress_level;
 function selectProgress(){
   progress_level = document.querySelector(".progress-level").value;
 }
-function showEditForm(event,id,title,description,date) {
+
+function showEditForm(event,id,title,description,date,progress_level) {
   event.preventDefault(); // Prevent form submission
   var overlay = document.querySelector(".Edit-overlay");
   var formContainer = document.querySelector(".Edit-form-container");
   var edit_form = document.querySelector("#Edit-form");
+  var progress = progress_level;
   edit_form.title.value = title;
   edit_form.description.value = description;
   edit_form.date.value = date;
+  document.querySelector(".progress-level").value = progress;
   task_id = id;
   overlay.style.display = "block";
   formContainer.style.display = "block";
@@ -122,7 +122,6 @@ const edit_btn = document.querySelector('#edit-btn');
 const edit_form_container = document.querySelector('.Edit-form-container');
 edit_btn.addEventListener('click', async (event)=>{
   event.preventDefault();
-  document.querySelector(".progress-level").value = 50;
   let title = edit_form.title.value;
   let description = edit_form.description.value;
   let date = edit_form.date.value;
@@ -134,6 +133,7 @@ edit_btn.addEventListener('click', async (event)=>{
   description_error.textContent = '';
   date_error.textContent = '';
   progress_error.textContent = '';
+  edit_form_container.style.top = "10%";
   if(edit_form.title.value&&edit_form.description.value&&edit_form.description.value.length<500&&edit_form.date.value&&progress_level){
     try{
       const resolve = await fetch("/edit-task",{
@@ -143,10 +143,8 @@ edit_btn.addEventListener('click', async (event)=>{
       })
       const data = await resolve.json();
       if(data.task_edited){
-        var overlay = document.querySelector(".Edit-overlay");
-        var formContainer = document.querySelector(".Edit-form-container");
-        overlay.style.display = "none";
-        formContainer.style.display = "none";
+        this.hideEditForm(event);
+        location.assign('/task');
       }
       if(data.errors){
         description_error.textContent = data.errors.description;
@@ -174,33 +172,26 @@ edit_btn.addEventListener('click', async (event)=>{
     }
     edit_form_container.style.top = "5%";
   }
- 
 })
 
-document.querySelector("#delete-btn").addEventListener('click', async ()=>{
+document.querySelector("#delete-btn").addEventListener('click', async (event)=>{
   try{
     // create delete request (await)
-    const resolve = await fetch("/delete-task",{
+    const resolve = await fetch("/task-to-do",{
       method: 'DELETE',
       body: JSON.stringify({task_id}),
       headers: {'Content-Type':'application/json'},
     })
     const data = await resolve.json();
     if(data.task){
+      this.hideEditForm(event);
       var overlay = document.querySelector(".delete-success-overlay");
       var formContainer = document.querySelector(".delete-success-container");
-      var edit_overlay = document.querySelector(".Edit-overlay");
-      var edit_formContainer = document.querySelector(".Edit-form-container");
       overlay.style.display = "block";
       formContainer.style.display = "block";
-      edit_formContainer.style.display = "none";
-      edit_overlay.style.display = "none";
     }
     if(data.errors){
-      var overlay = document.querySelector(".Edit-overlay");
-      var formContainer = document.querySelector(".Edit-form-container");
-      overlay.style.display = "none";
-      formContainer.style.display = "none";
+      this.hideEditForm(event);
     }
   }
   catch(err){
@@ -214,19 +205,25 @@ function hideDeleteSuccess(event){
   var formContainer = document.querySelector(".delete-success-container");
   overlay.style.display = "none";
   formContainer.style.display = "none";
+  location.assign('/task');
 }
 
-// document.querySelector('.markasdone').addEventListener('click', async (event)=>{
-//   event.preventDefault();
-//   let done = 100;
-//   try{
-//     const resolve = await fetch("/done",{
-//       method: 'POST',
-//       body: JSON.stringify({done}),
-//       headers: {'Content-Type':'application/json'}
-//     })
-//   }
-//   catch(err){
-//     console.log(err)
-//   }
-// })
+document.querySelector('.markasdone').addEventListener('click', async (event)=>{
+  event.preventDefault();
+  let progress_level = 100;
+  try{
+    const resolve = await fetch("/done",{
+      method: 'POST',
+      body: JSON.stringify({task_id,progress_level}),
+      headers: {'Content-Type':'application/json'}
+    })
+    const data = await resolve.json();
+    if(data.task_done){
+      this.hideEditForm(event);
+      location.assign('/task');
+    }
+  }
+  catch(err){
+    console.log(err)
+  }
+})

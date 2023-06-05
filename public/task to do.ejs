@@ -227,7 +227,7 @@
             <section class="body-content">
                 <% if(tasks.length) {%>
                     <% for(let task of tasks) {%>
-                        <div class="task-1" onclick="showEditForm(event,'<%= task._id %>', '<%= task.title %>', '<%= task.description %>', '<%= task.date %>')">
+                        <div class="task-1" onclick="showEditForm(event,'<%= task._id %>', '<%= task.title %>', '<%= task.description %>', '<%= task.date %>', '<%= task.progress_level %>')">
                             <div class="box-a1" >
                                 <div class="content-a">
                                     <%= task.title %>
@@ -254,6 +254,6 @@
         </div>
     </div>
 </body>
-    <script src="Assests/JS/task.js"></script>
+    <script src="Assests/JS/task-to-do.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </html>
