@@ -244,27 +244,117 @@ body {
   height: 200px;
   width: 250px;
   border-radius: 30px;
-  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 1px 5px 1px rgba(0, 0, 0, 0.4);
 }
+
 
 .all-task .piece:hover {
   transform: translateY(-5px);
   cursor: pointer;
 }
 
+.all-task .piece ul li:last-child {
+  text-align: left;
+}
+
+/* .text-hidden {
+
+} */
+.piece-show-more {
+  height: 200px;
+  width: 250px;
+  
+}
+
+.piece-show-more:hover{
+    transform: translateY(-5px);
+  cursor: pointer;
+}
 .b-red {
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 .b-blue {
-  border: 2px solid blue;
+  border: 1px solid blue;
 }
 
 .b-green {
-  border: 2px solid green;
+  border: 1px solid green;
 }
 .task > div {
   margin-top: 20px;
+}
+
+.task {
+  margin: 0 10px 0 -10px;
+}
+
+.task-row {
+  margin: 0 10px 0 -2px;
+}
+.task .task-row-form {
+   position: relative;
+   /* background-color: paleturquoise; */
+   margin: 5px 0 5px 0;
+   border-radius: 12px;
+   display: none;
+}
+
+.task-row-form .no{
+  margin-right: 15px;
+}
+.task-row-form .progress {
+  margin-left: 10px;
+  margin-bottom: 2px;
+  margin-top: 3px;
+}
+
+.task-row-form i{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  max-width: 8px;
+  border-radius: 12px 0 0 12px;
+}
+
+.task-row-form:hover{
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.task-row-form:first-child:hover{
+  transform: none;
+  cursor: default;
+}
+
+.task-description {
+  position: relative;
+  /* background-color: #d8d6d6; */
+  padding: 20px;
+  border-radius: 15px;
+  display: none;
+}
+.b-task {
+  border: 1px solid rgb(223, 221, 221);
+}
+/* .task-row-form {
+  background-color: pink;
+  padding: 20px 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 1px 0 5px 1px rgba(0, 0, 0, 0.4);
+  width: 1200px;
+} */
+
+.sorting-option {
+  padding-left: 10px;
+}
+.sorting-option button{
+  margin-left: 10px;
+}
+.btn-sorting-selected {
+  border: 1px solid #e6e4e4;
+  background-color: #b9efed;
 }
 
 /* Task-progress =============================================*/
@@ -318,7 +408,12 @@ body {
   );
   border-radius: 50%;
   margin: 0 auto;
+   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
+
 }
+
+
 
 .chart::after {
   content: "";
@@ -330,7 +425,13 @@ body {
   width: 150px;
   background-color: white;
   border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+               inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+               -0.5px -0.5px 0px rgba(255,255,255,1),
+               0.5px 0.5px 0px rgba(0,0,0,0.15),
+               0px 12px 10px -10px rgba(0,0,0,0.05);
 }
+
 
 /* Completion Rate */
 .completed-rate .row {
@@ -366,7 +467,7 @@ body {
 .completed-rate .prio-chart > div {
   position: relative;
   height: 280px;
-  margin: 0 20px;
+  margin: 0 10px 0 0;
 }
 
 .completed-rate .prio-chart {
@@ -391,6 +492,13 @@ body {
   background-color: #439a97;
   border-radius: 50%;
   margin: 0 auto;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
+
+}
+
+.badge {
+  font-size: 13px;
 }
 
 .prio-middle {
@@ -404,6 +512,8 @@ body {
   );
   border-radius: 50%;
   margin: 0 auto;
+   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
 
 .prio-low {
@@ -412,31 +522,40 @@ body {
   background-image: conic-gradient(
     rgb(107, 221, 107) 0deg,
     rgb(107, 221, 107) 313deg,
-    green 314deg,
-    green 360deg
+    blue 314deg,
+    blue 360deg
   );
   border-radius: 50%;
   margin: 0 auto;
+   box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
 
 .percentage {
   position: absolute;
   content: "";
   left: 50%;
-  top: 50%;
+  top: 48%;
   transform: translate(-50%, -100%);
   color: #439a97;
+  width: 100px;
 }
 
 .w::before {
   content: "";
   top: 50%;
   position: absolute;
-  transform: translate(-50%, -65%);
+  transform: translate(-50%, -69%);
   height: 150px;
   width: 150px;
   background-color: white;
   border-radius: 50%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+               inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+               -0.5px -0.5px 0px rgba(255,255,255,1),
+               0.5px 0.5px 0px rgba(0,0,0,0.15),
+               0px 12px 10px -10px rgba(0,0,0,0.05);
+
 }
 
 @media screen and (max-width: 767px) {
@@ -444,3 +563,21 @@ body {
     margin-left: 0;
   }
 }
+
+/* @media (min-width: 992px) {
+  .font-size-lg {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .font-size-md {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .font-size-sm {
+    font-size: 10px;
+  }
+} */

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,10 +10,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="CSS/ckc.css">
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/popupdelete.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+    <div class="delete-success-overlay">
+        <div class="delete-success-container">
+            <div class="dismiss-container">
+                <button class="dismiss-btn" onclick="hideDeleteSuccess(event)"><i class="fa-sharp fa-solid fa-circle-xmark fa-beat"></i></button>
+            </div>
+            <div class="success-icon container">
+                <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_qk8e4pqk.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+            </div>
+            <div class="title">
+                Task has been deleted successfully!
+            </div>
+            <div class="description">
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <!-- SideNavBar -->
         <section class="sidebar d-none d-md-block min-vh-100 col-auto position-fixed">
@@ -58,7 +78,7 @@
                 </li>
                 <li>
                     <a href="/logout">
-                        <i class="fa-solid fa-sign-out"></i> 
+                        <i class="fa-solid fa-sign-out"></i>
                         <span class="text">Log Out</span>
                     </a>
                 </li>
@@ -68,10 +88,10 @@
         <!-- SideNavBar -->
 
         <section class="main container-sm col">
-                <main>
+            <main>
                 <!-- Top -->
                 <div class="top d-md-none ">
-                    <a href="#" > 
+                    <a href="#">
                         <div class="toggle-nav-btn ">
                             <i class="fa-solid fa-bars fa-xl"></i>
                         </div>
@@ -83,36 +103,79 @@
                 <!-- Top -->
                 <div class="head">
                     <h1>Welcome, <%= user.email %></h1>
-                    <span class="text-danger">You have <%= today_list.length  %> tasks today.</span>
+                    <span class="text-danger num_task">You have <%= today_list.length %> tasks today.</span>
                 </div>
-        
-                <h4 id = "date"> MONDAY,  APRIL 10 </h4>
-                <ol class="home-view-task p-2 ">
-                <% if(today_list.length){ %>
-                    <% for(list of today_list){ %>
-                        <li>
-                            <h5> <%= list.title %> </h5>
-                            <div class="d-flex justify-content-between row-cols-2">
-                                <span class="col-8" id="remaining-time"> <i class="fa-solid fa-clock-rotate-left"></i> &nbsp;&nbsp; <%= list.date %> </span> 
-                                <button type = "button" class = "btn btn-done col" onclick="done_task()">Done</button>
+
+                <h4 id="date"> MONDAY, APRIL 10 </h4>
+                    <% if(today_list.length){ %>
+                        <div class="task_list_container">
+                            <ol class="home-view-task">
+                                <% for(list of today_list){ %>
+                                    <% if(list.progress_level!=100){ %>
+                                        <li class="task_list">
+                                            <div class="list_content">
+                                                <h5>
+                                                    <%= list.title %>
+                                                </h5>
+                                                <div class="task-remaining-time-container">
+                                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_rnivi7xe.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop  autoplay></lottie-player>                                                
+                                                    <span id="remaining-time"> <%= list.date %> </span>
+                                                </div>
+                                            </div>
+                                            <div class="button_task">
+                                                <button type="button" id="btn_done" onclick="done_task('<%= list._id %>')"><i
+                                                        class="fa-sharp fa-solid fa-circle-check"></i></button>
+                                                <button type="button" id="btn_delete" onclick="delete_task('<%= list._id %>')"><i
+                                                        class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                        </li>
+                                    <% } else{ %>
+                                        <li class="task_list done">
+                                            <div class="list_done">
+                                                <div class="list_content">
+                                                    <h5>
+                                                        <%= list.title %>
+                                                    </h5>
+                                                    <div class="task-remaining-time-container">
+                                                        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_rnivi7xe.json"  background="transparent"  speed="1"  style="width: 30px; height: 30px;"  loop  autoplay></lottie-player>                                                
+                                                        <span id="remaining-time-done"> Done! </span>
+                                                    </div>
+                                                </div>
+                                                <div class="done_animation">
+                                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_4chtroo0.json"  background="transparent"  speed="1"  style="width: 100px; height: 80px;"  loop  autoplay></lottie-player>
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="button_task">
+                                                <button type="button" id="btn_done" onclick="done_task('<%= list._id %>')"><i
+                                                        class="fa-sharp fa-solid fa-circle-check"></i></button>
+                                                <button type="button" id="btn_delete" onclick="delete_task('<%= list._id %>')"><i
+                                                        class="fa-solid fa-trash"></i></button>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                <% }%>
+                            </ol>
+                        </div>
+                    <%  } else { %>
+                        <div class="no-task-container">
+                            <h2 class="no-task-text">No Task Due Today, Take a Rest!</h2>
+                            <div class="no-task">
+                                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_2tHSZX6XAG.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
                             </div>
-                        </li>
+                        </div>
+                        <div class="no-task-background-left">
+                            <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_4fewfamh.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>                        
+                        </div>
+                        <div class="no-task-background">
+                            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_HPkAIy.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px;"  loop autoplay></lottie-player>
+                        </div>
                     <% } %>
-                <% } %>
-                </ol>
-                </main>
+            </main>
         </section>
     </div>
     <script src="Assests/JS/home.js"></script>
-    <script>
-        const timer = document.querySelector('#date');
-        timer.innerHTML = new Date();
-        setInterval(()=>{
-            let date = new Date();
-            timer.innerHTML = date;
-        },1000);
-
-    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>

@@ -41,5 +41,55 @@ async function clear_task(){
     }
 }
 
+// setInterval(()=>{
+//   let date = new Date();
+//   timer.innerHTML = date;
+// },1000);
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const day = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const d = new Date();
+let date =
+  day[d.getDay()] +
+  ", " +
+  d.getDate() +
+  " " +
+  months[d.getMonth()] +
+  " " +
+  d.getFullYear();
+let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+time = d.getHours() + ":" + min + ":" + sec;
+$(".text-muted").html(date + ", " + time + " (Malaysia Time)");
+
+setInterval(function (params) {
+  const d = new Date();
+  let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+  let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+  time = d.getHours() + ":" + min + ":" + sec;
+  $(".text-muted").html(date + ", " + time + " (Malaysia Time)");
+}, 1000);
+
 
 
