@@ -67,7 +67,6 @@ module.exports.feedback_get = async (req,res,next) =>{
     try{
         let query = await Feedback.find();
         res.locals.feedbacks = query;
-        console.log(query);
         next();
     }
     catch(err){
