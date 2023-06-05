@@ -264,18 +264,66 @@ h5{
     font-weight: bold;
 }
 
+.num_task{
+    font-size: 1.2rem;
+}
+
 #date{
     font-size: 20px;;
     font-weight: bolder;
     color: #439A97;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-left: 10px;
     margin-bottom: 20px;
+}
+
+.home-view-task{
+    padding: 10px 50px;
 }
 
 .clock-icon, .logout-icon {
     height: 20px;
     width: 20px;
+}
+
+.task_list_container{
+    overflow-y: scroll;
+    height: 500px;
+    direction: rtl;
+}
+
+.task_list_container li:hover{
+    cursor: pointer;
+}
+
+.task_list{
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+    margin-right: 20px;
+}
+
+.list_content h5{
+    text-align: left;
+}
+
+.task-remaining-time-container{
+    display: flex;
+    gap: 5px;
+}
+
+.button_task button{
+    color: #439A97;
+    border-width: 0;
+    background-color: transparent;
+}
+
+.button_task button:hover{
+    color: #6ac2bf;
+}
+
+.list_done{
+    display: flex;
 }
 
 .btn-done{
@@ -320,6 +368,44 @@ h5{
     width: 15px;
     margin-right: 3px;
 }
+
+/* if no task */
+.no-task-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-task-text{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.no-task{
+    background: url(../Assests/img/home_background.svg) no-repeat;
+}
+
+.no-task-background-left{
+    position: absolute;
+    left: 18%;
+    bottom: 0%;
+}
+
+.no-task-background{
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+
+@media (max-width: 1400px) {
+    .no-task-background-left{
+        display: none;
+    }
+    
+    .no-task-background{
+        display: none;
+    }
+}  
 
 
 /*Profile Page*/

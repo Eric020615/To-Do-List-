@@ -62,7 +62,6 @@ task_to_do_form.addEventListener('submit', async (e)=>{
       description_error.textContent = data.errors.description;
       date_error.textContent = data.errors.date;
       priority_error.textContent = data.errors.priority_level;
-      task_to_do_form_container.style.top = "5%";
     }
     if(data.task){
       location.assign('/task');
@@ -170,7 +169,6 @@ edit_btn.addEventListener('click', async (event)=>{
     if(!progress_level){
       progress_error.textContent = "Please do not leave progress level empty."
     }
-    edit_form_container.style.top = "5%";
   }
 })
 
