@@ -33,7 +33,10 @@ body {
 
 .cal__main h1 {
 	font-size: 3rem;
-	color: rgba(255, 255, 255, 0.491);
+	/* color: rgba(255, 255, 255, 0.491); */
+	color: rgba(255, 255, 255, 0.800);
+
+
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -103,12 +106,13 @@ body {
 .calendar__top .calendar__time .cal__time {
 	font-size: 1.7rem;
 	text-transform: uppercase;
+	color: #000000;
 }
 
 .calendar__top .cal__month {
 	font-size: 1.8rem;
 	text-transform: uppercase;
-	color: white;
+	color: #000000;
 }
 
 .calendar__top .cal__date {
@@ -139,7 +143,6 @@ body {
 	color: rgb(199, 199, 199);
 }
 
-
 .weekdays {
 	display: flex;
   }
@@ -157,7 +160,8 @@ body {
      grid-template-columns: repeat(7, calc(14.28% - 1px)); 
     /* Adjust the percentage and pixel values as needed */
 	place-items: center;
-	color: white;
+	/* color: white; */
+	color: #000000;
 }
 
 .calendar__bottom .cal__days span {
@@ -346,63 +350,3 @@ body {
 
 	/* Additional styles for larger screens */
 }
-
-
-/* @media only screen and (max-width: 768px) {
-	.calendar__bottom .cal__weekdays {
-	  grid-template-columns: 1fr;
-	}
-  
-	.calendar__bottom .cal__days {
-	  grid-template-columns: 1fr;
-	}
-  
-	.calendar__bottom .cal__days span {
-	  width: auto;
-	  padding: 0.5rem;
-	}
-  }
-   */
-
-
-/* @media only screen and (max-width: 768px) {
-    .calendar__bottom .cal__weekdays {
-      grid-template-columns: repeat(7, 1fr);
-    }
-  
-    .calendar__bottom .cal__days {
-      grid-template-columns: repeat(7, 1fr);
-    }
-  
-    .calendar__bottom .cal__days span {
-      width: 100%;
-      padding: 1rem;
-      text-align: center;
-    }
-  }
-   */
-
-
-   /* @media only screen and (max-width: 768px) {
-    .calendar__bottom .cal__days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      place-items: center;
-      color: white;
-    } */
-    @media only screen and (max-width: 768px) {
-    .calendar__bottom .cal__days span {
-      /* padding: 1rem;
-      font-size: 1.2rem;
-      width: 100%;
-      text-align: center;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 200ms;
-      transform: translateX(-3px); */
-      
-    }
-  }
-  
-
-  

@@ -57,13 +57,13 @@ const showTime = () => {
 		hr = 12;
 		am_pm = 'AM';
 	}
-  if (min < 10) {
+  	if (min < 10) {
 		min = '0' + min;
 	}
 	let currentTime = `${hour}:${min} ${am_pm}`;
 	timeDisplay.innerHTML = currentTime;
 };
-setInterval(showTime(), 1000);
+setInterval(showTime, 1000);
 
 // Generating Dates per Month
 const glassCalendar = () => {
