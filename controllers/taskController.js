@@ -70,6 +70,7 @@ module.exports.task_to_do_post = async (req,res) =>{
             date: req.body.date,
             priority_level: req.body.priority_level,
             progress_level: req.body.progress_level,
+            email_frequence: 0
         })
         await task.save();
         res.status(201).json({task});
@@ -147,7 +148,6 @@ module.exports.task_complete_delete = async (req,res,next) =>{
 // All Task Get Data
 module.exports.all_task_get = async (req, res, next) => {
   const user = res.locals.user;
-
   let currentDate = new Date();
   const user_id = user._id;
   try {

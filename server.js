@@ -5,6 +5,7 @@ const auth_route = require('./routes/authRoutes');
 const task_route = require('./routes/taskRoutes');
 const feedback_route = require('./routes/feedbackRoute');
 const cookieParser = require('cookie-parser');
+const smtp = require('./services/smtp')
 
 const app = express();
 
@@ -30,6 +31,9 @@ app.use(feedback_route);
 app.listen(3000, ()=>{
     console.log("Port Connected")
 });
+
+setInterval(smtp.scheduleEmail,5000);
+
 
 // //  cookies (Store information in the client browser)
 // app.get('set-cookies',(req,res)=>{
