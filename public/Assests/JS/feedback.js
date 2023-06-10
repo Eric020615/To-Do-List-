@@ -14,7 +14,7 @@ feedbackcontent.addEventListener('submit', async (e) => {
             body: JSON.stringify({username,email,comments,file}),
             headers: {'Content-Type':'application/json'}
         });
-        const data = await response.json();        
+        const data = await response.json();   
         if (data.feedback) {
             history.go(-1); // 返回上一个页面
         }
