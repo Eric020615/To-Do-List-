@@ -31,6 +31,18 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please enter password.'],
         minlength: [6, 'Please enter mininum 6 characters.']
     },
+    username:{
+        type: String,
+        required: [true, 'Please enter your name.'],
+    },
+    contact_num:{
+        type: String,
+        required: [true, 'Please enter contact number.'],
+    },
+    date_of_birth:{
+        type: Date,
+        required: [true, 'Please enter your date of birth.']
+    },
 });
 
 // hook functions (post(), pre())

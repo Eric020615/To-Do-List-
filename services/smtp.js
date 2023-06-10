@@ -67,7 +67,7 @@ async function sendEmail(to, subject, message, item) {
                 <noscript>
                   <xml>
                     <o:OfficeDocumentSettings>
-                      <o:PixelsPerInch>96</o:PixelsPerInch>
+                      <o:PixelsPerInch></o:PixelsPerInch>
                     </o:OfficeDocumentSettings>
                   </xml>
                 </noscript>
@@ -116,7 +116,10 @@ async function sendEmail(to, subject, message, item) {
                           <tr>
                             <td style="padding:30px;background-color:#ffffff;">
                               <h1 style="margin-top:0;margin-bottom:16px;font-size:26px;line-height:32px;font-weight:bold;letter-spacing:-0.02em;">Reminder!</h1>
-                              <p style="margin:0;">It's OK to feel down sometimes but don't forget to complete your task. <br/>Task: ${item.title}</br>Description: ${item.description}</br>Date: ${item.date.split('T')[0]}</p>
+                              <p style="margin:0;">It's OK to feel down sometimes but don't forget to complete your task.</p>
+                              <p style="margin:0;">Task: ${item.title}</p>
+                              <p style="margin:0;">Description: ${item.description}</p>
+                              <p style="margin:0;">Date: ${item.date.split('T')[0]}</p>
                             </td>    
                           </tr>
                           <tr>
