@@ -672,6 +672,10 @@ margin-bottom: 15px;
     width: 40%;
 }
 
+.text-grey {
+    color: #808080;
+}
+
 @media screen and (max-width: 767px) {
   .main {
     margin-left: 0;
