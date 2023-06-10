@@ -132,7 +132,6 @@ edit_btn.addEventListener('click', async (event)=>{
   description_error.textContent = '';
   date_error.textContent = '';
   progress_error.textContent = '';
-  edit_form_container.style.top = "10%";
   if(edit_form.title.value&&edit_form.description.value&&edit_form.description.value.length<500&&edit_form.date.value&&progress_level){
     try{
       const resolve = await fetch("/edit-task",{

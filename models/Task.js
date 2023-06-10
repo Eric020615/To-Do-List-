@@ -29,6 +29,10 @@ const taskSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Please enter the progress level.']
     },
+    email_frequence:{
+        type: Number,
+        require: [true]
+    }
 })
 
 const Task = mongoose.model('task', taskSchema);
