@@ -51,11 +51,11 @@ router.get('/profile', requireAuth ,getImg, (req,res)=>{
     res.render("profile");
 })
 
-router.get('/settings-advanced', requireAuth , (req,res)=>{
+router.get('/settings-advanced', requireAuth ,checkUser, (req,res)=>{
     res.render('settings-advanced');
 })
 
-router.get('/settings-general', requireAuth , (req,res)=>{
+router.get('/settings-general', requireAuth ,checkUser, (req,res)=>{
     res.render('settings-general');
 })
 

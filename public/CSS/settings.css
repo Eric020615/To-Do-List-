@@ -222,13 +222,14 @@ main{
 
 /* settings for advanced */
 #advanced-settings label{
+  margin-bottom: 10px;
   margin-top: 10px;
 }
 
 #advanced-settings input{
   width: 30%;
   border-radius: 10px;
-  padding: 0.2rem;
+  padding: 0.3rem 0.4rem;
 }
 
 #advanced-settings form{
@@ -237,6 +238,7 @@ main{
 
 form p{
   display: block;
+  color: red;
 }
 
 form p.show{
@@ -258,11 +260,136 @@ form .part-show.show input{
 }
 
 form .part-show.show button{
-  width: 3.5rem;
-  background-color: #ccc;
+  padding: 0.2rem 1.0rem;
+  width: 20%;
+  background-color: #439a97;
+  color: white;
 }
 
 .part-show button{
   border-radius: 10px;
   padding: 0.2rem;
+  border-width: 0;
+}
+
+form .part-show.show button:hover{
+  background-color: #6ac2bf;
+  color: white;
+}
+
+.change-password-error{
+  color: red;
+}
+
+.email-error{
+  color: red;
+}
+
+@media(max-width:500px){
+  #advanced-settings input{
+    width: 50%;
+    border-radius: 10px;
+    padding: 0.3rem 0.4rem;
+  }
+  #confirm-delete-form{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.delete-success-overlay{
+  display: none;
+  position: fixed;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.delete-success-container{
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%,-50%);
+  padding: 10px 30px 30px 30px;
+  border-radius: 30px;
+  background-color: whitesmoke;
+}
+
+.dismiss-container{
+  background-color: transparent;
+}
+
+.dismiss-btn{
+  font-size: 1.5rem;
+  color: #439A97;;
+  background-color: transparent;
+  border: 0;
+}
+
+.success-icon{
+  display: flex;
+  justify-content: center;
+}
+
+.modal-title{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.modal-title .username{
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0.3rem 1.5rem;
+  color: white;
+  border-radius: 10px;
+  background-color: #439a97;
+}
+
+.modal-subtitle{
+  padding: 1.5rem 0.5rem;
+  text-align: left;
+}
+
+.modal-subtitle span{
+  font-weight: 700;
+  color: red;
+}
+
+.modal-bottom input{
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+#confirm-delete-form{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#confirm-delete-form button{
+  background-color: red;
+  width: 100px;
+  color: white;
+  border-radius: 10px;
+}
+
+#confirm-delete-form button:hover{
+  background-color: rgb(160, 0, 0);
+  width: 100px;
+  color: white;
+  border-radius: 10px;
+}
+
+.error{
+  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
