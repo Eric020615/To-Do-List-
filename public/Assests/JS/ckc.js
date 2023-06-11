@@ -43,3 +43,190 @@ function closeModal() {
 openModalBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal);
 
+
+// var userInfoData = document.querySelector(".data").innerHTML;
+// var user_info = JSON.parse(userInfoData);
+// console.log(user_info);
+
+$("#btn-edit").on("click", function(){
+     $(".profile-details label input")
+       .removeClass("d-none");
+     $("h5").addClass("d-none");
+     $("h5").eq(3).removeClass("d-none");
+     $("#btn-save").removeClass("d-none");
+     $(this).addClass("d-none");
+});
+
+$("#btn-save").on("click", async function (event) {
+   $(".profile-details label input").addClass("d-none");
+   $("h5").removeClass("d-none");
+  $("#btn-edit").removeClass("d-none");
+
+  event.preventDefault();
+  let email = $("#email").text();
+  let username = $("#name").val();
+  let contact_num = $("#phone-num").val();
+  let date_of_birth = new Date($("#dob").val());
+  if (username && contact_num && date_of_birth) {
+         try {
+           const resolve = await fetch("/edit-profile", {
+             method: "POST",
+             body: JSON.stringify({
+               email,
+               username,
+               contact_num,
+               date_of_birth,
+             }),
+             headers: { "Content-Type": "application/json" },
+           });
+           const data = await resolve.json();
+           if (data.profile_edited) {
+             // this.hideEditForm(event);
+             location.assign("/profile");
+           }
+           if (data.errors) {
+             description_error.textContent = data.errors.description;
+           }
+         } catch (err) {
+           console.log(err);
+         }
+        }
+  $(this).addClass("d-none");
+});
+
+// update = 0;
+// $(".btn-update-container").on("click",async function(event){
+//   if(update == 0 ){
+//      $(".profile-details label input")
+//        .removeClass("d-none").val($(this).siblings('h5').text());
+//      $("h5").addClass("d-none");
+//      $("h5").eq(3).removeClass("d-none");
+//      $(".btn-update-container button").text("Save Profile Details");
+//      update = 1;
+//   }else if(update == 1){
+//       $(".profile-details label input").addClass("d-none");
+//       $("h5").removeClass("d-none");
+      //  event.preventDefault();
+      //  let email = $("#email").text();
+      //  let username = $("#name").val();
+      //  let contact_num = $("#phone-num").val();
+      //  let date_of_birth = $("#dob").val();
+//        // const title_error = document.querySelector(".Edit-form .title_error");
+//        // const description_error = document.querySelector(
+//        //   ".Edit-form .description_error"
+//        // );
+//        // const date_error = document.querySelector(".Edit-form .date_error");
+//        // const progress_error = document.querySelector(".Edit-form .progress_error");
+//        // title_error.textContent = "";
+//        // description_error.textContent = "";
+//        // date_error.textContent = "";
+//        // progress_error.textContent = "";
+      //  if (username && contact_num && date_of_birth) {
+      //    try {
+      //      const resolve = await fetch("/edit-profile", {
+      //        method: "POST",
+      //        body: JSON.stringify({
+      //          email,
+      //          username,
+      //          contact_num,
+      //          date_of_birth,
+      //        }),
+      //        headers: { "Content-Type": "application/json" },
+      //      });
+      //      const data = await resolve.json();
+      //      if (data.profile_edited) {
+      //        // this.hideEditForm(event);
+      //        location.assign("/profile");
+      //      }
+      //      if (data.errors) {
+      //        description_error.textContent = data.errors.description;
+      //      }
+      //    } catch (err) {
+      //      console.log(err);
+      //    }
+//          // } else {
+//          //   if (!title) {
+//          //     title_error.textContent = "Please do not leave title empty.";
+//          //   }
+//          //   if (!description) {
+//          //     description_error.textContent = "Please do not leave description empty.";
+//          //   }
+//          //   if (description.length > 500) {
+//          //     description_error.textContent = "Please type 500 maximum characters";
+//          //   }
+//          //   if (!date) {
+//          //     date_error.textContent = "Please do not leave date empty.";
+//          //   }
+//          //   if (!progress_level) {
+//          //     progress_error.textContent = "Please do not leave progress level empty.";
+//          //   }
+//        }
+//       $(".btn-update-container button").text("Edit Profile Details");
+//       update = 0;
+//   }
+ 
+// });
+
+// const edit_profile_btn = document.querySelector("#btn-update");
+
+// edit_profile_btn.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   let email = $("#email").text();
+//   let username = $("#name").val();
+//   let contact_num = $("#phone-num").val();
+//   let date_of_birth = $("#dob").val();
+//   // const title_error = document.querySelector(".Edit-form .title_error");
+//   // const description_error = document.querySelector(
+//   //   ".Edit-form .description_error"
+//   // );
+//   // const date_error = document.querySelector(".Edit-form .date_error");
+//   // const progress_error = document.querySelector(".Edit-form .progress_error");
+//   // title_error.textContent = "";
+//   // description_error.textContent = "";
+//   // date_error.textContent = "";
+//   // progress_error.textContent = "";
+//   if (
+//     username &&
+//     contact_num &&
+//     date_of_birth
+//   ) {
+//     try {
+//       const resolve = await fetch("/edit-profile", {
+//         method: "POST",
+//         body: JSON.stringify({
+//           email,
+//           username,
+//           contact_num,
+//           date_of_birth,
+//         }),
+//         headers: { "Content-Type": "application/json" },
+//       });
+//       const data = await resolve.json();
+//       if (data.task_edited) {
+//         // this.hideEditForm(event);
+//         location.assign("/profile");
+//       }
+//       if (data.errors) {
+//         description_error.textContent = data.errors.description;
+//       }
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   // } else {
+//   //   if (!title) {
+//   //     title_error.textContent = "Please do not leave title empty.";
+//   //   }
+//   //   if (!description) {
+//   //     description_error.textContent = "Please do not leave description empty.";
+//   //   }
+//   //   if (description.length > 500) {
+//   //     description_error.textContent = "Please type 500 maximum characters";
+//   //   }
+//   //   if (!date) {
+//   //     date_error.textContent = "Please do not leave date empty.";
+//   //   }
+//   //   if (!progress_level) {
+//   //     progress_error.textContent = "Please do not leave progress level empty.";
+//   //   }
+//   }
+// });

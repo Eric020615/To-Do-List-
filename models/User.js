@@ -43,6 +43,11 @@ const userSchema = new mongoose.Schema({
         type: Date,
         required: [true, 'Please enter your date of birth.']
     },
+        image:{
+        // buffer is a binary data
+        data: Buffer,
+        contentType: String,
+    },
 });
 
 // hook functions (post(), pre())

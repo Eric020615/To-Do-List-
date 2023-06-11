@@ -4,6 +4,7 @@ const page_route = require('./routes/page');
 const auth_route = require('./routes/authRoutes');
 const task_route = require('./routes/taskRoutes');
 const feedback_route = require('./routes/feedbackRoute');
+const user_route = require('./routes/userRoute');
 const cookieParser = require('cookie-parser');
 const smtp = require('./services/smtp')
 
@@ -27,6 +28,7 @@ app.use(page_route);
 app.use(auth_route);
 app.use(task_route);
 app.use(feedback_route);
+app.use(user_route);
 
 app.listen(3000, ()=>{
     console.log("Port Connected")
