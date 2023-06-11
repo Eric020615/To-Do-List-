@@ -33,15 +33,9 @@ const userSchema = new mongoose.Schema({
     },
     username:{
         type: String,
-        required: [true, 'Please enter your name.'],
-    },
-    contact_num:{
-        type: String,
-        required: [true, 'Please enter contact number.'],
     },
     date_of_birth:{
         type: Date,
-        required: [true, 'Please enter your date of birth.']
     },
         image:{
         // buffer is a binary data

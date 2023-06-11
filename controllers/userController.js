@@ -6,29 +6,6 @@ const {mutler,upload,storage} = require('../services/multer');
 const User = require('../models/User');
 const fs = require('fs');
 
-// module.exports.uploadImg = async (req,res,next) =>{
-//     try{
-//         upload(req,res,(err)=>{
-//             if(err){
-//                 console.log(err);
-//             }
-//             else{
-//                 const newImage = new Image({
-//                     name: req.body.name,
-//                     image:{
-//                         data:req.file.filename,
-//                         contentType:'image/jpg'
-//                     }
-//                 })
-//                 newImage.save().then(console.log("Uploaded Successfully"));
-//             }
-//         })
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-// }
-
 module.exports.uploadImg = async (req,res,next) =>{
     try{
         const newImage = new Image({

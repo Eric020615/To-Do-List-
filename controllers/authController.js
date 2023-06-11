@@ -58,9 +58,11 @@ const createToken = (id) =>{
 module.exports.signup_post = async (req,res) =>{
     const {email, phone_num, password} = req.body;
     try{
+        let username = ""
+        let date_of_birth = null
         // need to wait the process done 
         // create the documents by mongoose
-        const user = await User.create({email, phone_num, password});
+        const user = await User.create({email, phone_num, password,username,date_of_birth});
         // pass user id into token
         const token = createToken(user._id);
         // make jwt token as cookie and response by http, send it back to the client browser (application tab)
