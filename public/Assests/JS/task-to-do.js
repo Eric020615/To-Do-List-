@@ -182,10 +182,8 @@ document.querySelector("#delete-btn").addEventListener('click', async (event)=>{
     const data = await resolve.json();
     if(data.task){
       this.hideEditForm(event);
-      var overlay = document.querySelector(".delete-success-overlay");
-      var formContainer = document.querySelector(".delete-success-container");
-      overlay.style.display = "block";
-      formContainer.style.display = "block";
+      showDeleteSuccess();
+      setTimeout(dlt,4000);
     }
     if(data.errors){
       this.hideEditForm(event);
@@ -195,6 +193,17 @@ document.querySelector("#delete-btn").addEventListener('click', async (event)=>{
     console.log(err);
   }
 });
+
+function dlt(){
+  location.assign('/task');
+}
+
+function showDeleteSuccess(){
+  var overlay = document.querySelector(".delete-success-overlay");
+  var formContainer = document.querySelector(".delete-success-container");
+  overlay.style.display = "block";
+  formContainer.style.display = "block";
+}
 
 function hideDeleteSuccess(event){
   event.preventDefault();
@@ -224,6 +233,41 @@ document.querySelector('.markasdone').addEventListener('click', async (event)=>{
     console.log(err)
   }
 })
+
+
+function showConfirmForm(){
+  var overlay = document.querySelector(".delete-confirm-overlay");
+  var formContainer = document.querySelector(".delete-confirm-container");
+  overlay.style.display = "block";
+  formContainer.style.display = "block";
+}
+
+async function confirm_delete(e){
+  e.preventDefault();
+  try{
+      const resolve = await fetch("/clear-all-to-do",{
+          method: 'DELETE',
+          headers: {'Content-Type':'application/json'},
+      })
+      const response = await resolve.json();
+      if(response.clear_to_do){
+        hideConfirmDelete(e);
+        showDeleteSuccess();
+        setTimeout(dlt,4000);
+      }
+  }
+  catch(err){
+    console.log(err);
+  }
+}
+
+function hideConfirmDelete(event){
+event.preventDefault();
+var overlay = document.querySelector(".delete-confirm-overlay");
+var formContainer = document.querySelector(".delete-confirm-container");
+overlay.style.display = "none";
+formContainer.style.display = "none";
+}
 
 // Set date and time
 const months = [

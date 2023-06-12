@@ -69,10 +69,8 @@ async function delete_task(task_id){
         })
         const data = await resolve.json();
         if(data.task){
-          var overlay = document.querySelector(".delete-success-overlay");
-          var formContainer = document.querySelector(".delete-success-container");
-          overlay.style.display = "block";
-          formContainer.style.display = "block";
+            showDeleteSuccess();
+            setTimeout(dlt,4000);
         }
         if(data.errors){
         }
@@ -82,15 +80,18 @@ async function delete_task(task_id){
       }
 }
 
-function hideDeleteSuccess(event){
-    event.preventDefault();
+
+function showDeleteSuccess(){
     var overlay = document.querySelector(".delete-success-overlay");
     var formContainer = document.querySelector(".delete-success-container");
-    overlay.style.display = "none";
-    formContainer.style.display = "none";
+    overlay.style.display = "block";
+    formContainer.style.display = "block";
+  }
+
+function dlt(){
     location.assign('/home');
 }
-
+  
 // Set date and time
 const months = [
     "January",

@@ -33,4 +33,4 @@ const upload = mutler({
   }
 });
 
-module.exports = {mutler,upload,Storage};
+module.exports = {mutler,upload,storage};
