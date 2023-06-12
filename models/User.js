@@ -33,11 +33,12 @@ const userSchema = new mongoose.Schema({
     },
     username:{
         type: String,
+        default: "Username",
     },
     date_of_birth:{
         type: Date,
     },
-        image:{
+    image:{
         // buffer is a binary data
         data: Buffer,
         contentType: String,

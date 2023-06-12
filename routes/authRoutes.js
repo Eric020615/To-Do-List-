@@ -13,8 +13,8 @@ router.post('/login',authController.login_post);
 // logout and clear the jwt cookie
 router.get('/logout',authController.logout_get);
 
-router.post('/upload',upload.single('image'),uploadImg);
+// router.post('/upload',upload.single('image'),uploadImg);
 
-router.get('/getImage',getImg);
+// router.get('/getImage',getImg);
 
 module.exports = router;

@@ -48,7 +48,7 @@ router.get('/calendar', requireAuth , (req,res)=>{
     res.render("calendar");
 })
 
-router.get('/profile', requireAuth ,checkUser,getImg, (req,res)=>{
+router.get('/profile', requireAuth ,checkUser, (req,res)=>{
     res.render("profile");
 })
 
