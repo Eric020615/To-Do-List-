@@ -30,7 +30,7 @@ router.get('/task', requireAuth, task_controller.task_to_do_get, (req,res)=>{
     res.render("task to do");
 })
 
-router.get('/task-in-progress', requireAuth , (req,res)=>{
+router.get('/task-in-progress', requireAuth, task_controller.task_in_progress_get, (req,res)=>{
     res.render('task in progress');
 })
 
