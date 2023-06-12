@@ -44,7 +44,6 @@ module.exports.getImg = async (req,res,next) =>{
     try{
         const images = await Image.find();
         res.locals.images = images;
-        console.log(images);
         next();
     }
     catch(err){

@@ -36,7 +36,6 @@ app.listen(3000, ()=>{
 
 setInterval(smtp.scheduleEmail,5000);
 
-
 // //  cookies (Store information in the client browser)
 // app.get('set-cookies',(req,res)=>{
 //     // set cookie('Cookie name','cookie value')
