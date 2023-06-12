@@ -58,8 +58,9 @@ const createToken = (id) =>{
 module.exports.signup_post = async (req,res) =>{
     const {email, phone_num, password} = req.body;
     try{
-        let username = ""
+        let username = "Username"
         let date_of_birth = null
+        let image = null;
         // need to wait the process done 
         // create the documents by mongoose
         const user = await User.create({email, phone_num, password,username,date_of_birth});

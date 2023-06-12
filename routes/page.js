@@ -4,6 +4,7 @@ const router = express.Router();
 const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 const task_controller = require("../controllers/taskController")
 const feedback_controller = require("../controllers/feedbackController");
+const user_controller = require("../controllers/userController");
 const { getImg } = require('../controllers/userController');
 
 // apply checkUser middleware into every single route
@@ -47,7 +48,7 @@ router.get('/calendar', requireAuth , (req,res)=>{
     res.render("calendar");
 })
 
-router.get('/profile', requireAuth ,getImg, (req,res)=>{
+router.get('/profile', requireAuth ,checkUser, (req,res)=>{
     res.render("profile");
 })
 
