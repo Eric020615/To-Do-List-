@@ -50,7 +50,6 @@ const userSchema = new mongoose.Schema({
 // not post request, => somethings happening after post
 // ('after event occurs', 'what to do')
 userSchema.post('save', function(doc, next){
-    console.log('New user was created and saved', doc);
     // we need to use next function in all mongoose middleware or hooks to avoid hanging the process
     next();
 });
