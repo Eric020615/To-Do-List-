@@ -5,6 +5,7 @@ const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 const task_controller = require("../controllers/taskController")
 const feedback_controller = require("../controllers/feedbackController");
 const user_controller = require("../controllers/userController");
+const calendar_Controller = require("../controllers/calendarController");
 const { getImg } = require('../controllers/userController');
 
 // apply checkUser middleware into every single route
@@ -38,6 +39,11 @@ router.get('/task-in-progress', requireAuth, task_controller.task_in_progress_ge
 router.get('/task-review', requireAuth , task_controller.all_task_get, (req,res)=>{
     const tasks = res.locals.tasks;
     res.render('task_review',{tasks});
+})
+
+router.get('/calendar', requireAuth , checkUser, calendar_Controller.calendar_get, (req,res)=>{
+    const tasks = res.locals.tasks;
+    res.render('calendar',{tasks});
 })
 
 router.get('/task-to-complete', requireAuth, checkUser, task_controller.task_complete_get, (req,res)=>{

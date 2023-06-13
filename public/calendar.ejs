@@ -86,15 +86,15 @@
         <!-- Head -->
         
         <!-- Head -->
-		<div class="cal__main">
-			<span class="background"></span>
-			<span class="background1"></span>
-			<span class="background2"></span>
-			<h1>Task Calendar</h1>
+		<div class="cal__main row mt-3">
+			<h1 class="h1 col-10 offset-1 col-md-6 offset-md-2 mt-2">Task Calendar</h1>
     
-			<div class="cal__container">
-				<div class="calendar__top">
+            <hr class="col-12 offset-0 col-md-10 offset-md-0">
+
+			<div class="col-10 offset-1 col-md-6 offset-md-2 mt-2">
+				<div class="calendar__top col-12">
 					<span class="arrow" id="back__arrow" ><</span>
+
 					<div class="calendar__day">
 						<span class="cal__month" id="cal__month"></span>
 						<span class="cal__date" id="cal__date"></span>
@@ -102,8 +102,10 @@
 					<div class="calendar__time">
 						<span class="cal__time" id="cal__time"></span>
 					</div>
+
 					<span class="arrow" id="next__arrow">></span>
 				</div>
+
 				<div class="calendar__bottom">
                     <div class="weekdays">
                         <div class="date1">SUN</div>
@@ -116,13 +118,36 @@
                     </div>
                     
 					<div class="cal__weekdays" id="cal__weekdays">
-				
 					</div>
-					<div class="cal__days" id="cal__days"></div>
+                    
+					<div class="cal__days" id="cal__days">
+                        <p class="d-none data"><%= JSON.stringify(tasks) %></p>
+                    </div>
 				</div>
 			</div>
 		</div>
     </section>
+
+    <div id="popup_box" class="col-4">
+        <div id="show_form_container" class="col-8 offset-2 mt-3" >
+            <form id="show_form" class="col-10 offset-1 m-3">
+                <label>Title:</label><br>
+                <p id="title" class="p"></p><br>
+
+                <label>Description:</label><br>
+                <p id="description"></p><br>
+
+                <label>Date:</label><br>
+                <p id="date"></p><br>
+
+                <label>Progress:</label><br>
+                <p id="progress"></p><br>
+            </form>
+            <div class="form-buttons col-6 offset-3">
+                <input type="button" class="close_btn col-12" onclick="closeTask()" value="Back">
+            </div>
+        </div>
+    </div>
 
     <script src="Assests/JS/calendar.js"></script>
     <script src = "Assests/JS/ckc.js"> </script>
