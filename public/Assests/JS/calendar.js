@@ -67,6 +67,9 @@ setInterval(showTime, 1000);
 
 // Generating Dates per Month
 const glassCalendar = () => {
+	// Get data from res.render()
+	var tasksDataElement = document.querySelector(".data").innerHTML;
+	var tasks = JSON.parse(tasksDataElement); 
 	currentDate();
 
 	let days = '';
@@ -81,20 +84,59 @@ const glassCalendar = () => {
 
 	// For lopp to iterates through month to generate days & today's date.
 	for (let i = 1; i <= lastDay; i++) {
-		
+		detect = false;
+
+		for(let j = 0; j < tasks.length ;j++){
+			if(i === new Date(tasks[j].date).getDate()){
+				days += `<span class="redmark">${i}</span>`;
+				detect = true;
+				break;
+			}
+		}
 		if (
 			i === new Date().getDate() &&
 			date.getMonth() === new Date().getMonth()
 		) {
 			days += `<span class="today">${i}</span>`;
 		} else {
-			days += `<span>${i}</span>`;
+			if(!detect){
+				days += `<span>${i}</span>`;
+			}
 		}
 
 		allDates.innerHTML = days;
 	}
+
+	// click tasks event
+	let task_mark = document.getElementsByClassName("redmark");
+	for(let i = 0; i < tasks.length;i++){
+		task_mark[i].onclick = function(){
+			var box = document.getElementById("popup_box");
+			var form_container = document.getElementById("show_form_container");
+			var show_form = document.getElementById("show_form");
+
+			box.style.display = "block";
+			form_container.style.display = "block";
+
+			show_form.getElementsByTagName("p")[0].innerHTML = tasks[i].title;
+			show_form.getElementsByTagName("p")[1].innerHTML = tasks[i].description;
+			show_form.getElementsByTagName("p")[2].innerHTML = new Date(tasks[i].date).getDate() + "/" + (Number(new Date(tasks[i].date).getMonth()) + 1 )+ "/" + new Date(tasks[i].date).getFullYear();
+			show_form.getElementsByTagName("p")[3].innerHTML = tasks[i].progress_level + "%";
+			document.body.style.background = "#555";
+		};
+	}
 };
 glassCalendar();
+
+function closeTask(){
+	var box = document.getElementById("popup_box");
+	var form_container = document.getElementById("show_form_container");
+	var show_form = document.getElementById("show_form");
+
+	box.style.display = "none";
+	form_container.style.display = "none";
+	document.body.style.background = "#fff";
+}
 
 // Added event listener to buttons for
 prevBtn.addEventListener('click', () => {
@@ -106,3 +148,6 @@ nxtBtn.addEventListener('click', () => {
 	date.setMonth(date.getMonth() + 1);
 	glassCalendar();
 });
+
+
+
