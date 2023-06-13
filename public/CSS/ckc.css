@@ -73,6 +73,7 @@ a {
   line-height: 48px;
   padding: 0 35px;
   color: white;
+  text-decoration: none;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -369,6 +370,7 @@ h5{
     margin-right: 3px;
 }
 
+
 /* if no task */
 .no-task-container{
     display: flex;
@@ -422,6 +424,8 @@ h5{
     border: 5px solid #439A97;
     margin-top: 20px;
     margin-left: 30px;
+    object-fit: cover;
+   object-position: center;
   }
 
 .username-text-container{
@@ -645,9 +649,9 @@ margin-bottom: 15px;
 }
 
 /* home.html css */
-.home-view-task {
+/* .home-view-task {
    
-}
+} */
 .home-view-task li {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -671,6 +675,11 @@ margin-bottom: 15px;
 .add-new-task {
     width: 40%;
 }
+
+.text-grey {
+    color: #808080;
+}
+
 
 @media screen and (max-width: 767px) {
   .main {

@@ -263,9 +263,10 @@ section{
     float: left;
 }
 
-.about_us .content img{
+.about_us .content .about-background{
     float: right;
 }
+
 
 .about_us .text-content span{
     font-weight: 600;
@@ -283,19 +284,19 @@ section{
         width: 100%;
         text-align: center;
     }
-    .about_us .content img{
+    .about_us .content .about-background{
         margin-top: 50px;
         display: flex;
         justify-content: center;
     }
-    .about_us img{
+    .about_us .about-background{
         width: 70%;
         height: 70%;
     }
 }
 
 @media(max-width: 1200px) {
-    .about_us img{
+    .about_us .about-background{
         width: 50%;
         height: 50%;
     }

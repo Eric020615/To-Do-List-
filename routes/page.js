@@ -4,6 +4,7 @@ const router = express.Router();
 const {requireAuth, checkUser} = require('../middleware/authMiddleware');
 const task_controller = require("../controllers/taskController")
 const feedback_controller = require("../controllers/feedbackController");
+const user_controller = require("../controllers/userController");
 const { getImg } = require('../controllers/userController');
 
 // apply checkUser middleware into every single route
@@ -30,7 +31,7 @@ router.get('/task', requireAuth, task_controller.task_to_do_get, (req,res)=>{
     res.render("task to do");
 })
 
-router.get('/task-in-progress', requireAuth , (req,res)=>{
+router.get('/task-in-progress', requireAuth, task_controller.task_in_progress_get, (req,res)=>{
     res.render('task in progress');
 })
 
@@ -47,7 +48,7 @@ router.get('/calendar', requireAuth , (req,res)=>{
     res.render("calendar");
 })
 
-router.get('/profile', requireAuth ,getImg, (req,res)=>{
+router.get('/profile', requireAuth ,checkUser, (req,res)=>{
     res.render("profile");
 })
 
