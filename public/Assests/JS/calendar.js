@@ -167,15 +167,15 @@ function closeTask(){
 }
 
 // Added event listener to buttons for
-prevBtn.addEventListener('click', () => {
+function previous() {  
 	date.setMonth(date.getMonth() - 1);
 	glassCalendar();
-});
+};
 
-nxtBtn.addEventListener('click', () => {
+function next(){
 	date.setMonth(date.getMonth() + 1);
 	glassCalendar();
-});
+};
 
 
 

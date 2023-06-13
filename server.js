@@ -7,7 +7,7 @@ const feedback_route = require("./routes/feedbackRoute");
 const settings_route = require("./routes/settingsRoutes");
 const user_route = require("./routes/userRoute");
 const calendar_route = require("./routes/calendarRoute");
-const calendar_route = require("./routes/calendarRoute");
+
 const forgotPass = require('./routes/forgotPassRoute')
 const cookieParser = require("cookie-parser");
 const smtp = require("./services/smtp");
