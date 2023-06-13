@@ -150,6 +150,13 @@ document.querySelector(".profile-pic-form").addEventListener("submit", async (ev
   }else{
     $(".file-empty-warning").addClass("d-none");
   }
+  if (
+    document.querySelector('input[type="file"]').files[0].type !=
+      "image/jpeg" &&
+    document.querySelector('input[type="file"]').files[0].type != "image/png"
+  ) {
+    $(".file-empty-warning").removeClass("d-none").text("Only png & jpg file supported");
+  }
   formData.append(
     "image",
     document.querySelector('input[type="file"]').files[0]
