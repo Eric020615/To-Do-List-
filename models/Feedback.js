@@ -21,10 +21,6 @@ const feedbackSchema = new mongoose.Schema({
         type: String,
         maxlength: [500, 'Please enter maximum 500 characters']
     },
-    file: {
-        type: mongoose.Schema.Types.Mixed,
-        required: [true]
-    },
 })
 
 const Feedback = mongoose.model('feedback', feedbackSchema);

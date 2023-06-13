@@ -57,7 +57,7 @@ const showTime = () => {
 		hr = 12;
 		am_pm = 'AM';
 	}
-  	if (min < 10) {
+	if (min < 10) {
 		min = '0' + min;
 	}
 	let currentTime = `${hour}:${min} ${am_pm}`;
@@ -81,6 +81,7 @@ const glassCalendar = () => {
 
 	// For lopp to iterates through month to generate days & today's date.
 	for (let i = 1; i <= lastDay; i++) {
+		
 		if (
 			i === new Date().getDate() &&
 			date.getMonth() === new Date().getMonth()

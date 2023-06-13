@@ -51,9 +51,9 @@ const createToken = (id) =>{
 // this is asychronous function
 // it will return promise
 module.exports.feedback_post = async (req,res) =>{
-    const {username,email,comments,file} = req.body;
+    const {username,email,comments} = req.body;
     try{
-        const feedback = await Feedback.create({username,email,comments,file});
+        const feedback = await Feedback.create({username,email,comments});
         res.status(201).json({feedback:feedback._id});
     }
     catch(err){

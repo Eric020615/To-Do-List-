@@ -6,12 +6,11 @@ feedbackcontent.addEventListener('submit', async (e) => {
     const username = feedbackcontent.username.value;
     const email = feedbackcontent.email.value;
     const comments = feedbackcontent.comments.value;
-    const file = feedbackcontent.querySelector('input[type="file"]').files; // 获取文件对象列表
     
     try {
         const response = await fetch('/feedback', {
             method: 'POST',
-            body: JSON.stringify({username,email,comments,file}),
+            body: JSON.stringify({username,email,comments}),
             headers: {'Content-Type':'application/json'}
         });
         const data = await response.json();   
