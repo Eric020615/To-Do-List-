@@ -175,12 +175,12 @@ body {
 	background-color: rgba(240, 248, 255, 0.573);
 }
 
-.calendar__bottom .cal__days .today {
-	background: rgb(3, 157, 67);
-}
-
 .calendar__bottom .cal__days .redmark {
 	background: rgba(239, 58, 76, 0.908);
+}
+
+.calendar__bottom .cal__days .today {
+	background: rgb(3, 157, 67);
 }
 
 /* Show task */

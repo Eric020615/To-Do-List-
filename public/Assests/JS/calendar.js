@@ -65,42 +65,68 @@ const showTime = () => {
 };
 setInterval(showTime, 1000);
 
+// Get data from res.render()
+var tasksDataElement = document.querySelector(".data").innerHTML;
+var tasks = JSON.parse(tasksDataElement); 
+
 // Generating Dates per Month
 const glassCalendar = () => {
-	// Get data from res.render()
-	var tasksDataElement = document.querySelector(".data").innerHTML;
-	var tasks = JSON.parse(tasksDataElement); 
 	currentDate();
 
 	let days = '';
-	let lastDay =
-		32 - new Date(date.getFullYear(), date.getMonth(), 32).getDate();
-	const emptyDates = date.getDay();
+	let lastDay = 32 - new Date(date.getFullYear(), date.getMonth(), 32).getDate();
+
+	const emptyDates = new Date(date.getFullYear(), date.getMonth(),1).getDay();
 
 	// For lopp to iterates empty spot where there's no date.
 	for (let x = emptyDates; x > 0; x--) {
 		days += `<span></span>`;
 	}
 
-	// For lopp to iterates through month to generate days & today's date.
+	// json for collecting the tasks
+	// json for collecting the tasks
+	const task_collection = {
+		index_collection: {}
+	};
+	let index_collection = 0;
+	
+	// For loop to iterate through each day
 	for (let i = 1; i <= lastDay; i++) {
-		detect = false;
-
-		for(let j = 0; j < tasks.length ;j++){
-			if(i === new Date(tasks[j].date).getDate()){
-				days += `<span class="redmark">${i}</span>`;
-				detect = true;
-				break;
+		let detect = false;
+	
+		for (let j = 0; j < tasks.length; j++) {
+		if (
+			i === new Date(tasks[j].date).getDate() &&
+			date.getMonth() === new Date(tasks[j].date).getMonth()
+		) {
+			detect = true;
+			let key = 'key' + index_collection;
+			let value = [
+			tasks[j].title,
+			tasks[j].description,
+			tasks[j].date,
+			tasks[j].progress_level
+			];
+			task_collection.index_collection[key] = value;
+	
+			index_collection++;
+			break;
+		}
+		}
+		if(!detect){
+			if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+				days += `<span class="today">${i}</span>`;
+			}
+			else{
+				days += `<span>${i}</span>`;
 			}
 		}
-		if (
-			i === new Date().getDate() &&
-			date.getMonth() === new Date().getMonth()
-		) {
-			days += `<span class="today">${i}</span>`;
-		} else {
-			if(!detect){
-				days += `<span>${i}</span>`;
+		else{
+			if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+				days += `<span class="redmark today">${i}</span>`;
+			}
+			else{
+				days += `<span class="redmark">${i}</span>`;
 			}
 		}
 
@@ -118,10 +144,12 @@ const glassCalendar = () => {
 			box.style.display = "block";
 			form_container.style.display = "block";
 
-			show_form.getElementsByTagName("p")[0].innerHTML = tasks[i].title;
-			show_form.getElementsByTagName("p")[1].innerHTML = tasks[i].description;
-			show_form.getElementsByTagName("p")[2].innerHTML = new Date(tasks[i].date).getDate() + "/" + (Number(new Date(tasks[i].date).getMonth()) + 1 )+ "/" + new Date(tasks[i].date).getFullYear();
-			show_form.getElementsByTagName("p")[3].innerHTML = tasks[i].progress_level + "%";
+			var json_key = "key" + i;
+
+			show_form.getElementsByTagName("p")[0].innerHTML = task_collection.index_collection[json_key][0];
+			show_form.getElementsByTagName("p")[1].innerHTML = task_collection.index_collection[json_key][1];
+			show_form.getElementsByTagName("p")[2].innerHTML = new Date(task_collection.index_collection[json_key][2]).getDate() + "/" + (Number(new Date(task_collection.index_collection[json_key][2]).getMonth()) + 1 )+ "/" + new Date(task_collection.index_collection[json_key][2]).getFullYear();
+			show_form.getElementsByTagName("p")[3].innerHTML = task_collection.index_collection[json_key][3] + "%";
 			document.body.style.background = "#555";
 		};
 	}
