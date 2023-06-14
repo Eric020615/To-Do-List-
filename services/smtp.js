@@ -42,13 +42,14 @@ async function sendEmail(to, subject, message, item) {
     port: 587, // Replace with the SMTP server port
     secure: false, // Set to true if using SSL/TLS
     auth: {
-      user: 'worldpopi57@gmail.com', // Replace with your email address
-      pass: 'nvomcteiswhrbveo', // Replace with your email password
-    },
+      user: 'ticktoktasks@gmail.com', // Replace with your email address
+      pass: 'rhqwmzdqzzkklhjs', // Replace with your email password
+    }
   });
+  
   // Set up the email options
   const mailOptions = {
-    from: 'worldpopi57@example.com', // Sender address
+    from: "ticktoktasks@gmail.com", // Sender address
     to, // Recipient address
     subject,
     text: message,
@@ -144,14 +145,35 @@ async function sendEmail(to, subject, message, item) {
               </body>
           </html>`
   };
-
   // Send the email
   await transporter.sendMail(mailOptions)
 }
+
+async function sendEmail_reset_password(to, subject, message) {
+  // Set up the SMTP transport configuration
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com', // Replace with your SMTP server host
+    port: 587, // Replace with the SMTP server port
+    secure: false, // Set to true if using SSL/TLS
+    auth: {
+      user: 'ticktoktasks@gmail.com', // Replace with your email address
+      pass: 'rhqwmzdqzzkklhjs', // Replace with your email password
+    }
+  });
+  // Set up the email options
+  const mailOptions = {
+    from: "ticktoktasks@gmail.com", // Sender address
+    to, // Recipient address
+    subject,
+    text: message,
+  };
+  // Send the email
+  await transporter.sendMail(mailOptions)
+}
+
 async function scheduleEmail() {
   try {
     const data = await Task.find();
-
     for (const item of data) {
       const { message, to, subject, emailDate } = await generateEmailData(item);
       const currentDate = new Date().toISOString().split('T')[0];
@@ -170,4 +192,6 @@ async function scheduleEmail() {
 module.exports = { 
   Task,
   scheduleEmail,
+  sendEmail,
+  sendEmail_reset_password
 };
