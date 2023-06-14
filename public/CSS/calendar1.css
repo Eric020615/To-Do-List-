@@ -163,7 +163,7 @@ body {
 .calendar__bottom .cal__days span {
 	padding: 1rem;
 	font-size: 1.2rem;
-	width: 100%;
+	width: 75%;
 	text-align: center;
 	border-radius: 20px;
 	cursor: pointer;
@@ -171,16 +171,22 @@ body {
    
 }
 
-.calendar__bottom .cal__days span:hover {
-	background-color: rgba(240, 248, 255, 0.573);
-}
-
 .calendar__bottom .cal__days .redmark {
 	background: rgba(239, 58, 76, 0.908);
 }
 
 .calendar__bottom .cal__days .today {
-	background: rgb(3, 157, 67);
+	/* background: rgb(3, 157, 67); */
+	/* border: 5px solid white; */
+	border: 5px solid rgb(3, 157, 67);
+}
+
+.calendar__bottom .cal__days span:hover {
+	background-color: rgba(240, 248, 255, 0.573);
+}
+
+.calendar__bottom .cal__days .move {
+	background-color: rgba(240, 248, 255, 0.573);
 }
 
 /* Show task */
