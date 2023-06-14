@@ -152,7 +152,7 @@ function createNewTask(title, status, priority, deadline) {
   // piece = $("<div>").addClass("piece d-flex flex-nowrap b-red m-auto");
 
   let ul = $("<ul>").addClass(
-    "d-flex flex-wrap flex-column justify-content-around"
+    "d-flex flex-nowrap flex-column justify-content-around max-w-200"
   );
   let titleLi = $("<li>")
     .addClass("pt-2")

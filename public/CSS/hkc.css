@@ -38,6 +38,10 @@ body {
   width: 100%;
   padding-left: 15px;
 }
+
+.max-w-200 {
+  max-width: 200px;
+}
 /* SideNavBar ========================================================= */
 .sidebar {
   display: flex;
