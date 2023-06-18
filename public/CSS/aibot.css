@@ -52,6 +52,7 @@ div#parent {
   /* max-height: 100vh; */
   padding-bottom: 100px;
 }
+
 :where(.chat-container, textarea)::-webkit-scrollbar {
   width: 6px;
 }
@@ -176,6 +177,30 @@ span.material-symbols-rounded {
     background: var(--outgoing-chat-bg);
     border-top: 1px solid var(--incoming-chat-border);
 }
+
+@media only screen and (max-width: 768px) {
+  div#parent {
+    padding-top: 10%;
+    height: 87.5%;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .typing-container {
+    position: fixed;
+    bottom: 0;
+    height: 12.5%;
+    width: 100%;
+    display: flex;
+    padding: 22.5px 20px;
+    justify-content: center;
+    background: var(--outgoing-chat-bg);
+    border-top: 1px solid var(--incoming-chat-border);
+}
+  
+}
+
 .typing-container .typing-content {
   display: flex;
   width: 100%;

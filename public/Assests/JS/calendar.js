@@ -89,6 +89,8 @@ const glassCalendar = () => {
 		index_collection: {}
 	};
 	let index_collection = 0;
+	var json_key;
+	let index_bg_color = 0;
 	
 	// For loop to iterate through each day
 	for (let i = 1; i <= lastDay; i++) {
@@ -105,9 +107,13 @@ const glassCalendar = () => {
 			tasks[j].title,
 			tasks[j].description,
 			tasks[j].date,
-			tasks[j].progress_level
+			tasks[j].progress_level,
+			tasks[j].priority_level
 			];
 			task_collection.index_collection[key] = value;
+
+
+			index_bg_color = tasks[j].priority_level;
 	
 			index_collection++;
 			break;
@@ -122,20 +128,66 @@ const glassCalendar = () => {
 			}
 		}
 		else{
-			if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-				days += `<span class="redmark today">${i}</span>`;
+			if(index_bg_color == 10){
+				if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+					days += `<span class="bg-primary today marked">${i}</span>`;
+				}
+				else{
+					days += `<span class="bg-primary marked">${i}</span>`;
+				}
 			}
-			else{
-				days += `<span class="redmark">${i}</span>`;
+			else if(index_bg_color == 20){
+				if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+					days += `<span class="bg-warning today marked">${i}</span>`;
+				}
+				else{
+					days += `<span class="bg-warning marked">${i}</span>`;
+				}
+			}
+			else if(index_bg_color == 30){
+				if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+					days += `<span class="bg-danger today marked">${i}</span>`;
+				}
+				else{
+					days += `<span class="bg-danger marked">${i}</span>`;
+				}
 			}
 		}
-
+		
 		allDates.innerHTML = days;
 	}
 
 	// click tasks event
-	let task_mark = document.getElementsByClassName("redmark");
+	let task_mark = document.getElementsByClassName("marked");
 	for(let i = 0; i < tasks.length;i++){
+		task_mark[i].onmouseover = function(){
+			task_mark[i].classList.add("bg-secondary");
+			if(task_mark[i].classList.contains("bg-danger")){
+				task_mark[i].classList.remove("bg-danger");
+
+				this.onmouseout = function(){
+					task_mark[i].classList.add("bg-danger");
+					task_mark[i].classList.remove("bg-secondary");
+				}
+			}
+			else if(task_mark[i].classList.contains("bg-warning")){
+				task_mark[i].classList.remove("bg-warning");
+
+				this.onmouseout = function(){
+					task_mark[i].classList.add("bg-warning");
+					task_mark[i].classList.remove("bg-secondary");
+				}
+			}
+			else if(task_mark[i].classList.contains("bg-primary")){
+				task_mark[i].classList.remove("bg-primary");
+
+				this.onmouseout = function(){
+					task_mark[i].classList.add("bg-primary");
+					task_mark[i].classList.remove("bg-secondary");
+				}
+			}
+		}
+
 		task_mark[i].onclick = function(){
 			var box = document.getElementById("popup_box");
 			var form_container = document.getElementById("show_form_container");
@@ -150,6 +202,7 @@ const glassCalendar = () => {
 			show_form.getElementsByTagName("p")[1].innerHTML = task_collection.index_collection[json_key][1];
 			show_form.getElementsByTagName("p")[2].innerHTML = new Date(task_collection.index_collection[json_key][2]).getDate() + "/" + (Number(new Date(task_collection.index_collection[json_key][2]).getMonth()) + 1 )+ "/" + new Date(task_collection.index_collection[json_key][2]).getFullYear();
 			show_form.getElementsByTagName("p")[3].innerHTML = task_collection.index_collection[json_key][3] + "%";
+
 			document.body.style.background = "#555";
 		};
 	}
