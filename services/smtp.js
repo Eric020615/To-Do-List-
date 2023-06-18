@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const schedule = require('node-schedule');
 const Task = require('../models/Task');
+const path = require('path');
 
 async function generateEmailData(data) {
   const { priority_level, title, description } = data;
@@ -111,7 +112,7 @@ async function sendEmail(to, subject, message, item) {
                         <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
                           <tr>
                             <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
-                              <a href="http://www.example.com/" style="text-decoration:none;"><img src="https://assets.codepen.io/210284/logo.png" width="165" alt="Logo" style="width:165px;max-width:80%;height:auto;border:none;text-decoration:none;color:#ffffff;"></a>
+                              <a href="http://www.example.com/" style="text-decoration:none;"><img src="cid:logo.ee" width="165" alt="Logo" style="width:165px;max-width:80%;height:auto;border:none;text-decoration:none;color:#ffffff;"></a>
                             </td>
                           </tr>
                           <tr>
@@ -143,8 +144,14 @@ async function sendEmail(to, subject, message, item) {
                   </table>
                 </div>
               </body>
-          </html>`
+          </html>`,
+    attachments: [{
+      filename: 'title_logo.png',
+      path: './public/Assests/img/title_logo.png',
+      cid: 'logo.ee'
+    }]
   };
+  
   // Send the email
   await transporter.sendMail(mailOptions)
 }

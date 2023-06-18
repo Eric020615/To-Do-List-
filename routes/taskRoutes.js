@@ -10,7 +10,6 @@ router.delete('/clear-all-to-do',checkUser,taskController.task_to_do_clear);
 router.post('/edit-task',taskController.task_edit);
 router.post('/done',taskController.task_done);
 
-
 // task in progress route
 router.delete('/clear-all-progress',checkUser,taskController.task_in_progress_clear);
 router.post('/edit-task-in-progress',taskController.task_in_progress_edit);
