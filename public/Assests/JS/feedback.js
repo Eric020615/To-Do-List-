@@ -15,7 +15,7 @@ feedbackcontent.addEventListener('submit', async (e) => {
         });
         const data = await response.json();   
         if (data.feedback) {
-            history.go(-1); // 返回上一个页面
+            location.assign('/about-us');
         }
         if (data.errors){
             console.log(errors);

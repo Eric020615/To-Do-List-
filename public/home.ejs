@@ -22,6 +22,14 @@
       crossorigin="anonymous"
     ></script>
     <link rel="shortcut icon" href="Assests/img/title_logo.png" class="icon" />
+    <script>
+      // Prevent navigating back after logout
+      function preventBack() {
+        window.history.forward(); 
+      }
+      setTimeout("preventBack()", 0);
+      window.onunload = function () { null };
+  </script>
   </head>
 
   <body>
