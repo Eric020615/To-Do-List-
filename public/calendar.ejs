@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="CSS/hkc.css">
     <link rel="shortcut icon" href="Assests/img/title_logo.png" class="icon">
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
+    <script>
+        // Prevent navigating back after logout
+        function preventBack() {
+          window.history.forward(); 
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
 </head>
 
 
@@ -48,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="/settings-general">
+                <a href="/settings">
                     <i class="fa-solid fa-gear"></i>
                     <span class="text">Settings</span>
                 </a>

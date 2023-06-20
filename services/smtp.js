@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const schedule = require('node-schedule');
 const Task = require('../models/Task');
+const path = require('path');
 
 async function generateEmailData(data) {
   const { priority_level, title, description } = data;
@@ -42,13 +43,14 @@ async function sendEmail(to, subject, message, item) {
     port: 587, // Replace with the SMTP server port
     secure: false, // Set to true if using SSL/TLS
     auth: {
-      user: 'worldpopi57@gmail.com', // Replace with your email address
-      pass: 'nvomcteiswhrbveo', // Replace with your email password
-    },
+      user: 'ticktoktasks@gmail.com', // Replace with your email address
+      pass: 'rhqwmzdqzzkklhjs', // Replace with your email password
+    }
   });
+  
   // Set up the email options
   const mailOptions = {
-    from: 'worldpopi57@example.com', // Sender address
+    from: "ticktoktasks@gmail.com", // Sender address
     to, // Recipient address
     subject,
     text: message,
@@ -110,7 +112,7 @@ async function sendEmail(to, subject, message, item) {
                         <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
                           <tr>
                             <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
-                              <a href="http://www.example.com/" style="text-decoration:none;"><img src="https://assets.codepen.io/210284/logo.png" width="165" alt="Logo" style="width:165px;max-width:80%;height:auto;border:none;text-decoration:none;color:#ffffff;"></a>
+                              <a href="http://www.example.com/" style="text-decoration:none;"><img src="cid:logo.ee" width="165" alt="Logo" style="width:165px;max-width:80%;height:auto;border:none;text-decoration:none;color:#ffffff;"></a>
                             </td>
                           </tr>
                           <tr>
@@ -142,16 +144,43 @@ async function sendEmail(to, subject, message, item) {
                   </table>
                 </div>
               </body>
-          </html>`
+          </html>`,
+    attachments: [{
+      filename: 'title_logo.png',
+      path: './public/Assests/img/title_logo.png',
+      cid: 'logo.ee'
+    }]
   };
-
+  
   // Send the email
   await transporter.sendMail(mailOptions)
 }
+
+async function sendEmail_reset_password(to, subject, message) {
+  // Set up the SMTP transport configuration
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com', // Replace with your SMTP server host
+    port: 587, // Replace with the SMTP server port
+    secure: false, // Set to true if using SSL/TLS
+    auth: {
+      user: 'ticktoktasks@gmail.com', // Replace with your email address
+      pass: 'rhqwmzdqzzkklhjs', // Replace with your email password
+    }
+  });
+  // Set up the email options
+  const mailOptions = {
+    from: "ticktoktasks@gmail.com", // Sender address
+    to, // Recipient address
+    subject,
+    text: message,
+  };
+  // Send the email
+  await transporter.sendMail(mailOptions)
+}
+
 async function scheduleEmail() {
   try {
     const data = await Task.find();
-
     for (const item of data) {
       const { message, to, subject, emailDate } = await generateEmailData(item);
       const currentDate = new Date().toISOString().split('T')[0];
@@ -170,4 +199,6 @@ async function scheduleEmail() {
 module.exports = { 
   Task,
   scheduleEmail,
+  sendEmail,
+  sendEmail_reset_password
 };

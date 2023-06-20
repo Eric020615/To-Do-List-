@@ -209,3 +209,17 @@ ai_btn.onclick = function(){
     auto_close_sideNav.addListener(close);
     close(auto_close_sideNav);
 };
+
+function closeAll(){
+    // open the scroll function back
+    document.body.style.overflow = "auto";
+    // hidden semi dark background
+    bg_semidark.style.display = "none";
+    // hidden chat box
+    chatbox.style.display = "none";
+    chatbox.classList.remove = "sidebar-show";
+    // hidden ai section
+    section_ai.className = "sidebar min-vh-100 col-auto d-none";
+    // show the button
+    ai_btn.style.display = "block";
+}

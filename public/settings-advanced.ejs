@@ -14,6 +14,14 @@
     crossorigin="anonymous"
     />
     <script src="https://kit.fontawesome.com/10eadcceed.js" crossorigin="anonymous"></script>
+    <script>
+        // Prevent navigating back after logout
+        function preventBack() {
+          window.history.forward(); 
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
 </head>
 <body>
     <div class="row">
@@ -47,7 +55,7 @@
                 </a>
             </li>
             <li>
-                <a href="/settings-general" class="sidebar-active">
+                <a href="/settings" class="sidebar-active">
                     <i class="fa-solid fa-gear"></i>
                     <span class="text">Settings</span>
                 </a>
@@ -110,26 +118,7 @@
                     <div class="top-title">
                         <h1 class="title">Settings</h1>
                     </div>
-                    <nav class="navbar navbar-expand-sm">
-                        <div class="container-fluid page-nav">
-                          <div class="navbar-expand">
-                            <ul class="navbar-nav">
-                              <li class="nav-item">
-                                <a class="nav-link" href="/settings-general">General</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/settings-advanced">Advanced</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">Extensions</a>
-                              </li>  
-                            </ul>
-                          </div>
-                        </div>
-                      </nav>
-                      
                       <div class="container-fluid mt-3 advanced-settings-content">
-                        <h3>Advanced Settings</h3>
                         <p>Account and Security</p>
                         <div id="advanced-settings" class="d-grid">
                             <!-- password -->

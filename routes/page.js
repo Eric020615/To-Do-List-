@@ -58,13 +58,13 @@ router.get('/profile', requireAuth ,checkUser, (req,res)=>{
     res.render("profile");
 })
 
-router.get('/settings-advanced', requireAuth ,checkUser, (req,res)=>{
+router.get('/settings', requireAuth ,checkUser, (req,res)=>{
     res.render('settings-advanced');
 })
 
-router.get('/settings-general', requireAuth ,checkUser, (req,res)=>{
-    res.render('settings-general');
-})
+// router.get('/settings-general', requireAuth ,checkUser, (req,res)=>{
+//     res.render('settings-general');
+// })
 
 router.get('/about-us', requireAuth , (req,res)=>{
     res.render('about us');

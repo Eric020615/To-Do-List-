@@ -1,6 +1,8 @@
 // import user models
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const smtp = require('../services/smtp');
+const bcrypt = require('bcrypt');
 
 // evaluate the error and define what message return to user
 const handleErrors = (err) => {
@@ -100,4 +102,83 @@ module.exports.logout_get = (req, res) =>{
     // make jwt cookie to be empty so that json web token assume it is wrong jwt cookie
     res.cookie('jwt','',{maxAge: 1});
     res.redirect('/');
+}
+
+module.exports.forgot_password_get = (req,res) =>{
+    res.render('forgot-password')
+}
+
+let jwt_secret = "Tick-Tok-Tasks";
+module.exports.forgot_password_post = async (req,res,next) =>{
+    const {email} = req.body;
+    const verified = await User.exists({email:email});
+    let oldUser = await User.find({email:email});
+    //check if user exists in database
+    try{ 
+        if(verified) {
+            //Create a one-time link that valid for 15 minutes
+            const secret = jwt_secret + oldUser[0].password;
+            const payload = {
+                email: oldUser[0].email,
+                id: oldUser[0]._id
+            }
+            res.status(200).json({payload});
+            const token = jwt.sign(payload, secret, {expiresIn: '15m'});
+            const link = `http://localhost:3000/reset-password/${oldUser[0]._id}/${token}`;
+            let subject= "Tick Tok Tasks Account Password Reset";
+            let message= "Dear user,\n\nKindly please click on the below link to reset your password. The link will be expired in 15 minutes. Thank you.\n\n" + link;
+            smtp.sendEmail_reset_password(email,subject,message);
+        }
+        else{
+            let error = "Not Found"
+            await res.status(400).json({error});
+        }
+    } catch (error) { 
+        console.log(error);
+    } 
+}
+
+module.exports.reset_password_get = async(req,res,next) =>{
+    const {id, token} = req.params;
+    try {
+        //check if user exists in database
+        const oldUser = await User.findOne({_id: id});
+        const secret = jwt_secret + oldUser.password;
+        const payload = jwt.verify(token, secret);
+        // res.render("reset-password", {email: payload.email,  status: "Not verified."})
+        if (oldUser) {
+            res.render("reset-password", {email: payload.email,  status: "Not verified."})
+        }
+    } catch(error){
+        console.log(error.message)
+        res.status(400).json({error});
+    }
+}
+
+module.exports.reset_password_post = async(req,res,next) =>{
+    // extract from the url
+    const {password1,password2,email} = req.body;
+    try {
+        if(password1===password2){
+            //hash the password
+            const salt = await bcrypt.genSalt();
+            const encryptedPassword = await bcrypt.hash(password2, salt);
+            //check password and password2 if they are match (here also got problem, cannot check)
+            // Update in database with new password
+            const status = await User.findOneAndUpdate({email: email},{password:encryptedPassword});
+            res.status(200).json({status});
+            //prompt successful message(here got problem) 
+            // alert("Your password is successfully reset. Please return to login page.");     
+        }
+        if(password1!=password2){
+            let error = {
+                password : 'Passwords do not match, please re-enter.'
+            }
+            res.status(400).json({error});
+        }
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(400).json({error});
+    }
 }
